@@ -9,12 +9,14 @@ import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import GreetingContainer from './greeting/greeting_container'
 import Modal from './modal/modal'
+import SplashPage from "./splash/splash";
+
 
 const App = () => (
   <div>
     {/* <NavBarContainer /> */}
     <Modal /> 
-    {/* <AuthRoute exact path="/" component={MainPage} />  */}
+    <Route exact path="/" component={SplashPage} /> 
     <GreetingContainer />
 
     <Switch>
