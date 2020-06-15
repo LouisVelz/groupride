@@ -1,0 +1,237 @@
+.splash-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.splash-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column
+}
+
+// TOP
+.splash-top-content {
+  display: flex;
+  min-width: auto;
+  min-height: auto;
+  margin-bottom: 750px;
+}
+
+// Splash Top Body
+.splash-top-context {
+  border-radius: 4px;
+  position: absolute;
+  word-break: break-word; 
+  top: 110px;
+  left: 80px;
+  min-width: 40%;
+  text-align: left;
+  
+  h1 {
+    color: rgb(245, 245, 245);
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: 8px 6px 2px black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 0px;
+  }
+
+  p {
+    font-weight: bold;
+    color: rgba(245, 245, 245, 0.973);
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 6px 6px 3px black;
+  }
+}
+
+// Splash image Transition
+#splash-img-container  {
+  display: flex;
+  justify-content: center;
+  position:relative;
+}
+
+#splash-img-container > img {
+  display:block;
+  clear:both;
+  position:absolute;
+  min-width: 1320px;
+  z-index: 0;
+  left:0;
+}
+
+@-webkit-keyframes imgFade {
+ 0% {
+   opacity:1;
+ }
+ 17% {
+   opacity:1;
+ }
+ 25% {
+   opacity:0;
+ }
+ 92% {
+   opacity:0;
+ }
+ 100% {
+   opacity:1;
+ }
+}
+
+@-moz-keyframes imgFade {
+ 0% {
+   opacity:1;
+ }
+ 17% {
+   opacity:1;
+ }
+ 25% {
+   opacity:0;
+ }
+ 92% {
+   opacity:0;
+ }
+ 100% {
+   opacity:1;
+ }
+}
+
+@-o-keyframes imgFade {
+ 0% {
+   opacity:1;
+ }
+ 17% {
+   opacity:1;
+ }
+ 25% {
+   opacity:0;
+ }
+ 92% {
+   opacity:0;
+ }
+ 100% {
+   opacity:1;
+ }
+}
+
+@keyframes imgFade {
+ 0% {
+   opacity:1;
+ }
+ 17% {
+   opacity:1;
+ }
+ 25% {
+   opacity:0;
+ }
+ 92% {
+   opacity:0;
+ }
+ 100% {
+   opacity:1;
+ }
+}
+
+#splash-img-container > img {
+  -webkit-animation-name: imgFade;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 8s;
+
+  -moz-animation-name: imgFade;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 8s;
+
+  -o-animation-name: imgFade;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count: infinite;
+  -o-animation-duration: 8s;
+
+  animation-name: imgFade;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+}
+#splash-img-container >  img:nth-of-type(1) {
+  -webkit-animation-delay: 6s;
+  -moz-animation-delay: 6s;
+  -o-animation-delay: 6s;
+  animation-delay: 6s;
+}
+#splash-img-container > img:nth-of-type(2) {
+  -webkit-animation-delay: 4s;
+  -moz-animation-delay: 4s;
+  -o-animation-delay: 4s;
+  animation-delay: 4s;
+}
+#splash-img-container > img:nth-of-type(3) {
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  -o-animation-delay: 2s;
+  animation-delay: 2s;
+}
+#splash-img-container > img:nth-of-type(4) {
+  -webkit-animation-delay: 0;
+  -moz-animation-delay: 0;
+  -o-animation-delay: 0;
+  animation-delay: 0;
+}
+
+.splash-top-context > h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  // margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgba(255, 166, 0, 0.918); }
+}
+
+.splash-top-links {
+  border-radius: 10px;
+  border: 3px solid black;
+  padding: 10px;
+  position: relative;
+  background: white;
+  top: 460px;
+  left: 80px;
+
+  a {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  a:hover {
+    color: rgb(211, 186, 47);
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+// CENTER
+.splash-middle-content {
+  position: relative;
+  // top: 750px;
+  border: 1px solid green;
+  margin-bottom: 300px;
+}
