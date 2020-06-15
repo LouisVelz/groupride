@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import '../../stylesheets/splash/splash.scss';
 
 const mstp = (state) => {
 
@@ -12,17 +13,10 @@ const mdtp = dispatch => {
 
 
 class Splash extends React.Component {
-  constructor(props) {
-    super(props)
-
-  }
-
-
   render() {
     return (
     <section className="splash-container">
       <section className="splash-top-content">
-        <image></image>
         <div className="splash-top-context"> 
             <h1>
               Welcome to GroupRider.
