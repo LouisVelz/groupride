@@ -24,7 +24,7 @@ router.post("/register", (req, res) => {
         return res.status(400).json(errors);
     } else {
       const newUser = new User({
-        handle: req.body.handle,
+        username: req.body.username,
         email: req.body.email,
         password: req.body.password
       });
@@ -36,7 +36,7 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then(user => {
-              const payload = { id: user.id, handle: user.handle };
+              const payload = { id: user.id, username: user.username };
 
               jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                 res.json({
@@ -59,7 +59,7 @@ router.post("/login", (req, res) => {
     return res.status(400).json(errors);
   }
 
-  // const handle = req.body.handle;
+  // const username = req.body.username;
   const password = req.body.password;
   const email = req.body.email;
 
@@ -73,7 +73,7 @@ router.post("/login", (req, res) => {
 
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
-        const payload = { id: user.id, handle: user.handle };
+        const payload = { id: user.id, username: user.username };
 
         jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
           res.json({
