@@ -8,19 +8,19 @@ import MainPage from "./main/main_page";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import GreetingContainer from './greeting/greeting_container'
-// import Modal from './modal/modal'
+import Modal from './modal/modal'
 
 const App = () => (
   <div>
     {/* <NavBarContainer /> */}
-    {/* <Modal /> */}
+    <Modal /> 
     <AuthRoute exact path="/" component={MainPage} /> 
     <GreetingContainer />
 
     <Switch>
       {/* <AuthRoute exact path="/" component={MainPage} />  */}
-      <AuthRoute exact path="/login" component={LoginFormContainer} /> 
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> 
+      <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
     </Switch>
   </div>
 );

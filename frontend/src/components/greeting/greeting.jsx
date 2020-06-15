@@ -14,10 +14,10 @@ export default (props) => {
     ) : (
         <div>
             <h1>Splash page</h1>
-            <a href="#/login">Login</a>
-            <a href="#/signup">Sign Up</a>
-            {/* <Link className="signup-btn" to="" onClick={() => props.openModal('signup')}>Join</Link>
-            <Link className="login-btn" to="" onClick={() => props.openModal('login')}>Log In</Link> */}
+            {/* <a href="#/login">Login</a>
+            <a href="#/signup">Sign Up</a> */}
+            <Link className="signup-btn" to="" onClick={() => props.openModal('signup')}>Join</Link>
+            <Link className="login-btn" to="" onClick={() => props.openModal('login')}>Log In</Link>
         </div>
     );
 
