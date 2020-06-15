@@ -5,6 +5,7 @@ const db = require("./config/keys").mongoURI;
 const users = require("./routes/api/users");
 const rideEvent = require("./routes/api/ride_event");
 const bodyParser = require("body-parser");
+const passport = require('passport');
 
 mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -20,6 +21,11 @@ app.get("/", (req, res) =>{
 });
 app.use("/api/users", users);
 app.use("/api/rideevent", rideEvent);
+
+app.use(passport.initialize());
+
+
+require('./config/passport')(passport);
 
 const port = process.env.PORT || 5000;
 
