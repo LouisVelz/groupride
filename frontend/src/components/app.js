@@ -14,7 +14,7 @@ const App = () => (
   <div>
     {/* <NavBarContainer /> */}
     <Modal /> 
-    <AuthRoute exact path="/" component={MainPage} /> 
+    {/* <AuthRoute exact path="/" component={MainPage} />  */}
     <GreetingContainer />
 
     <Switch>
