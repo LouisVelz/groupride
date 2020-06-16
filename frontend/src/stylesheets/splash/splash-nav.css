@@ -25,10 +25,10 @@ body {
     height: 70px;
 }
 
-.splash {
+/* .splash-page {
     height: calc(100vh - 70px);
     overflow-y: scroll;    
-}
+} */
 
 .nav-logo {
     color: white;
