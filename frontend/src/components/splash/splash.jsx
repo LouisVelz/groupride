@@ -119,21 +119,6 @@ class Splash extends React.Component {
               </div>
             </div>
           </section>
-<<<<<<< HEAD
-        </section>
-        <section className="splash-bottom-content">
-          <div id="splash-footer-container">
-            <div id="splash-footer-links">
-              <a href="">About Us</a>
-              <a href="">Developers</a>
-              <a href="">Technology</a>
-              <a href="">Github</a>
-            </div>
-            <h2>GroupRide</h2>
-            <p>© Copyright 2020. All rights reserved.</p>
-          </div>
-=======
->>>>>>> 22340676ebebf58ed0164243416a126919b603ae
         </section>
       </div>
     );}
