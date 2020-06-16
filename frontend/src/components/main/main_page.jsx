@@ -3,9 +3,9 @@ import React from "react";
 class MainPage extends React.Component {
   render() {
     return (
-      <div>
+      <div className="splash">
         <h1>Group Ride</h1>
-        <footer>Copyright &copy; 2020 groupride</footer>
+        <footer>Copyright &copy; 2020 groupride</footer> 
       </div>
     );
   }

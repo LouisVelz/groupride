@@ -7,13 +7,12 @@ import { openModal } from '../../actions/modal_actions';
 export default (props) => {
 
     const welcomePage = props.loggedIn ? (
-       <div>
+       <div className="nav-home-container">
            <h1>Logged in page</h1>
             <Link to="" className="loggedin-logout" onClick={props.logout}>Log Out</Link>
        </div>
     ) : (
-        <div>
-            <h1>Splash page</h1>
+        <div id="nav-splash-container">
             {/* <a href="#/login">Login</a>
             <a href="#/signup">Sign Up</a> */}
             <Link className="signup-btn" to="" onClick={() => props.openModal('signup')}>Join</Link>
