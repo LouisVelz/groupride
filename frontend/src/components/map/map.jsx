@@ -1,50 +1,75 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { withRouter } from 'react-router-dom';
+/*global google*/
+import React from "react";
+import ReactDOM from "react-dom";
+import { compose, withProps, lifecycle } from "recompose";
+import {
+    withScriptjs,
+    withGoogleMap,
+    GoogleMap,
+    DirectionsRenderer,
 
-class RideMap extends React.Component {
+} from "react-google-maps";
 
-    componentDidMount(){
-        function initMap() {
-            var directionsService = new google.maps.DirectionsService();
-            var directionsRenderer = new google.maps.DirectionsRenderer();
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 7,
-                center: { lat: 41.85, lng: -87.65 }
-            });
-            directionsRenderer.setMap(map);
+class MapWithADirectionsRenderer extends React.Component{
+    constructor(props){
+        super(props);
+        this.googleMapURL = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAcQjrfAudzl6Ton7GA7D-gVqOINMFE7ns&v=3.exp&libraries=geometry,drawing,places";
+        this.state = {
+            directions: null,
 
-            var onChangeHandler = function () {
-                calculateAndDisplayRoute(directionsService, directionsRenderer);
-            };
-            document.getElementById('start').addEventListener('change', onChangeHandler);
-            document.getElementById('end').addEventListener('change', onChangeHandler);
-        }
 
-        function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-            directionsService.route(
-                {
-                    origin: { query: document.getElementById('start').value },
-                    destination: { query: document.getElementById('end').value },
-                    travelMode: 'DRIVING'
-                },
-                function (response, status) {
-                    if (status === 'OK') {
-                        directionsRenderer.setDirections(response);
-                    } else {
-                        window.alert('Directions request failed due to ' + status);
-                    }
-                });
-        }
+        };
     }
 
-    render() {
-        return (
-            <div className="map" ref="map">
+    componentDidMount() {
+        const DirectionsService = new google.maps.DirectionsService();
 
-            </div>
+        DirectionsService.route(
+            {
+                origin: 'brooklyn',
+                destination: 'central park',
+                travelMode: 'BICYCLING'
+            },
+            (result, status) => {
+                if (status === google.maps.DirectionsStatus.OK) {
+                    this.setState({
+                        directions: result
+                    });
+                } else {
+                    console.error(`error fetching directions ${result}`);
+                }
+            }
         );
     }
+
+    render(){
+        if(!this.state.directions){
+            return null;
+        }
+        const GoogleMapExample = withGoogleMap(props => (
+            <GoogleMap
+                defaultCenter={{ lat: 6.5244, lng: 3.3792 }}
+                defaultZoom={13}
+            >
+                <DirectionsRenderer
+                    directions={this.state.directions}
+                />
+            </GoogleMap>
+        ));
+            debugger
+        return(
+            <div>
+                <GoogleMapExample
+                    containerElement={<div style={{ height: `500px`, width: "500px" }} />}
+                    mapElement={<div style={{ height: `100%` }} />}
+                />
+                <li>{this.state.directions.routes[0].legs[0].distance.text}</li>
+                <li>{this.state.directions.routes[0].legs[0].duration.text}</li>
+            </div>
+        )
+    }
+
+
 }
 
-export default withRouter(RideMap);
+export default MapWithADirectionsRenderer;
