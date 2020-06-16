@@ -51,12 +51,17 @@ class Splash extends React.Component {
                 <p>A New Way To Socially Interact With Others.</p>
                 <p> Where Your Solo Rides</p>
                 <p>Can Become Group Marathons!</p>
+                <button className="splash-top-link1">
+                  <Link to="/signup" id="splash-top-link">
+                    Join the Community →
+                  </Link>
+                </button>
+                <button className="splash-top-link2">
+                  <Link to="/signup" id="splash-top-link">
+                    Try our Demo →
+                  </Link>
+                </button>
               </div>
-            </div>
-            <div className="splash-top-links">
-              <Link to="/signup" id="splash-top-link">
-                Join the Community →
-              </Link>
             </div>
           </section>
 
@@ -91,6 +96,7 @@ class Splash extends React.Component {
                   Join a friend, join a family member, or even join a random
                   person and get to know each other through biking together.
                 </p>
+                <p></p>
               </div>
             </div>
           </section>
