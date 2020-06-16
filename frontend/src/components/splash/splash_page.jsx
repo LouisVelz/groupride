@@ -1,6 +1,7 @@
 import React from "react";
+import './splash.css'
 
-class MainPage extends React.Component {
+class SplashPage extends React.Component {
   render() {
     return (
       <div className="splash">
@@ -11,4 +12,4 @@ class MainPage extends React.Component {
   }
 }
 
-export default MainPage;
+export default SplashPage;
