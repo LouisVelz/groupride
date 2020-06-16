@@ -9,7 +9,9 @@
   width: 80%;
   margin: 0 auto;
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  height: calc(100vh - 70px);
+  overflow-y: scroll;    
 }
 
 // TOP
