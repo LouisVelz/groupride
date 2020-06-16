@@ -49,7 +49,7 @@
   min-width: auto;
   width: 100%;
   min-height: auto;
-  margin-bottom: 375px;
+  // margin-bottom: 505px;
 }
 
 // Splash Top Body
@@ -327,14 +327,20 @@
 }
 
 #splash-middle-1 {
+  // float:left;
   text-align: left;
   // border: 1px solid red;
   margin-bottom: 100px;
+  display: inline;
+
 
   div {
-    float: left;
+    // float: left;
     width: 600px;
+    display: inline-block;
     // position: relative;
+    margin-right: 100px;
+    margin-bottom: 80px;
   }
 
   div > h2 {
@@ -375,7 +381,7 @@
   img {
     width: 500px;
     box-shadow: 4px 10px 10px #888888;
-    float: right;
+    // float: right;
   }
 
   div > a {
