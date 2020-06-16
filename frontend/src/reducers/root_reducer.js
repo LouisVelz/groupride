@@ -8,8 +8,8 @@ import entities from './entities_reducer'
 
 const RootReducer = combineReducers({
   session,
-  entities,
   errors,
+  entities,
   ui,
 });
 

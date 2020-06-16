@@ -5,12 +5,10 @@ import { Switch, Route } from "react-router-dom";
 // import NavBarContainer from "./nav/navbar_container";
 
 import MainPage from "./main/main_page";
-import LoginFormContainer from "./session/login_form_container";
-import SignupFormContainer from "./session/signup_form_container";
 import GreetingContainer from './greeting/greeting_container'
 import Modal from './modal/modal'
 import SplashPage from "./splash/splash";
-// import UsersPageContainer from "./user/user_container"
+import UsersPageContainer from "./user/user_container"
 
 
 const App = () => (
@@ -21,7 +19,7 @@ const App = () => (
     <GreetingContainer />
 
     <Switch>
-      {/* <ProtectedRoute path='/user/:user_id' component={UsersPageContainer} /> */}
+      <ProtectedRoute path='/user/:user_id' component={UsersPageContainer} />
       {/* <AuthRoute exact path="/" component={MainPage} />  */}
       {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> 
       <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
