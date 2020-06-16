@@ -6,6 +6,8 @@ import splashTop1 from '../images/fitIndia.png';
 import splashTop2 from "../images/helpingRide.png";
 import splashTop3 from "../images/friendsRide.png";
 import splashTop4 from "../images/fingerAir.png";
+import splashMid1 from "../images/highfive.png";
+import splashMid2 from "../images/splashphone.png";
 
 
 const mstp = (state) => {
@@ -60,24 +62,51 @@ class Splash extends React.Component {
 
           <section className="splash-middle-content">
             <div id="splash-middle-1">
-              <h2>Don't Bike Alone!</h2>
-              <p>
-                Riding alone can be dangerous, especially in cities with large
-                traffics. Join a fellow biker as you commute!
-              </p>
-              <img></img>
+              <div>
+                <h2>Don't Bike Alone!</h2>
+                <p>
+                  - Riding alone can be dangerous, especially in cities with
+                  large traffics.
+                </p>
+                <p> - Join a fellow biker as you commute! </p>
+                <Link to="/signup" id="splash-top-link">
+                  Join the Community →
+                </Link>
+              </div>
+              <img
+                src={splashMid1}
+                className="splash-mid-logo1"
+                alt="splash mid1"
+              />
             </div>
             <div id="splash-middle-2">
-              <img></img>
-              <h2>Find Bike Events Near You!</h2>
-              <p>
-                Join a friend, join a family member, or even join a random
-                person and get to know each other through biking together.
-              </p>
+              <img
+                src={splashMid2}
+                className="splash-mid-logo2"
+                alt="splash mid2"
+              />
+              <div>
+                <h2>Find Bike Events Near You!</h2>
+                <p>
+                  Join a friend, join a family member, or even join a random
+                  person and get to know each other through biking together.
+                </p>
+              </div>
             </div>
           </section>
 
-          <section className="splash-bottom-content"></section>
+          <section className="splash-bottom-content">
+            <div id="splash-footer-container">
+              <div id="splash-footer-links">
+                <a href="">About Us</a>
+                <a href="">Developers</a>
+                <a href="">Technology</a>
+                <a href="">Hot Sauce</a>
+              </div>
+              <h2>GroupRide</h2>
+              <p>© Copyright 2020. All rights reserved.</p>
+            </div>
+          </section>
         </section>
       </div>
     );}
