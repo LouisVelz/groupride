@@ -9,7 +9,11 @@ body {
     color: black;
     background-color: black;
     height: 70px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
     align-items: center;
+    width: 100%;
 }
 
 .nav-home-container {
