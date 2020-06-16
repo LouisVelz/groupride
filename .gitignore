@@ -2,4 +2,3 @@
 /node_modules
 .DS_Store
 /config/keys_dev.js
-/config/keys_prod.js
