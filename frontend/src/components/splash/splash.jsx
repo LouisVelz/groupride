@@ -92,7 +92,7 @@ class Splash extends React.Component {
                 <Link
                   to=""
                   onClick={() => this.props.openModal("signup")}
-                  id="splash-top-link"
+                  id="splash-mid-link"
                 >
                   Sign Up Now!
                 </Link>
