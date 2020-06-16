@@ -1,29 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { openModal } from '../../actions/modal_actions';
+import '../splash/splash.css'
+// import { openModal } from '../../actions/modal_actions';
 
 
 
 export default (props) => {
 
     const welcomePage = props.loggedIn ? (
-       <div>
+       <div className="nav-home-container">
            <h1>Logged in page</h1>
             <Link to="" className="loggedin-logout" onClick={props.logout}>Log Out</Link>
        </div>
     ) : (
-        <div>
-            <h1>Splash page</h1>
+        <div id="nav-splash-container">
+            <h1 className="nav-logo">GroupRide</h1>
             {/* <a href="#/login">Login</a>
             <a href="#/signup">Sign Up</a> */}
-            <Link className="signup-btn" to="" onClick={() => props.openModal('signup')}>Join</Link>
-            <Link className="login-btn" to="" onClick={() => props.openModal('login')}>Log In</Link>
+            <div className="singup-login">
+                <Link className="signup-btn" to="" onClick={() => props.openModal('signup')}>Sign Up</Link>
+                <Link className="login-btn" to="" onClick={() => props.openModal('login')}>Log In</Link>
+            </div>
         </div>
     );
 
     return (
         <header className="greeting">
-            <div>
+            <div className="nav">
                 {welcomePage}
             </div>
         </header>

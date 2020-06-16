@@ -4,9 +4,8 @@ import { logout } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions'
 
 const mSTP = state => {
-        console.log(state)
+        // console.log(state)
     return {
-        // currentUser: state.session.user
         loggedIn: state.session.isAuthenticated
     }
 };

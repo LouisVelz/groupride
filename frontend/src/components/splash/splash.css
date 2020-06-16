@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+}
+
+#nav-splash-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: black;
+    background-color: black;
+    height: 70px;
+    align-items: center;
+}
+
+.nav-home-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: black;
+    background-color: black;
+    height: 70px;
+}
+
+.splash {
+    height: calc(100vh - 70px);
+    overflow-y: scroll;    
+}
+
+.nav-logo {
+    color: white;
+    margin-left: 15px;
+    align-self: center;
+}
+
+.login-btn {
+    align-self: center;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5.5px;
+    text-decoration: none;
+    background-color: #007cc3;
+    width: 60px;
+    justify-content: center;
+    display: inline-flex;
+    margin-right: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+.signup-btn {
+    align-self: center;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5.5px;
+    text-decoration: none;
+    background-color: #007cc3;
+    width: 65px;
+    justify-content: center;
+    display: inline-flex;
+    margin-right: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.loggedin-logout {
+    align-self: center;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5.5px;
+    text-decoration: none;
+    background-color: white;
+    width: 60px;
+    justify-content: center;
+    display: inline-flex;
+    margin-right: 25px;
+}
