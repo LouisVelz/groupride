@@ -1,5 +1,5 @@
 import React from "react";
-import './splash.css'
+import '../../stylesheets/splash/splash-nav.css'
 
 class SplashPage extends React.Component {
   render() {
