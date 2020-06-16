@@ -17,7 +17,8 @@ class RideIndexItem extends React.Component {
         <p>{this.props.ride.destination}</p>
         
         <MapLoader ride={this.props.ride}
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_DIRECTIONS_API}s&v=3.exp&libraries=geometry,drawing,places`}
+                // API KEY  GOES IN THIS LINK without curly braces
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key={API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
           loadingElement={<div style={{ height: `100%` }} />}
         />
       </li>

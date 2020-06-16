@@ -13,7 +13,8 @@ import {
 class MapWithADirectionsRenderer extends React.Component{
     constructor(props){
         super(props);
-        this.googleMapURL = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAcQjrfAudzl6Ton7GA7D-gVqOINMFE7ns&v=3.exp&libraries=geometry,drawing,places";
+        // API KEY  GOES IN THIS LINK without curly braces
+        this.googleMapURL = "https://maps.googleapis.com/maps/api/js?key={API_KEY}&v=3.exp&libraries=geometry,drawing,places";
         this.state = {
             directions: null,
 
