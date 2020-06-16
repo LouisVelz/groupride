@@ -7,8 +7,8 @@ class RideIndexItem extends React.Component{
 
 
   render(){
-    return 
+    return <div>{this.props.ride}</div>
   }
 }
 
-export default RideIndexItem
+export default RideIndexItem;

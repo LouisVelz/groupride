@@ -1,13 +1,13 @@
 import axios from "axios";
 
 export const getRides = () => {
-  return axios.get("/api/ride");
+  return axios.get("/api/rideevent");
 };
 
 export const getUserRides = (id) => {
-  return axios.get(`/api/ride/user/${id}`);
+  return axios.get(`/api/rideevent/user/${id}`);
 };
 
 export const writeRide = (data) => {
-  return axios.post("/api/ride/", data);
+  return axios.post("/api/rideevent/", data);
 };

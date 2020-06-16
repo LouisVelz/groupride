@@ -10,17 +10,16 @@ class UserPage extends React.Component {
   }
 
   componentWillMount() {
- 
     this.props.fetchUserRides(this.props.currentUser.id);
   }
 
   componentWillReceiveProps(newState) {
-    this.setState({ tweets: newState.tweets });
+    this.setState({ rides: newState.rides });
   }
 
   render(){
     let userRides= this.props.rides.map((ride, index) =>{
-      this.setState({ user_miles: user_miles + ride.total_miles})
+      // this.setState({ user_miles: user_miles + ride.total_miles})
       return <RideIndexItem key={index} ride={ride}/>
     })
     const { currentUser } = this.props
@@ -28,13 +27,13 @@ class UserPage extends React.Component {
       <div className= 'user-main'>
         <div className='user-info'>
           <ul>
-            <li><img src="" alt=""/></li>
+            {/* <li><img src="" alt=""/></li> */}
             <li>{currentUser.username}</li>
-            <li>{currentUser.user_miles}</li>
+            {/* <li>{currentUser.user_miles}</li>
             <li>{currentUser.bicycle}</li>
             <li>{currentUser.skill}</li>
             <li>{currentUser.fb_link}</li>
-            <li>{currentUser.rides_completed}</li>
+            <li>{currentUser.rides_completed}</li> */}
           </ul>
         </div>
         <div className="user-rides">
@@ -46,3 +45,5 @@ class UserPage extends React.Component {
     )
   }
 }
+
+export default UserPage;
