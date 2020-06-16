@@ -47,7 +47,7 @@ class Splash extends React.Component {
                 alt="splash top4"
               />
               <div className="splash-top-context">
-                <h1>GroupRider</h1>
+                <h1>🚲 GroupRider 🚲</h1>
                 <p>A New Way To Socially Interact With Others.</p>
                 <p> Where Your Solo Rides</p>
                 <p>Can Become Group Marathons!</p>

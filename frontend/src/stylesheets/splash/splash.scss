@@ -4,56 +4,67 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  background: linear-gradient(180deg, rgb(255, 246, 231), rgb(214, 211, 207))
+  background: linear-gradient(180deg, rgb(255, 246, 231), rgb(214, 211, 207));
+  // border: 1px solid red;
 
   // background-image: url(../../components/images/background.png);
   // background-size: cover;
 }
+@media (min-width: 576px) { 
+  .splash-container {
+    max-width: 576px;
+  }
+}
 
-// @media (min-width:768px) {
-//   .splash-container {
-//     max-width: 768px;
-//   }
-// }
-// @media (min-width:992px) {
-//   .splash-container  {
-//     max-width: 992px;
-//   }
-// }
-// @media (min-width:1200px) {
-//   .splash-container {
-//     max-width: 1200px;
-//   }
-// }
+@media (min-width:768px) {
+  .splash-container {
+    max-width: 768px;
+  }
+}
+@media (min-width:992px) {
+  .splash-container  {
+    max-width: 992px;
+  }
+}
+@media (min-width:1200px) {
+  .splash-container {
+    max-width: 1200px;
+  }
+}
 
 .splash-container {
   width: 80%;
   margin: 0 auto;
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  // border: 1px solid red;
+
 }
 
 // TOP
 .splash-top-content {
   display: flex;
   min-width: auto;
+  width: 100%;
   min-height: auto;
-  margin-bottom: 750px;
+  margin-bottom: 600px;
+  // border: 1px solid red;
 }
 
 // Splash Top Body
 .splash-top-context {
-  border-radius: 4px;
-  position: absolute;
-  word-break: break-word; 
-  top: 110px;
-  left: 80px;
+  // border-radius: 3px;
+  position: relative;
+  // word-break: break-word; 
+  top: 120px;
+  // left: 30px;
   min-width: 40%;
   text-align: left;
   
+  
   h1 {
     color: rgb(245, 245, 245);
-    font-size: 60px;
+    font-size: 50px;
     font-weight: bold;
     text-shadow: 8px 6px 2px black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -63,7 +74,7 @@
   p {
     font-weight: bold;
     color: rgba(245, 245, 245, 0.973);
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
     text-shadow: 6px 6px 3px black;
   }
@@ -73,14 +84,16 @@
 #splash-img-container  {
   display: flex;
   justify-content: center;
-  position:relative;
+  // position:relative;
+  // border: 1px solid red;
 }
 
 #splash-img-container > img {
   display:block;
   clear:both;
   position:absolute;
-  min-width: 1320px;
+  min-width: 100%;
+  height: 1000px;
   z-index: 0;
   left:0;
 }
@@ -230,11 +243,11 @@
   border-radius: 10px;
   border: 3px solid black;
   padding: 10px;
-  position: relative;
+  position: absolute;
   background: white;
-  top: 460px;
-  left: 80px;
-
+  top: 400px;
+  left: 230px;
+  
   a {
     color: black;
     font-size: 20px;
@@ -252,7 +265,7 @@
 // CENTER
 .splash-middle-content {
   // border: 1px solid green;
-  margin-bottom: 300px;
+  // margin-bottom: 300px;
   display: flex;
   flex-direction: column;
 }
@@ -265,7 +278,7 @@
   div {
     float: left;
     width: 600px;
-    position: relative;
+    // position: relative;
   }
 
   div > h2 {
@@ -286,7 +299,7 @@
   }
 
   img {
-    width: 700px;
+    width: 600px;
     box-shadow: 4px 10px 10px #888888;
     float: right;
   }
