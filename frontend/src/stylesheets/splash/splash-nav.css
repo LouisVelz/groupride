@@ -25,9 +25,16 @@ body {
     height: 70px;
 }
 
+<<<<<<< HEAD:frontend/src/components/splash/splash.css
 .splash {
     height: calc(100vh - 70px);   
 }
+=======
+/* .splash-page {
+    height: calc(100vh - 70px);
+    overflow-y: scroll;    
+} */
+>>>>>>> master:frontend/src/stylesheets/splash/splash-nav.css
 
 .nav-logo {
     color: white;
