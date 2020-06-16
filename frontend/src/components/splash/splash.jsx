@@ -1,6 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { openModal } from "../../actions/modal_actions";
+import { logout } from "../../actions/session_actions";
+
+//Styling
 import '../../stylesheets/splash/splash.scss';
 import splashTop1 from '../images/fitIndia.png';
 import splashTop2 from "../images/helpingRide.png";
@@ -10,16 +14,23 @@ import splashMid1 from "../images/highfive.png";
 import splashMid2 from "../images/splashphone.png";
 
 
-const mstp = (state) => {
+const mSTP = state => {
+  return {
+    loggedIn: state.session.isAuthenticated,
+  };
+};
 
-}
-
-const mdtp = dispatch => {
-
-}
+const mDTP = (dispatch) => ({
+  logout: () => dispatch(logout()),
+  openModal: (str) => dispatch(openModal(str)),
+});
 
 
 class Splash extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
       <div className="splash-page">
@@ -52,12 +63,16 @@ class Splash extends React.Component {
                 <p> Where Your Solo Rides</p>
                 <p>Can Become Group Marathons!</p>
                 <button className="splash-top-link1">
-                  <Link to="/signup" id="splash-top-link">
+                  <Link
+                    to=""
+                    onClick={() => this.props.openModal("signup")}
+                    id="splash-top-link"
+                  >
                     Join the Community →
                   </Link>
                 </button>
                 <button className="splash-top-link2">
-                  <Link to="/signup" id="splash-top-link">
+                  <Link to="/" id="splash-top-link">
                     Try our Demo →
                   </Link>
                 </button>
@@ -74,7 +89,11 @@ class Splash extends React.Component {
                   large traffics.
                 </p>
                 <p> - Join a fellow biker as you commute! </p>
-                <Link to="/signup" id="splash-top-link">
+                <Link
+                  to=""
+                  onClick={() => this.props.openModal("signup")}
+                  id="splash-top-link"
+                >
                   Sign Up Now!
                 </Link>
               </div>
@@ -119,4 +138,4 @@ class Splash extends React.Component {
 
 }
 
-export default connect(null, null)(Splash);
+export default connect(mSTP, mDTP)(Splash);
