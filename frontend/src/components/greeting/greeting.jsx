@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../splash/splash.css'
+import '../../stylesheets/splash/splash-nav.css'
 // import { openModal } from '../../actions/modal_actions';
 
 

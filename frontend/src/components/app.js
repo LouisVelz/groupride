@@ -5,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import GreetingContainer from './greeting/greeting_container'
 import Modal from './modal/modal'
 import SplashPage from "./splash/splash";
+import Footer from './footer/footer'
 
 
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
       {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> 
       <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
     </Switch>
+    <Footer /> 
   </div>
 );
 

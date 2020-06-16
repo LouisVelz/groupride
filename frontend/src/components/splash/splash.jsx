@@ -12,6 +12,7 @@ import splashTop3 from "../images/friendsRide.png";
 import splashTop4 from "../images/fingerAir.png";
 import splashMid1 from "../images/highfive.png";
 import splashMid2 from "../images/splashphone.png";
+import Footer from '../footer/footer'
 
 
 const mSTP = state => {
@@ -117,19 +118,6 @@ class Splash extends React.Component {
                 </p>
                 <p></p>
               </div>
-            </div>
-          </section>
-
-          <section className="splash-bottom-content">
-            <div id="splash-footer-container">
-              <div id="splash-footer-links">
-                <a href="">About Us</a>
-                <a href="">Developers</a>
-                <a href="">Technology</a>
-                <a href="">Hot Sauce</a>
-              </div>
-              <h2>GroupRide</h2>
-              <p>© Copyright 2020. All rights reserved.</p>
             </div>
           </section>
         </section>

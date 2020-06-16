@@ -4,6 +4,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+  width: 100%;
   // background: linear-gradient(180deg, rgb(255, 246, 231), rgb(214, 211, 207));
   // border: 1px solid red;
 
@@ -35,12 +36,10 @@
 }
 
 .splash-container {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  // border: 1px solid red;
-
 }
 
 // TOP
