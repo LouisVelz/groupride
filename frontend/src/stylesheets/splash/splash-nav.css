@@ -34,7 +34,11 @@ body {
     height: calc(100vh - 70px);
     overflow-y: scroll;    
 } */
+<<<<<<< HEAD
 >>>>>>> 22340676ebebf58ed0164243416a126919b603ae:frontend/src/stylesheets/splash/splash-nav.css
+=======
+>>>>>>> master:frontend/src/stylesheets/splash/splash-nav.css
+>>>>>>> 978f0deca00aead8fe8e75d973f2c800e2b3d30f
 
 .nav-logo {
     color: white;
