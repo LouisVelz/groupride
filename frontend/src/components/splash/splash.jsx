@@ -115,7 +115,6 @@ class Splash extends React.Component {
                   Join a friend, join a family member, or even join a random
                   person and get to know each other through biking together.
                 </p>
-                <p></p>
               </div>
             </div>
           </section>
