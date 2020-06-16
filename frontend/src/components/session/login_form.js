@@ -16,10 +16,10 @@ class LoginForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this);
     }
 
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        if (nextProps.currentUser === true) {
-            this.props.history.push('/home');
-        }
+    componentWillReceiveProps(nextProps) {
+        // if (nextProps.currentUser === true) {
+        //     this.props.history.push('/home');
+        // }
 
         this.setState({ errors: nextProps.errors })
     }
