@@ -23,11 +23,11 @@ class MapWithADirectionsRenderer extends React.Component{
 
     componentDidMount() {
         const DirectionsService = new google.maps.DirectionsService();
-
+        
         DirectionsService.route(
             {
-                origin: 'brooklyn',
-                destination: 'central park',
+                origin: this.props.ride.meetup_location,
+                destination: this.props.ride.destination,
                 travelMode: 'BICYCLING'
             },
             (result, status) => {

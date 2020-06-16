@@ -1,0 +1,28 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 425px;
+    height: auto;
+}
+
+.login-form h2 {
+    margin-bottom: 5px;
+}
+
+.login-form input {
+    width: 300px;
+    height: 60px;
+    text-indent: 10px;
+}
+
+.login-form ul {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    color: red;
+}
