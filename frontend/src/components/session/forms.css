@@ -18,6 +18,16 @@
     width: 300px;
     height: 60px;
     text-indent: 10px;
+    font-size: 17px;
+}
+
+#submit-button {
+    background-color: #007cc3;
+    width: 310px;
+    border: 1px solid #007cc3;
+    border-radius: 4px;
+    color: white;
+    font-size: 17px;
 }
 
 .login-form ul {

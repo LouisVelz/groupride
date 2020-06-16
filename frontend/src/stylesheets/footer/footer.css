@@ -1,0 +1,23 @@
+
+.splash-page {
+    position: relative;
+    min-height: calc(100vh - 70px);
+}
+
+.splash-footer-container {
+    padding-bottom: 2.5rem;
+}
+    
+    
+.footer {
+    /* position: absolute; */
+    bottom: 0;
+    width: 100%;
+    height: 200px;   
+    display: flex;
+    padding: 50px 0;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #EFEFEF;
+} 
