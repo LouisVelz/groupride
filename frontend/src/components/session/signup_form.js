@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './forms.css'
-import { closeModal } from '../../actions/modal_actions';
 
 class SignupForm extends React.Component {
     constructor(props) {
