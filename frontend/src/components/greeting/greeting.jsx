@@ -42,9 +42,9 @@ class Greeting extends React.Component {
           </li>
         </ul>
        
-        {/* <Link to="" className="loggedin-logout" onClick={props.logout}>
+        <Link to="" className="loggedin-logout" onClick={props.logout}>
           Log Out
-        </Link> */}
+        </Link>
       </div>
     ) : (
       <div id="nav-splash-container">
