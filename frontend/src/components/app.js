@@ -10,8 +10,10 @@ import Footer from './footer/footer'
 // import MainPage from "./main/main_page";
 
 import RidesIndex from './rides/ride_index_container'
+
 // import LoginFormContainer from "./session/login_form_container";
 // import SignupFormContainer from "./session/signup_form_container";
+
 
 
 const App = () => (
