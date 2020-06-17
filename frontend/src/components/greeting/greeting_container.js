@@ -5,7 +5,8 @@ import { openModal } from '../../actions/modal_actions'
 
 const mSTP = state => {
     return {
-        loggedIn: state.session.isAuthenticated
+        loggedIn: state.session.isAuthenticated,
+        currentUser: state.session.user
     }
 };
 

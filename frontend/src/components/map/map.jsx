@@ -15,7 +15,7 @@ class MapWithADirectionsRenderer extends React.Component{
         super(props);
         // API KEY  GOES IN THIS LINK without curly braces
         this.googleMapURL =
-          "https://maps.googleapis.com/maps/api/js?key=AIzaSyDBUs7KdTVM2VmTwfJFAEfEBH2rWvkbhyo&v=3.exp&libraries=geometry,drawing,places";
+          "https://maps.googleapis.com/maps/api/js?key={API_Key}&v=3.exp&libraries=geometry,drawing,places";
         this.state = {
             directions: null,
 

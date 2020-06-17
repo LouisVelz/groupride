@@ -7,7 +7,7 @@ const mSTP = (state) => {
   return {
     errors: state.errors.session,
     // currentUser: entities.users[session.user.id],
-    currentUser: session.user.id,
+    currentUser: state.session.user,
     rides: Object.values(entities.rides.user)
   };
 };

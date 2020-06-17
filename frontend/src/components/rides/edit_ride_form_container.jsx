@@ -27,7 +27,7 @@ class EditRideForm extends React.Component {
 
 const mSTP = (state, ownProps) => ({
     // ride: state.rides[ownProps.match.params.rideId],
-    formType: 'Update Ride'
+    formType: 'Update GroupRide'
 });
 
 const mDTP = dispatch => ({

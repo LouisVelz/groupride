@@ -11,7 +11,8 @@ import Technology from "./footer/technology";
 import EditRideFormContainer from './rides/edit_ride_form_container'
 import RideFormContainer from './rides/ride_form_container'
 import RidesIndex from './rides/ride_index_container'
-
+// import Dummy from './dummy/dummy_component'
+// import UserPage from './user/user_container'
 
 
 //remember to erase window.getState form index.js
@@ -23,7 +24,6 @@ const App = () => (
 
     <Modal /> 
     <GreetingContainer />
-
     <Switch>
       <AuthRoute exact path='/' component={SplashPage} />
       <Route exact path="/index" component={RidesIndex} /> 
