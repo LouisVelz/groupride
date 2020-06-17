@@ -19,8 +19,8 @@ class SignupForm extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.signedIn === true) {
-            this.props.history.push('/index');
 
+            this.props.history.push('/index');
             this.props.closeModal();
         }
         
@@ -44,23 +44,46 @@ class SignupForm extends React.Component {
 
         this.props.signup(user)
             .then(() => {
-            if (Object.keys(this.state.errors).length === 0) {
+            // if (Object.keys(this.state.errors).length === 0) {
                 this.props.login(user)
-            }
+            // } else {
+
+            // }
         });
     }
 
     renderErrors() {
+    let errorList;
+    let errorsClass;
+    if (this.props.errors === undefined || this.props.errors.length == 0) {
+      errorList = null;
+      errorsClass = "no-errors"
+    } else {
+      errorsClass = "errors"
+      errorList = Object.values(this.state.errors).map((error, i) => {
         return (
-            <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {this.state.error[error]}
-                    </li>
-                ))}
+          <li key={`error-${i}`}>{error}</li>
+        );
+      });
+
+        return (
+            <ul className={errorsClass}>
+            {errorList}
             </ul>
         );
+        }
     }
+
+    //     return (
+    //         <ul>
+    //             {Object.keys(this.props.errors).map((error, i) => (
+    //                 <li key={`error-${i}`}>
+    //                     {this.props.error[error]}
+    //                 </li>
+    //             ))}
+    //         </ul>
+    //     );
+    // }
 
     render() {
         return (
