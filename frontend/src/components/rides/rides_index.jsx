@@ -13,17 +13,13 @@ class RidesIndex extends React.Component {
         this.props.fetchRides();
     }
 
-    ridesItem() {
-
+    RenderRideItems() {
+        debugger
         if (Array.isArray(this.props.rides[0])){
         return (
-            <ul>
-                {
-                    this.props.rides[0].map(ride =>
-                        <RidesIndexItem key={ride._id} ride={ride} />
-                    )
-                }
-            </ul>
+            <>
+                { this.props.rides[0].map(ride => <RidesIndexItem key={ride._id} ride={ride} />) }
+            </>
         )}
     }
 
@@ -31,10 +27,10 @@ class RidesIndex extends React.Component {
     render() {
         if (!this.props.rides[0]) return null;
         return (
-          <div>
-              {this.ridesItem()}
+          <div className="index-page-container">
+            <section className="index-feed-container">{this.RenderRideItems()}</section>
           </div>
-        )
+        );
     }
 }
 
