@@ -6,6 +6,8 @@ import GreetingContainer from './greeting/greeting_container'
 import Modal from './modal/modal'
 import SplashPage from "./splash/splash";
 import Footer from './footer/footer'
+import EditRideFormContainer from './rides/edit_ride_form_container'
+import RideFormContainer from './rides/ride_form_container'
 
 import MainPage from "./main/main_page";
 
@@ -29,6 +31,8 @@ const App = () => (
       {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
       {/* <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
       <Route exact path="/index" component={RidesIndex} /> 
+      <Route path="/ride/:rideId/edit" component={EditRideFormContainer} />
+      <Route path="/ride/new" component={RideFormContainer} />
     </Switch>
     <Footer /> 
   </div>

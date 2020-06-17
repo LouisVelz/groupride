@@ -1,4 +1,4 @@
-import { getRides, getUserRides, writeRide } from './../util/ride_event_api_util'
+import { getRides, getUserRides, writeRide, patchRide, getRide } from './../util/ride_event_api_util'
 
 export const RECEIVE_RIDES = "RECEIVE_RIDES";
 export const RECEIVE_USER_RIDES = "RECEIVE_USER_RIDES";
@@ -33,3 +33,15 @@ export const createRide = (data) => (dispatch) =>
   writeRide(data)
     .then((ride) => dispatch(receiveNewRide(ride)))
     .catch((err) => console.log(err));
+
+
+export const updateRide = (data) => (dispatch) =>
+  patchRide(data)
+    .then((ride) => dispatch(receiveNewRide(ride)))
+    .catch((err) => console.log(err));
+
+export const fetchRide = (id) => (dispatch) =>
+  getRide(id)
+    .then((ride) => dispatch(receiveNewRide(ride)))
+    .catch((err) => console.log(err));
+
