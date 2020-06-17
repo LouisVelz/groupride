@@ -35,7 +35,6 @@ class Splash extends React.Component {
   }
 
   viewDemoClick(event) {
-    // debugger
     event.preventDefault();
     const demoUser = {
       email: 'test@gmail.com',

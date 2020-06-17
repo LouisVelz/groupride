@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 import './modal.css'
 
 function Modal({ modal, closeModal }) {
-    // debugger
+
     if (!modal) {
         return null;
     }

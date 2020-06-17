@@ -19,7 +19,7 @@ class RideIndexItem extends React.Component {
         <MapLoader
           ride={ride}
           // API KEY  GOES IN THIS LINK without curly braces
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyAcQjrfAudzl6Ton7GA7D-gVqOINMFE7ns&v=3.exp&libraries=geometry,drawing,places`}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key={API_key}&v=3.exp&libraries=geometry,drawing,places`}
           loadingElement={<div style={{ height: `100%` }} />}
         />
       </li>

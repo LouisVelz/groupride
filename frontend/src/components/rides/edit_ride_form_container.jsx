@@ -7,7 +7,7 @@ class EditRideForm extends React.Component {
 
     componentDidMount() {
         this.props.fetchRide(this.props.match.params.rideId)
-        debugger
+
     }
 
     render() {
