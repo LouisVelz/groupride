@@ -24,10 +24,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) =>{
-<<<<<<< HEAD
-=======
-
->>>>>>> 8e922250258f2add2901be3a4723d5ccfc63b69d
   res.send("Whats up?");
 });
 app.use("/api/users", users);
