@@ -14,9 +14,7 @@ export default (props) => {
        </div>
     ) : (
         <div id="nav-splash-container">
-            <h1 className="nav-logo">GroupRide</h1>
-            {/* <a href="#/login">Login</a>
-            <a href="#/signup">Sign Up</a> */}
+            <a id="logo" href="#/"><h1 className="nav-logo">GroupRide</h1></a>
             <div className="singup-login">
                 <Link className="signup-btn" to="" onClick={() => props.openModal('signup')}>Sign Up</Link>
                 <Link className="login-btn" to="" onClick={() => props.openModal('login')}>Log In</Link>

@@ -35,6 +35,10 @@ body {
     align-self: center;
 }
 
+#logo {
+    text-decoration: none;
+}
+
 .login-btn {
     align-self: center;
     margin: 10px;

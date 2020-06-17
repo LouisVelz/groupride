@@ -6,12 +6,12 @@ class Footer extends React.Component {
         return (
             <section className="footer">
                 <div id="splash-footer-links">
-                    <a href="">About Us</a>
-                    <a href="">Developers</a>
-                    <a href="">Technology</a>
-                    <a href="">Github</a>
+                    <a href="#/about">About Us</a>
+                    <a href="#/team">Developers</a>
+                    <a href="#/technology">Technology</a>
+                    <a href="https://github.com/LouisVelz/groupride">Github</a>
                 </div>
-                <h2>GroupRide</h2>
+                <a id="footer-logo" href="#/"><h2>GroupRide</h2></a>
                 <p>© Copyright 2020. All rights reserved.</p>
             </section>
         );
