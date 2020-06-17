@@ -1,0 +1,40 @@
+.create-ride-form{
+  // display: flex;
+  display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  font-size: large;
+  // flex-flow: column wrap;
+  // justify-content: flex-end;
+  // align-items: flex-start;
+  margin: 40px auto;
+
+}
+
+.create-ride-form input{
+  width: 300px;
+  height: 45px;
+  margin-left: 20px;
+  margin-top: 20px;
+  // text-align: end;
+}
+.create-ride-form select {
+  width: 300px;
+  height: 45px;
+  margin-left: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.create-ride-form button{
+  width: 300px;
+  height: 45px;
+  margin-top: 20px;
+  background-color: #027cc2;
+  color: white;
+  font-size: inherit;
+
+}
+// .create-ride-form label{
+//   margin-left: 20px;
+// }
