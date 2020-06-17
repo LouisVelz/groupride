@@ -10,7 +10,7 @@ class Footer extends React.Component {
                         <a href="">About Us</a>
                         <a href="">Developers</a>
                         <a href="">Technology</a>
-                        <a href="">Hot Sauce</a>
+                        <a href="">Github</a>
                     </div>
                     <h2>GroupRide</h2>
                     <p>© Copyright 2020. All rights reserved.</p>
