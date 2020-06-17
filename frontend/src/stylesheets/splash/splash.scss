@@ -67,44 +67,45 @@
     color: rgb(245, 245, 245);
     font-size: 70px;
     font-weight: bold;
+    width: fit-content;
     text-shadow: 8px 6px 2px black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    // margin-bottom: 0px;
+    margin: 0px;
   }
 
   p:nth-child(2) {
     font-weight: bold;
     color: rgba(248, 248, 248, 0.979);
-    font-size: 20px;
+    font-size: 23px;
     font-family: 'Courier New', Courier, monospace;
     text-shadow: 6px 6px 3px black;
     border-radius: 5px;
     padding: 5px;
-    background-color: rgba(83, 233, 69, 0.753);
+    background-color: #007cc3d3;
     width: fit-content;
   }
 
   p:nth-child(3) {
     font-weight: bold;
     color: rgba(248, 248, 248, 0.979);
-    font-size: 20px;
+    font-size: 23px;
     font-family: 'Courier New', Courier, monospace;
     text-shadow: 6px 6px 3px black;
     border-radius: 5px;
     padding: 5px;
-    background-color: rgba(206, 196, 55, 0.87);
+  background-color: #41b3f5b6;
     width: fit-content;
   }
 
   p:nth-child(4) {
     font-weight: bold;
     color: rgba(248, 248, 248, 0.979);
-    font-size: 20px;
+    font-size: 23px;
     font-family: 'Courier New', Courier, monospace;
     text-shadow: 6px 6px 3px black;
     border-radius: 5px;
     padding: 5px;
-    background-color: rgba(193, 204, 43, 0.945);
+    background-color: #007cc3d3;
     width: fit-content;
   }
 
@@ -252,7 +253,7 @@
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  // margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   animation: 
     typing 3.5s steps(40, end),
@@ -276,19 +277,20 @@
   border: 3px solid black;
   padding: 10px;
   position: relative;
-  background: rgb(255, 225, 52);
+  background-color: #4ebaf8;
 
   
   a {
-    color: black;
+    color: white;
     font-size: 25px;
     font-weight: bolder;
     text-decoration: none;
     font-family: 'Courier New', Courier, monospace;
     padding: 1px;
+    transition: 0.3s;
   }
   a:hover {
-    color: white;
+    color: black;
     cursor: pointer;
   }
 }
@@ -300,19 +302,20 @@
   border: 3px solid black;
   padding: 10px;
   position: relative;
-  background: rgb(81, 250, 14);
+  background-color: #007cc3;
 
   
   a {
-    color: black;
+    color: white;
     font-size: 25px;
     font-weight: bolder;
     text-decoration: none;
     font-family: 'Courier New', Courier, monospace;
     padding: 1px;
+    transition: 0.3s;
   }
   a:hover {
-    color: white;
+    color: black;
     cursor: pointer;
   }
 }
@@ -336,17 +339,15 @@
 
 
   div {
-    // float: left;
     width: 600px;
     display: inline-block;
-    // position: relative;
     margin-right: 30px;
     margin-bottom: 80px;
     padding: 10px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom: none;
-    background: linear-gradient(rgba(255, 191, 73, 0.788), white)
+    background: linear-gradient(rgba(40, 169, 255, 0.815), white);
   }
 
   div > h2 {
@@ -367,7 +368,7 @@
       margin-bottom: 40px;
       border-radius: 8px;
       padding: 3px;
-      background-color: rgba(173, 216, 72, 0.973);
+      // background-color: rgba(173, 216, 72, 0.973);
       width: fit-content;
     }
 
@@ -379,7 +380,7 @@
       margin-bottom: 40px;
       border-radius: 8px;
       padding: 5px;
-      background: rgb(252, 190, 110);
+      // background: rgb(252, 190, 110);
       width: fit-content;
     }
   }
@@ -395,20 +396,22 @@
     border-radius: 10px;
     border: 3px solid black;
     padding: 15px;
-    background: rgb(255, 222, 77);
+    background: #007cc3;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: white;
     font-size: 30px;
     display:block;
     text-align: center;
     padding-right: 50px;
     // margin: 160px;
     font-weight: bold;
+    transition: 0.3s;
   }
 
   div > a:hover {
-    color: rgb(255, 255, 255);
+    color: black;
     cursor: pointer;
+    background: #4598c9;
     // text-decoration: underline;
   }
 }
@@ -447,7 +450,6 @@
     font-family: 'Courier New', Courier, monospace;
     border-radius: 8px;
     padding: 3px;
-    background-color: rgba(53, 208, 255, 0.973);
     width: fit-content;
   }
 
