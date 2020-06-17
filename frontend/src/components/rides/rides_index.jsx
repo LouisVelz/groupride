@@ -14,7 +14,7 @@ class RidesIndex extends React.Component {
     }
 
     RenderRideItems() {
-        debugger
+        // debugger
         if (Array.isArray(this.props.rides[0])){
         return (
             <>
