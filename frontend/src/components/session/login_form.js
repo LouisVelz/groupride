@@ -18,7 +18,7 @@ class LoginForm extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser === true) {
-            this.props.history.push('/home');
+            this.props.history.push('/index');
         }
 
         this.setState({ errors: nextProps.errors })

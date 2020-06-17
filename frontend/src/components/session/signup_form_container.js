@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { signup } from '../../actions/session_actions';
+import { signup, login } from '../../actions/session_actions';
+import { closeModal } from '../../actions/modal_actions';
 import SignupForm from './signup_form';
 import { closeModal } from '../../actions/modal_actions'
 
@@ -12,9 +13,10 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
-        signup: user => dispatch(signup(user)),
-        closeModal: () => dispatch(closeModal())
-    }
+      signup: (user) => dispatch(signup(user)),
+      closeModal: () => dispatch(closeModal()),
+      login: (user) => dispatch(login(user)),
+    };
 }
 
 export default connect(mSTP, mDTP)(SignupForm);
