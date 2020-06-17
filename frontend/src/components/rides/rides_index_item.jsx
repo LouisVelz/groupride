@@ -11,19 +11,19 @@ class RideIndexItem extends React.Component {
 
   render() {
     console.log("api key", process.env.REACT_APP_DIRECTIONS_API)
+    const { ride } = this.props
     return (
-
       <li className="hot-item">
-        <p>{this.props.ride.destination}</p>
-        
-        <MapLoader ride={this.props.ride}
-                // API KEY  GOES IN THIS LINK without curly braces
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key={API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
+        <p>{ride.destination}</p>
+
+        <MapLoader
+          ride={ride}
+          // API KEY  GOES IN THIS LINK without curly braces
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key={API_key}&v=3.exp&libraries=geometry,drawing,places`}
           loadingElement={<div style={{ height: `100%` }} />}
         />
       </li>
-
-    )
+    );
   }
 
 

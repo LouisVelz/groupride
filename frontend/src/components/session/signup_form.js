@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './forms.css'
 
+
 class SignupForm extends React.Component {
     constructor(props) {
         super(props);
@@ -19,7 +20,7 @@ class SignupForm extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.signedIn === true) {
-            this.props.history.push('/home');
+            this.props.history.push('/index');
 
             this.props.closeModal();
         }
@@ -55,7 +56,7 @@ class SignupForm extends React.Component {
             <ul>
                 {Object.keys(this.state.errors).map((error, i) => (
                     <li key={`error-${i}`}>
-                        {this.state.errors[error]}
+                        {this.state.error[error]}
                     </li>
                 ))}
             </ul>
