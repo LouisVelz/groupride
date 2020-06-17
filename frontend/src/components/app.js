@@ -8,7 +8,8 @@ import Footer from './footer/footer'
 import EditRideFormContainer from './rides/edit_ride_form_container'
 import RideFormContainer from './rides/ride_form_container'
 import RidesIndex from './rides/ride_index_container'
-
+import Dummy from './dummy/dummy_component'
+import UserPage from './user/user_container'
 
 
 //remember to erase window.getState form index.js
@@ -20,12 +21,13 @@ const App = () => (
 
     <Modal /> 
     <GreetingContainer />
-
+    <Dummy/>
     <Switch>
       <AuthRoute exact path='/' component={SplashPage} />
       <Route exact path="/index" component={RidesIndex} /> 
       <Route path="/ride/:rideId/edit" component={EditRideFormContainer} />
       <Route path="/ride/new" component={RideFormContainer} />
+      <ProtectedRoute path="/user/:userId" component={UserPage} />
     </Switch>
     <Footer /> 
   </div>

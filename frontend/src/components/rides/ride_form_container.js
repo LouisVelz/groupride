@@ -13,7 +13,7 @@ const mSTP = (state) => {
             meetup_time: "",
             purpose: "",
         },
-        formType: 'Add Ride'
+        formType: 'Create GroupRide'
     }
 };
 

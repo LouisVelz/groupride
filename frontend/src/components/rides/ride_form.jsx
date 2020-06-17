@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import './ride-form.scss'
 
 class RideForm extends React.Component {
     constructor(props) {
@@ -22,34 +23,71 @@ class RideForm extends React.Component {
 
     render() {
         return (
+          <div className="create-ride-form">
             <form onSubmit={this.handleSumit}>
-                <h1>{this.props.formType}</h1>
-                <label>title
-                    <input type="text" value={this.state.understanding}
-                        onChange={this.update('title')} />
-                </label>
-                <label>description
-                    <input type="text" value={this.state.understanding}
-                        onChange={this.update('description')} />
-                </label>
-                <label>destination
-                    <input type="text" value={this.state.understanding}
-                        onChange={this.update('destination')} />
-                </label>
-                <label>meetup location
-                    <input type="text" value={this.state.understanding}
-                        onChange={this.update('meetup_location')} />
-                </label>
-                <label>meetup time
-                    <input type="text" value={this.state.understanding}
-                        onChange={this.update('meetup_time')} />
-                </label>
-                <label>purpose
-                    <textarea value={this.state.improvement}
-                        onChange={this.update('purpose')} />
-                </label>
-                <input type='submit' value={this.props.formType} />
+              <h1>{this.props.formType}!!!</h1>
+              <label>
+                Title:
+                <input
+                  className="first-input"
+                  type="text"
+                  value={this.state.title}
+                  onChange={this.update("title")}
+                />
+              </label>
+              <br />
+              <label>
+                Trip Description:
+                <input
+                  className="second-input"
+                  type="text"
+                  value={this.state.description}
+                  onChange={this.update("description")}
+                />
+              </label>
+              <br />
+              <label>
+                Destination:
+                <input
+                  type="text"
+                  className="third-input"
+                  value={this.state.destination}
+                  onChange={this.update("destination")}
+                />
+              </label>
+              <br />
+              <label>
+                GroupRide location:
+                <input
+                  className="fourth-input"
+                  type="text"
+                  value={this.state.meetup_location}
+                  onChange={this.update("meetup_location")}
+                />
+              </label>
+              <br />
+              <label>
+                Groupride departure time:
+                <input
+                  type="datetime-local"
+                  className="fifth-input"
+                  value={this.state.meetup_time}
+                  onChange={this.update("meetup_time")}
+                />
+              </label>
+              <br />
+              <label>
+                Purpose:
+                <textarea
+                  value={this.state.purpose}
+                  onChange={this.update("purpose")}
+                />
+              </label>
+              <br />
+              <button type="submit">{this.props.formType}</button>
+              {/* <input type="submit" value={this.props.formType} /> */}
             </form>
+          </div>
         );
     }
 }
