@@ -21,14 +21,12 @@ const App = () => (
 
     <Modal /> 
     <GreetingContainer />
-    <Route exact path="/" component={SplashPage} /> 
-  
-
     <Switch>
-      <AuthRoute exact path="/" component={MainPage} />
+      <AuthRoute exact path="/" component={SplashPage} /> 
+      <ProtectedRoute exact path="/home" component={MainPage} />
+      <ProtectedRoute exact path="/index" component={RidesIndex} /> 
       {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
       {/* <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
-      <Route exact path="/index" component={RidesIndex} /> 
     </Switch>
     <Footer /> 
   </div>
