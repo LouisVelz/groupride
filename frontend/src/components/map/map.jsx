@@ -57,7 +57,6 @@ class MapWithADirectionsRenderer extends React.Component{
                 />
             </GoogleMap>
         ));
-
         return(
             <div>
                 <GoogleMapExample
