@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { openModal } from "../../actions/modal_actions";
-import { logout } from "../../actions/session_actions";
+// import { logout } from "../../actions/session_actions";
+import { login } from "../../actions/session_actions";
 
 //Styling
 import '../../stylesheets/splash/splash.scss';
@@ -22,14 +23,25 @@ const mSTP = state => {
 };
 
 const mDTP = (dispatch) => ({
-  logout: () => dispatch(logout()),
+  processForm: (user) => dispatch(login(user)),
   openModal: (str) => dispatch(openModal(str)),
 });
 
 
 class Splash extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.viewDemoClick = this.viewDemoClick.bind(this);
+  }
+
+  viewDemoClick(event) {
+    // debugger
+    event.preventDefault();
+    const demoUser = {
+      email: 'test@gmail.com',
+      password: 'hunter2'
+    };
+    this.props.processForm(demoUser);
   }
 
   render() {
@@ -72,11 +84,14 @@ class Splash extends React.Component {
                     Join the Community →
                   </Link>
                 </button>
-                <button className="splash-top-link2">
+                <div className="splash-top-link2">
+                  <button id="splash-top-link" onClick={this.viewDemoClick}>Try our Demo →</button>
+                </div>
+                {/* <button className="splash-top-link2">
                   <Link to="/" id="splash-top-link">
                     Try our Demo →
                   </Link>
-                </button>
+                </button> */}
               </div>
             </div>
           </section>

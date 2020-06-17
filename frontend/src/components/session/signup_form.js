@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './forms.css'
+import { closeModal } from '../../actions/modal_actions';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -55,7 +56,7 @@ class SignupForm extends React.Component {
             <ul>
                 {Object.keys(this.state.errors).map((error, i) => (
                     <li key={`error-${i}`}>
-                        {this.state.errors[error]}
+                        {this.state.error[error]}
                     </li>
                 ))}
             </ul>
