@@ -17,7 +17,10 @@ class RideShow extends React.Component {
     }else{
       return(
         <div className="show-song-main">
-          
+          <h1>{ride.title}</h1>
+          <ul>
+            <li></li>
+          </ul>
         </div>
       )
     }
