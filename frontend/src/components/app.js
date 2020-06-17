@@ -26,14 +26,19 @@ const App = () => (
 
     <Modal /> 
     <GreetingContainer />
-    <Route exact path="/" component={SplashPage} /> 
-  
-
     <Switch>
+<<<<<<< HEAD
+      <AuthRoute exact path="/" component={SplashPage} /> 
+      <ProtectedRoute exact path="/home" component={MainPage} />
+      <ProtectedRoute exact path="/index" component={RidesIndex} /> 
+      {/* <AuthRAoute exact path="/login" component={LoginFormContainer} /> */}
+      {/* <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
+=======
       <ProtectedRoute exact path='/rides/new' component={NewRideFormContainer} />
       <Route exact path="/index" component={RidesIndex} /> 
       <Route path="/ride/:rideId/edit" component={EditRideFormContainer} />
       <Route path="/ride/new" component={RideFormContainer} />
+>>>>>>> master
     </Switch>
     <Footer /> 
   </div>

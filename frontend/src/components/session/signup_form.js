@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './forms.css'
+import { closeModal } from '../../actions/modal_actions';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -19,9 +20,10 @@ class SignupForm extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        // if (nextProps.signedIn === true) {
-        //     this.props.history.push('/home');
-        // }
+        // debugger
+        if (nextProps.signedIn === true) {
+            this.props.history.push('/home');
+        }
 
         this.setState({ errors: nextProps.errors })
     }
@@ -43,6 +45,7 @@ class SignupForm extends React.Component {
         };
 
         this.props.signup(user, this.props.history);
+            // .then(this.props.closeModal);
     }
 
     renderErrors() {
