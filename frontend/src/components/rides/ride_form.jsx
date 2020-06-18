@@ -1,13 +1,24 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import './ride-form.scss'
+import PlacesAutocomplete from 'react-places-autocomplete';
+import {
+  geocodeByAddress,
+  geocodeByPlaceId,
+  getLatLng,
+} from 'react-places-autocomplete';
 
 class RideForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.ride;
+        // const [address, setAddress] = React.useState("");
+        // this.address = address;
+        // this.setAddress = setAddress;
         this.handleSumit = this.handleSumit.bind(this);
     }
+
+    
 
     update(field) {
         return (e) => {
@@ -21,7 +32,34 @@ class RideForm extends React.Component {
         this.props.createRide(this.state);
     }
 
-    render() {
+  handleChangeDest = destination => {
+    this.setState({ destination });
+  };
+
+  handleChangeMeetupLoc = meetup_location => {
+    this.setState({ meetup_location });
+  };
+  
+  handleSelectDest = destination => {
+    
+    this.setState({ destination });
+    geocodeByAddress(destination)
+      .then(results => getLatLng(results[0]))
+      .then(latLng => console.log('Success', latLng))
+      .catch(error => console.error('Error', error));
+  };
+
+  handleSelectMeetupLoc = meetup_location => {
+    this.setState({ meetup_location });
+    geocodeByAddress(meetup_location)
+      .then(results => getLatLng(results[0]))
+      .then(latLng => console.log('Success', latLng))
+      .catch(error => console.error('Error', error));
+  };
+
+    render() { 
+      // const handleSelect = async value => {};
+      
         return (
           <div className="create-ride-form">
             <form onSubmit={this.handleSumit}>
@@ -48,22 +86,56 @@ class RideForm extends React.Component {
               <br />
               <label>
                 Destination:
-                <input
-                  type="text"
-                  className="third-input"
-                  value={this.state.destination}
-                  onChange={this.update("destination")}
-                />
+                <PlacesAutocomplete value={this.state.destination} onChange={this.handleChangeDest} onSelect={this.handleSelectDest}>
+                  
+                  {({getInputProps, suggestions, getSuggestionItemProps, loading})=>(
+                    <div>
+                  <input {...getInputProps({placeholder:"enter your destination"})}
+                      // type="text"
+                      // className="third-input"
+                      // value={this.state.destination}
+                      // onChange={this.update("destination")}
+                    />
+                    <div>
+                      {loading ? <div>...loading</div> : null}
+                      {suggestions.map((suggestion)=>{
+                        const style = {
+                          backgroundColor: suggestion.active ? "#dadada" : "#fff"
+                        };
+                        return <div {...getSuggestionItemProps(suggestion, {style})}>{suggestion.description}</div>
+                      })}
+                    </div>
+                    </div>
+                    )}
+                    
+                </PlacesAutocomplete>
               </label>
               <br />
               <label>
                 GroupRide location:
-                <input
-                  className="fourth-input"
-                  type="text"
-                  value={this.state.meetup_location}
-                  onChange={this.update("meetup_location")}
-                />
+                <PlacesAutocomplete value={this.state.meetup_location} onChange={this.handleChangeMeetupLoc} onSelect={this.handleSelectMeetupLoc}>
+
+                  {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+                    <div>
+                      <input {...getInputProps({ placeholder: "enter your destination" })}
+                      // type="text"
+                      // className="third-input"
+                      // value={this.state.destination}
+                      // onChange={this.update("destination")}
+                      />
+                      <div>
+                        {loading ? <div>...loading</div> : null}
+                        {suggestions.map((suggestion) => {
+                          const style = {
+                            backgroundColor: suggestion.active ? "#dadada" : "#fff"
+                          };
+                          return <div {...getSuggestionItemProps(suggestion, { style })}>{suggestion.description}</div>
+                        })}
+                      </div>
+                    </div>
+                  )}
+
+                </PlacesAutocomplete>
               </label>
               <br />
               <label>
@@ -78,10 +150,15 @@ class RideForm extends React.Component {
               <br />
               <label>
                 Purpose:
-                <textarea
+                <select
                   value={this.state.purpose}
                   onChange={this.update("purpose")}
-                />
+                >
+                  <option value="Competitive Training">Competitive Training</option>
+                  <option value="Light Training">Light Training</option>
+                  <option value="Commute">Commute</option>
+                  <option value="Joy Ride">Joy Ride</option>
+                </select>
               </label>
               <br />
               <button type="submit">{this.props.formType}</button>
@@ -93,3 +170,10 @@ class RideForm extends React.Component {
 }
 
 export default withRouter(RideForm);
+
+          // <select value={this.state.value} onChange={this.handleChange}>
+          //   <option value="grapefruit">Grapefruit</option>
+          //   <option value="lime">Lime</option>
+          //   <option value="coconut">Coconut</option>
+          //   <option value="mango">Mango</option>
+          // </select>;

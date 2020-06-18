@@ -3,18 +3,26 @@ import { getRides, getUserRides, writeRide, patchRide, getRide } from './../util
 export const RECEIVE_RIDES = "RECEIVE_RIDES";
 export const RECEIVE_USER_RIDES = "RECEIVE_USER_RIDES";
 export const RECEIVE_NEW_RIDE = "RECEIVE_NEW_RIDE";
+export const RECEIVE_RIDE = "RECEIVE_RIDE";
 
-export const receiveRides = (rides) => ({
+
+const receiveRides = (rides) => ({
   type: RECEIVE_RIDES,
   rides,
 });
 
-export const receiveUserRides = (rides) => ({
+const receiveRide = (ride) => ({
+  type: RECEIVE_RIDE,
+  ride
+})
+
+
+const receiveUserRides = (rides) => ({
   type: RECEIVE_USER_RIDES,
   rides,
 });
 
-export const receiveNewRide = (ride) => ({
+const receiveNewRide = (ride) => ({
   type: RECEIVE_NEW_RIDE,
   ride,
 });
@@ -40,8 +48,8 @@ export const updateRide = (data) => (dispatch) =>
     .then((ride) => dispatch(receiveNewRide(ride)))
     .catch((err) => console.log(err));
 
-export const fetchRide = (id) => (dispatch) =>
-  getRide(id)
-    .then((ride) => dispatch(receiveNewRide(ride)))
+export const fetchRide = (rideId) => (dispatch) =>
+  getRide(rideId)
+    .then((ride) => dispatch(receiveRide(ride)))
     .catch((err) => console.log(err));
 
