@@ -18,6 +18,7 @@ class RideIndexItem extends React.Component {
 
 handleClick(){
   this.props.updateRide(this.state)
+    .then(() => window.location.reload())
 }
 
 joinRide(){
