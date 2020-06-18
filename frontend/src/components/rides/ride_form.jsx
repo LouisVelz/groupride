@@ -24,7 +24,7 @@ class RideForm extends React.Component {
     render() {
         return (
           <div className="create-ride-form">
-            <form onSubmit={this.handleSumit}>
+            <form className="c-ride-form" onSubmit={this.handleSumit}>
               <h1>{this.props.formType}!!!</h1>
               <label>
                 Title:
@@ -91,6 +91,7 @@ class RideForm extends React.Component {
               <br />
               <button type="submit">{this.props.formType}</button>
               {/* <input type="submit" value={this.props.formType} /> */}
+              <div class="push"></div>
             </form>
           </div>
         );
