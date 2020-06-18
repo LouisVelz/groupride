@@ -89,7 +89,7 @@ class SignupForm extends React.Component {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit}>
-                    <div className="login-form">
+                    <div className="signup-form">
                         <h2 className="form-header">Join GroupRide</h2>
                         <br />
                         <input type="text"
