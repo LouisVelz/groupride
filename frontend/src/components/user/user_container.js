@@ -13,7 +13,8 @@ const mSTP = (state) => {
 
 const mDTP = dispatch => {
   return {
-    fetchUserRides: (id) => dispatch(fetchUserRides(id))
+    fetchUserRides: (id) => dispatch(fetchUserRides(id)),
+    
   }
 }
 

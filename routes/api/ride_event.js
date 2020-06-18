@@ -33,7 +33,7 @@ router.get('/:id/participants', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    db.RideEvent.deleteOne({ "_id": ObjectId(req.params.id) })
+    RideEvent.deleteOne({ "_id": req.params.id })
 });
 
 router.get('/:id', (req, res) => {
