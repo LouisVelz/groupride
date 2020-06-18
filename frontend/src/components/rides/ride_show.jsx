@@ -19,6 +19,7 @@ class RideShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchRide(this.props.match.params.rideId);
+    this.props.fetchParticipants(this.props.match.params.rideId)
   }
 
   render() {
