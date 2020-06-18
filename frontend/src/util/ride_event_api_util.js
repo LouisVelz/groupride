@@ -9,11 +9,11 @@ export const getUserRides = (id) => {
 };
 
 export const writeRide = (data) => {
+  debugger
   return axios.post("/api/rideevent/", data);
 };
 
 export const patchRide = (data) => {
-
   return axios.patch(`/api/rideevent/${data.id}`, data);
 };
 
