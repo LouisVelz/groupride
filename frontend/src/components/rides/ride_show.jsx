@@ -1,6 +1,9 @@
 import React from 'react'
 import Map from "../map/map"
 import { withScriptjs } from "react-google-maps";
+import './ride_show.scss'
+
+
 const MapLoader = withScriptjs(Map)
 
 class RideShow extends React.Component {
