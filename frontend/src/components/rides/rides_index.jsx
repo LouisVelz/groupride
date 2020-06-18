@@ -22,6 +22,7 @@ class RidesIndex extends React.Component {
               key={ride._id}
               currentUser={this.props.currentUser}
               updateRide={this.props.updateRide}
+              trashRide={this.props.trashRide}
               ride={ride}
             />
           ))}
