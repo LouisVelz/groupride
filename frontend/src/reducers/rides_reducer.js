@@ -3,11 +3,12 @@ import {
   RECEIVE_USER_RIDES,
   RECEIVE_NEW_RIDE,
   RECEIVE_RIDE,
+  RECEIVE_PARTICIPANTS
 } from "../actions/ride_actions";
 
 
 const ridesReducer = (
-  state = { all: {}, user: {}, new: undefined },
+  state = { all: {}, user: {}, new: undefined, participants: {} },
   action
 ) => {
   Object.freeze(state);
@@ -24,6 +25,8 @@ const ridesReducer = (
       return newState;
     case RECEIVE_RIDE:
       return Object.assign({}, state, {[action.ride.data._id]: action.ride.data})
+      // case RECEIVE_PARTICIPANTS:
+      //   return Object.assign({}, state, action.participants)
     default:
       return state;
   }

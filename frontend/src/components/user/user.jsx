@@ -27,7 +27,7 @@ class UserPage extends React.Component {
 
 
       userRides = rides.map( (ride, index) =>{
-        this.setState({ user_miles: user_miles + ride.total_miles})
+        // this.setState({ user_miles: user_miles + ride.total_miles})
         return <RideIndexItem key={index} ride={ride}/>
       })
 
