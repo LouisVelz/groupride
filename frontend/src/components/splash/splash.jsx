@@ -37,7 +37,7 @@ class Splash extends React.Component {
   viewDemoClick(event) {
     event.preventDefault();
     const demoUser = {
-      email: 'test@gmail.com',
+      email: 'demo@gmail.com',
       password: 'hunter2'
     };
     this.props.processForm(demoUser);

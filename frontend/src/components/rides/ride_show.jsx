@@ -12,29 +12,29 @@ class RideShow extends React.Component {
     // this.state = { ride: null };
   }
 
-  componentWillMount() {
-    this.props.fetchRide(this.props.match.params.rideId);
-  }
-
-  componentWillReceiveProps(newState) {
-    this.setState({ ride: newState.ride });
-  }
-
-  // componentDidMount() {
+  // componentWillMount() {
   //   this.props.fetchRide(this.props.match.params.rideId);
   // }
+
+  // componentWillReceiveProps(newState) {
+  //   this.setState({ ride: newState.ride });
+  // }
+
+  componentDidMount() {
+    this.props.fetchRide(this.props.match.params.rideId);
+  }
 
   render() {
     const { ride } = this.props;
     let joinedMembers;
 
-    // joinedMembers = ride.participants.map(participant => {
-    //   return <li>{participant}</li>
-    // })
-    debugger;
+    // debugger;
     if (!ride) {
       return <div>fetching data...</div>;
     } else {
+      joinedMembers = ride.participants.map(participant => {
+        return <li>{participant}</li>
+      })
       return (
         <div className="show-ride-main">
           <h1>{ride.title}</h1>

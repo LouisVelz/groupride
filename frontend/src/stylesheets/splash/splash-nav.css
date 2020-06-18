@@ -17,16 +17,8 @@ body {
     width: 100%;
 }
 
-.nav-home-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: black;
-    background-color: black;
-    height: 70px;
-}
 .nav-home-container ul{
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -81,18 +73,4 @@ ul{
     margin-right: 5px;
     color: white;
     font-weight: bold;
-}
-
-.loggedin-logout {
-    align-self: center;
-    margin: 10px;
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 5.5px;
-    text-decoration: none;
-    background-color: white;
-    width: 60px;
-    justify-content: center;
-    display: inline-flex;
-    margin-right: 25px;
 }

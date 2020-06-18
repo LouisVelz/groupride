@@ -11,6 +11,8 @@
   // background-image: url(../../components/images/background.png);
   // background-size: cover;
   width: 100%;
+  // background-image: linear-gradient(white 0%,#007cc3 50%);
+  // background: linear-gradient(white,#007cc3);
 }
 
 @media (min-width: 576px) { 
@@ -344,10 +346,10 @@
     margin-right: 30px;
     margin-bottom: 80px;
     padding: 10px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     border-bottom: none;
-    background: linear-gradient(rgba(40, 169, 255, 0.815), white);
+    background: linear-gradient(white,#007cc3);
   }
 
   div > h2 {
