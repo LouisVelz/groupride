@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom"
 import RidesIndexItem from './rides_index_item';
+import { updateRide } from '../../actions/ride_actions';
 
 class RidesIndex extends React.Component {
     constructor(props) {
@@ -14,13 +15,12 @@ class RidesIndex extends React.Component {
     }
 
     ridesItem() {
-
         if (Array.isArray(this.props.rides[0])){
         return (
             <ul>
                 {
                     this.props.rides[0].map(ride =>
-                        <RidesIndexItem key={ride._id} ride={ride} />
+                        <RidesIndexItem key={ride._id} currentUser={this.props.currentUser} updateRide={this.props.updateRide} ride={ride} />
                     )
                 }
             </ul>

@@ -13,6 +13,7 @@ export const writeRide = (data) => {
 };
 
 export const patchRide = (data) => {
+  debugger
   return axios.patch(`/api/rideevent/${data.id}`, data);
 };
 
