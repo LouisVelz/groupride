@@ -1,0 +1,7 @@
+h1, select, input,
+a, p, h2, h3, label, option,
+textarea, button, h6{
+  line-height: 1.23077;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}

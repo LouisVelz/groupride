@@ -9,7 +9,6 @@
   // justify-content: flex-end;
   // align-items: flex-start;
   margin: 40px auto;
-
 }
 .create-ride-form form{
   display: flex;
@@ -24,21 +23,24 @@
   margin-top: 20px;
   // text-align: end;
 }
-.create-ride-form textarea{
-  width: 300px;
-  height: 45px;
-  margin-left: 20px;
-  margin-top: 20px;
-  // text-align: end;
-  margin-right: 80px;
+// .create-ride-form textarea{
+//   width: 300px;
+//   height: 45px;
+//   margin-left: 20px;
+//   margin-top: 20px;
+//   text-align: end;
+//   margin-right: 80px;
 
-}
+// }
+
 .create-ride-form select {
   width: 300px;
   height: 45px;
   margin-left: 20px;
   margin-top: 20px;
   text-align: center;
+  margin-right: 80px;
+  font-size: medium;
 }
 
 .create-ride-form form button{
@@ -53,22 +55,22 @@
 }
 
 .create-ride-form .fifth-input{
-  margin-right: 205px;
+  margin-right: 210px;
 
 }
 .create-ride-form .fourth-input{
-  margin-right: 165px;
+  margin-right: 175px;
 
 }
 .create-ride-form .third-input{
-  margin-right: 105px;
+  margin-right: 115px;
 
 }
 .create-ride-form .second-input{
-  margin-right: 140px;
+  margin-right: 150px;
 
 }
 .create-ride-form .first-input{
-  margin-right: 55px;
+  margin-right: 65px;
 
 }

@@ -78,10 +78,15 @@ class RideForm extends React.Component {
               <br />
               <label>
                 Purpose:
-                <textarea
+                <select
                   value={this.state.purpose}
                   onChange={this.update("purpose")}
-                />
+                >
+                  <option value="Competitive Training">Competitive Training</option>
+                  <option value="Light Training">Light Training</option>
+                  <option value="Commute">Commute</option>
+                  <option value="Joy Ride">Joy Ride</option>
+                </select>
               </label>
               <br />
               <button type="submit">{this.props.formType}</button>
@@ -93,3 +98,10 @@ class RideForm extends React.Component {
 }
 
 export default withRouter(RideForm);
+
+          // <select value={this.state.value} onChange={this.handleChange}>
+          //   <option value="grapefruit">Grapefruit</option>
+          //   <option value="lime">Lime</option>
+          //   <option value="coconut">Coconut</option>
+          //   <option value="mango">Mango</option>
+          // </select>;
