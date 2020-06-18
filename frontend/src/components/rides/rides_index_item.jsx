@@ -6,10 +6,31 @@ import { withScriptjs } from "react-google-maps";
 const MapLoader = withScriptjs(Map);
 
 class RideIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      participants: this.props.currentUser,
+      id: this.props.ride._id,
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.props.updateRide(this.state);
+  }
+
+  joinRide() {
+    if (!this.props.currentUser) return null;
+
+    if (this.props.currentUser._id !== this.props.ride.creator) {
+      return <button onClick={this.handleClick}>Join Ride</button>;
+    }
+  }
 
   render() {
-    console.log("api key", process.env.REACT_APP_DIRECTIONS_API)
-    const { ride } = this.props
+    // debugger;
+    console.log("api key", process.env.REACT_APP_DIRECTIONS_API);
+    const { ride } = this.props;
     var setMeetTime = ride.meetup_time;
     // debugger;
     const meetDate = setMeetTime.split("T")[0];
@@ -21,6 +42,7 @@ class RideIndexItem extends React.Component {
       <div className="event-container">
         <div className="event-title">
           <h1>{ride.title}</h1>
+          {this.joinRide()}
           <h2>Event Posted: {ride.date.split("T")[0]}</h2>
         </div>
         <h2>{ride.destination}</h2>
@@ -49,8 +71,6 @@ class RideIndexItem extends React.Component {
       </div>
     );
   }
-
-
 }
 
 export default RideIndexItem;
