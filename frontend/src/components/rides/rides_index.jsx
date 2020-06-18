@@ -18,7 +18,13 @@ class RidesIndex extends React.Component {
         if (Array.isArray(this.props.rides[0])){
         return (
             <>
-                { this.props.rides[0].map(ride => <RidesIndexItem key={ride._id} ride={ride} />) }
+                { this.props.rides[0].map(ride => 
+                <RidesIndexItem 
+                    key={ride._id} 
+                    currentUser={this.props.currentUser} 
+                    updateRide={this.props.updateRide} 
+                    ride={ride} 
+                />) }
             </>
         )}
     }

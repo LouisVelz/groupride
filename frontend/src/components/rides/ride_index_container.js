@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import rideIndex from './rides_index';
-import { fetchRides } from '../../actions/ride_actions';
+import { fetchRides, updateRide } from "../../actions/ride_actions";
 import { logout } from "../../actions/session_actions";
 
 const mSTP = (state) => {
     return {
-        rides: Object.values(state.entities.rides)
+        rides: Object.values(state.entities.rides),
+        currentUser: state.session.user,
     }
 };
 
@@ -14,6 +15,7 @@ const mDTP = dispatch => {
 
         fetchRides: () => dispatch(fetchRides()),
         logout: () => dispatch(logout()),
+        updateRide: (ride) => dispatch(updateRide(ride))
     }
 };
 
