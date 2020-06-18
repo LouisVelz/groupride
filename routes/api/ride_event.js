@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/user/:user_id', (req, res) => {
-    RideEvent.find({ user: req.params.user_id })
+    RideEvent.find({ creator: req.params.user_id })
         .sort({ date: -1 })
         .then(rides => res.json(rides))
         .catch(err =>
@@ -47,8 +47,8 @@ router.post('/',
         const { errors, isValid } = validateRideEventInput(req.body);
 
         if (!isValid) {
-            return res.status(400).json(errors);
-        }
+             return res.status(400).json(errors);
+         }
 
         const newRideEvent = new RideEvent({
             creator: req.user.id,

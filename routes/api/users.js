@@ -76,6 +76,7 @@ router.post("/login", (req, res) => {
       
         const payload = Object.assign({}, user._doc)
         delete payload.password;
+        // const payload = { id: user.id, username: user.username };
         jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
           res.json({
             success: true,
