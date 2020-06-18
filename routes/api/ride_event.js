@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 
+
 const RideEvent = require('../../models/RideEvent');
 const validateRideEventInput = require('../../validation/ride_events');
 
@@ -21,6 +22,18 @@ router.get('/user/:user_id', (req, res) => {
             res.status(404).json({ noridesfound: 'No rides found from that user' }
             )
         );
+});
+
+router.get('/:id/participants', (req, res) => {
+    RideEvent.findById(req.params.id).populate('participants')
+        .then(participants => res.json(participants))
+        .catch(err =>
+            res.status(404).json({ noridefound: 'No participants for this ride' })
+        );
+});
+
+router.delete('/:id', (req, res) => {
+    db.RideEvent.deleteOne({ "_id": ObjectId(req.params.id) })
 });
 
 router.get('/:id', (req, res) => {
