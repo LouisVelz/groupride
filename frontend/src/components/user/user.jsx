@@ -1,6 +1,7 @@
 import React from 'react'
-import './user.scss'
+import './user.css'
 import RideIndexItem from './../rides/rides_index_item'
+import { use } from 'passport';
 
 class UserPage extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class UserPage extends React.Component {
   // }
 
   render(){
-    debugger
+    // debugger
     const { rides, currentUser } = this.props
     let userRides
 
@@ -31,12 +32,21 @@ class UserPage extends React.Component {
         return <RideIndexItem key={index} ride={ride}/>
       })
 
+    const titles = rides.map( ride => {
+      return ride.title;
+    }) 
+
+    console.log(rides)
     return(
       <div className= 'user-main'>
         <div className='user-info'>
           <ul>
-            {/* <li><img src="" alt=""/></li> */}
-            <li>{currentUser.username}</li>
+            <li className="user-initial">{currentUser.username[0]}</li>
+            <li className="user-full-name">{currentUser.username}</li>
+            <div className="user-info">
+              <li className="user-email">{currentUser.email}</li>
+              <li className="user-rides">rides {titles.length}</li>
+            </div>
             {/* <li>{this.state.user_miles}</li> */}
             {/* <li>{currentUser.user_miles}</li>
             <li>{currentUser.bicycle}</li>
