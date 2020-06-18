@@ -11,7 +11,7 @@ function Modal({ modal, closeModal }) {
     if (!modal) {
         return null;
     }
-    debugger
+    // debugger
     let component;
     switch (modal) {
         case 'login':

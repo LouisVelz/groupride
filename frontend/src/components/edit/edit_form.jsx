@@ -8,6 +8,7 @@ class EditForm extends React.Component {
         super(props);
 
         this.state = {
+            id: this.props.currentUser._id,
             bike_type: '',
             skill_level: '',
             social_media: '',
@@ -31,11 +32,14 @@ class EditForm extends React.Component {
         e.preventDefault();
 
         let user = {
+            id: this.state.id,
             bike_type: this.state.bike_type,
             skill_level: this.state.skill_level,
             social_media: this.state.social_media
         };
-        this.props.updateUser(user);
+        this.props.updateUser(user)
+            .then(() => this.props.history.push(`/user/${this.props.currentUser._id}`))
+                .then(() => window.location.reload());
     }
 
     render() {
@@ -71,4 +75,4 @@ class EditForm extends React.Component {
     }
 }
 
-export default EditForm;
+export default withRouter(EditForm);

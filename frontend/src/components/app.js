@@ -11,7 +11,7 @@ import Technology from "./footer/technology";
 // import EditRideFormContainer from './rides/edit_ride_form_container'
 import RideFormContainer from './rides/ride_form_container'
 import RidesIndex from './rides/ride_index_container'
-import EditUser from './user/user_edit_container'
+import EditUser from './edit/edit_container'
 import UserPage from './user/user_container'
 import './../stylesheets/app.css'
 import ShowRide from './rides/ride_show_container'

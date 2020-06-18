@@ -29,7 +29,7 @@ class RideShow extends React.Component {
     const { ride } = this.props;
     let joinedMembers;
     
-    debugger;
+    // debugger;
     if (!ride) {
       return <div>fetching data...</div>;
     } else {

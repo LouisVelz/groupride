@@ -7,7 +7,7 @@ class UserPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { rides: [] };
+    // this.state = { rides: [] };
   }
 
   componentWillMount() {
@@ -23,16 +23,16 @@ class UserPage extends React.Component {
   // }
 
   render(){
-    debugger
-    // if (!this.props.rides) { return null };
+    // debugger
+    if (!this.props.rides) { return null }
     const { rides, currentUser, openModal } = this.props
     let userRides
 
 
-      userRides = rides.map( (ride, index) =>{
-        // this.setState({ user_miles: user_miles + ride.total_miles})
-        return <RideIndexItem key={index} ride={ride}/>
-      })
+    userRides = rides.map( (ride, index) =>{
+      // this.setState({ user_miles: user_miles + ride.total_miles})
+      return <RideIndexItem key={index} ride={ride}/>
+    })
 
     const titles = rides.map( ride => {
       return ride.title;
@@ -49,6 +49,7 @@ class UserPage extends React.Component {
               <li className="user-email">{currentUser.email}</li>
               <li className="user-rides">rides {titles.length}</li>
             </div>
+            <li><Link to={`/edit/${currentUser._id}`}>Edit Profile</Link></li>
             {/* <li>{this.state.user_miles}</li> */}
             {/* <li>{currentUser.user_miles}</li>
             <li>{currentUser.bicycle}</li>
