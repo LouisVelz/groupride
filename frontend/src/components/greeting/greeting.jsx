@@ -35,7 +35,7 @@ class Greeting extends React.Component {
                   <li>Username</li>
                   <li><Link to ={`/ride/new`}>Create Ride</Link></li>
                   <li><Link to ={`/user/${props.currentUser._id}`}>User Info</Link></li>
-                  <li><button onClick={() => props.logout}>Log Out</button></li>
+                  <li><button onClick={props.logout}>Log Out</button></li>
                 </ul>
               </div>
             )}

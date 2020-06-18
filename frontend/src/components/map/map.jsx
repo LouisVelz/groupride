@@ -58,16 +58,20 @@ class MapWithADirectionsRenderer extends React.Component{
             </GoogleMap>
         ));
 
-        return(
-            <div>
-                <GoogleMapExample
-                    containerElement={<div style={{ height: `500px`, width: "500px" }} />}
-                    mapElement={<div style={{ height: `100%` }} />}
-                />
-                <li>{this.state.directions.routes[0].legs[0].distance.text}</li>
-                <li>{this.state.directions.routes[0].legs[0].duration.text}</li>
-            </div>
-        )
+        return (
+          <div>
+            <GoogleMapExample
+              containerElement={
+                <div style={{ height: `500px`, width: "500px" }} />
+              }
+              mapElement={<div style={{ height: `100%` }} />}
+              distance={this.state.directions.routes[0].legs[0].distance.text}
+              duration={this.state.directions.routes[0].legs[0].duration.text}
+            />
+            <li>{this.state.directions.routes[0].legs[0].distance.text}</li>
+            <li>{this.state.directions.routes[0].legs[0].duration.text}</li>
+          </div>
+        );
     }
 
 

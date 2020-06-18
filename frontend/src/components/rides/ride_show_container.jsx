@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { fetchRide } from "./../../actions/ride_actions";
-import RideShow from "./song_show";
+import RideShow from "./ride_show";
 
 const mSTP = (state, ownProps) => {
   return {
