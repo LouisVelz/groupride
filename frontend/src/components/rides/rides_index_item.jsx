@@ -6,27 +6,27 @@ import { withScriptjs } from "react-google-maps";
 const MapLoader = withScriptjs(Map);
 
 class RideIndexItem extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor(props){
+    super(props)
     this.state = {
       participants: this.props.currentUser,
-      id: this.props.ride._id,
-    };
-    this.handleClick = this.handleClick.bind(this);
+      id: this.props.ride._id
+        }
+    this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick() {
-    this.props.updateRide(this.state);
+handleClick(){
+  this.props.updateRide(this.state)
+}
+joinRide(){
+  if(!this.props.currentUser) return null;
+  
+  if(this.props.currentUser._id!==this.props.ride.creator){
+    return(
+      <button onClick={this.handleClick}>Join Ride</button>
+    )
   }
-
-  joinRide() {
-    if (!this.props.currentUser) return null;
-
-    if (this.props.currentUser._id !== this.props.ride.creator) {
-      return <button onClick={this.handleClick}>Join Ride</button>;
-    }
-  }
-
+}
   render() {
     // debugger;
     console.log("api key", process.env.REACT_APP_DIRECTIONS_API);
