@@ -29,6 +29,9 @@ const App = () => (
       <Route exact path="/index" component={RidesIndex} />
       <Route path="/ride/:rideId/edit" component={EditRideFormContainer} />
       <Route path="/ride/new" component={RideFormContainer} />
+      <Route path="/about" component={About} />
+      <Route path="/team" component={Team} />
+      <Route path="/technology" component={Technology} />
       <ProtectedRoute path="/user/:userId" component={UserPage} />
       <ProtectedRoute path="/ride/:rideId" component={ShowRide} />
       <Route path="/about" component={About} />
