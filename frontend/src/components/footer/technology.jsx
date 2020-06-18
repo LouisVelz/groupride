@@ -11,8 +11,6 @@ class Technology extends React.Component {
                     <li>Frontend: React / Node.js</li>
                     <li>Libraries/APIs: TBA (Google Maps API)</li>
                 </ul>
-                {/* <img src="https://company-30077.frontify.com/d/ghqwg6pjpJrq/mongodb-identity#/basics/logo" alt=""/> */}
-
                 <h2 className="tech-title">Technical Challenges</h2>
                 <p className="tech-text">Using Google's Map API to locate created events 
                     based on their set location. The ideal case 
