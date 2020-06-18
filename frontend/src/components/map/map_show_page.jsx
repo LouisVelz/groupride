@@ -59,12 +59,12 @@ class MapWithADirectionsRenderer extends React.Component{
             </GoogleMap>
         ));
         return (
-          <div className="event-map">
+          <div className="show-page-map">
             <GoogleMapExample
               containerElement={
                 <div
-                  id="map-container"
-                  style={{ height: `300px`, width: "500px" }}
+                  id="show-page-style"
+                  style={{ height: `400px`, width: "650px" }}
                 />
               }
               mapElement={
