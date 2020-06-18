@@ -4,6 +4,7 @@ export const RECEIVE_RIDES = "RECEIVE_RIDES";
 export const RECEIVE_USER_RIDES = "RECEIVE_USER_RIDES";
 export const RECEIVE_NEW_RIDE = "RECEIVE_NEW_RIDE";
 export const RECEIVE_RIDE = "RECEIVE_RIDE";
+// export const RECEIVE_PARTICIPANTS = "RECEIVE_PARTICIPANTS";
 
 
 const receiveRides = (rides) => ({
@@ -26,6 +27,11 @@ const receiveNewRide = (ride) => ({
   type: RECEIVE_NEW_RIDE,
   ride,
 });
+
+// const receiveParticipants = (participants) => ({
+//   type: RECEIVE_PARTICIPANTS,
+//   participants
+// })
 
 export const fetchRides = () => (dispatch) =>
   getRides()
@@ -52,4 +58,9 @@ export const fetchRide = (rideId) => (dispatch) =>
   getRide(rideId)
     .then((ride) => dispatch(receiveRide(ride)))
     .catch((err) => console.log(err));
+
+// export const fetchParticipants = (rideId) => (dispatch) =>
+//   getParticipants(rideId)
+//   .then((participants) => dispatch(receiveParticipants(participants)))
+//   .then((err) => console.log(err));
 
