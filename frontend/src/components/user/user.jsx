@@ -1,7 +1,7 @@
 import React from 'react'
 import './user.css'
 import RideIndexItem from './../rides/rides_index_item'
-import { use } from 'passport';
+import { Link } from 'react-router-dom';
 
 class UserPage extends React.Component {
   constructor(props) {
@@ -11,6 +11,7 @@ class UserPage extends React.Component {
   }
 
   componentWillMount() {
+    // debugger
     this.props.fetchUserRides(this.props.currentUser._id);
   }
 
@@ -22,8 +23,9 @@ class UserPage extends React.Component {
   // }
 
   render(){
-    // debugger
-    const { rides, currentUser } = this.props
+    debugger
+    // if (!this.props.rides) { return null };
+    const { rides, currentUser, openModal } = this.props
     let userRides
 
 
@@ -35,8 +37,8 @@ class UserPage extends React.Component {
     const titles = rides.map( ride => {
       return ride.title;
     }) 
-
-    console.log(rides)
+    // debugger
+    console.log(currentUser)
     return(
       <div className= 'user-main'>
         <div className='user-info'>

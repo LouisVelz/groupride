@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+
 // import './user.css'
 
 class EditForm extends React.Component {
@@ -10,10 +11,15 @@ class EditForm extends React.Component {
             bike_type: '',
             skill_level: '',
             social_media: '',
+            // open: false
         };
-
+        // this.handleClick = this.handleClick.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    // handleClick() {
+    //     this.setState({ open: !this.state.open });
+    // }
 
     update(field) {
         return e => this.setState({
@@ -65,4 +71,4 @@ class EditForm extends React.Component {
     }
 }
 
-export default withRouter(EditForm);
+export default EditForm;
