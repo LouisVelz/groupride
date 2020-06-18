@@ -1,0 +1,45 @@
+.team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  height: calc(78vh - 70px);
+  width: 800px;
+  margin: auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: rgba(255, 255, 255, 0.904);
+  border: 1px solid red;
+}
+
+#team-ul {
+  display: block;
+  // flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  // width: 750px;
+  h2 {
+    font-size: 50px;
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
+}
+
+.team-ul {
+  display: block;
+}
+
+
+
+#team-links > a {
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+// .team ul li {
+//     font-size: 20px;
+//     line-height: 1.3;
+//     margin-bottom: 15px;
+// }

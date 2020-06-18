@@ -1,0 +1,25 @@
+.tech {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    overflow-y: scroll;
+    height: calc(101vh - 70px);
+    text-align: left;
+    align-items: center;
+    margin: auto;
+}
+
+.tech ul {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.tech p {
+    width: 446px;
+    font-size: 18px;
+}
+
+.tech h2 {
+    font-size: 32px;
+}
