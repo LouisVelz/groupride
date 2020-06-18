@@ -29,14 +29,10 @@ const receiveNewRide = (ride) => ({
   ride,
 });
 
-<<<<<<< HEAD
-
-=======
 const receiveParticipants = (users) => ({
   type: RECEIVE_USERS,
   users
 });
->>>>>>> 480493deac3cb90be4623003dc0e1522e219c902
 
 export const fetchRides = () => (dispatch) =>
   getRides()
