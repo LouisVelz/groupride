@@ -83,9 +83,9 @@ class Splash extends React.Component {
                     Join the Community →
                   </Link>
                 </button>
-                <div className="splash-top-link2">
-                  <button id="splash-top-link" onClick={this.viewDemoClick}>Try our Demo →</button>
-                </div>
+                <button className="splash-top-link2">
+                  <Link to="" id="splash-top-link" onClick={this.viewDemoClick}>Try our Demo →</Link>
+                </button>
                 {/* <button className="splash-top-link2">
                   <Link to="/" id="splash-top-link">
                     Try our Demo →

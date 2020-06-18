@@ -3,7 +3,6 @@ import { signup, login } from '../../actions/session_actions';
 import { closeModal } from '../../actions/modal_actions';
 import SignupForm from './signup_form';
 
-
 const mSTP = (state) => {
     return {
         signedIn: state.session.isSignedIn,
