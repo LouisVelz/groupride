@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/user/:user_id', (req, res) => {
-    RideEvent.find({ user: req.params.user_id })
+    RideEvent.find({ creator: req.params.user_id })
         .sort({ date: -1 })
         .then(rides => res.json(rides))
         .catch(err =>

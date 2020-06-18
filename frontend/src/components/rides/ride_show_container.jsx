@@ -4,7 +4,7 @@ import RideShow from "./ride_show";
 
 const mSTP = (state, ownProps) => {
   return {
-    ride: state.entities.rides[ownProps.match.params.rideId],
+    ride: state.entities.rides[ownProps.match.params.rideId]
   };
 };
 
