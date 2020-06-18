@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom"
 import RidesIndexItem from './rides_index_item';
 import { updateRide } from '../../actions/ride_actions';
-import '../../stylesheets/forms/logged_in_forms.css'
+import '../../stylesheets/rides/rider_index.scss'
 
 class RidesIndex extends React.Component {
   constructor(props) {

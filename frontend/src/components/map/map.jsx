@@ -14,7 +14,8 @@ class MapWithADirectionsRenderer extends React.Component{
     constructor(props){
         super(props);
         // API KEY  GOES IN THIS LINK without curly braces
-        this.googleMapURL = "https://maps.googleapis.com/maps/api/js?key={url}&v=3.exp&libraries=geometry,drawing,places";
+        this.googleMapURL =
+          "https://maps.googleapis.com/maps/api/js?key=AIzaSyAcQjrfAudzl6Ton7GA7D-gVqOINMFE7ns&v=3.exp&libraries=geometry,drawing,places";
         this.state = {
             directions: null,
 
@@ -57,19 +58,25 @@ class MapWithADirectionsRenderer extends React.Component{
                 />
             </GoogleMap>
         ));
-
         return (
           <div>
             <GoogleMapExample
               containerElement={
-                <div style={{ height: `500px`, width: "500px" }} />
+                <div
+                  id="map-container"
+                  style={{ height: `300px`, width: "500px" }}
+                />
               }
-              mapElement={<div style={{ height: `100%` }} />}
-              distance={this.state.directions.routes[0].legs[0].distance.text}
-              duration={this.state.directions.routes[0].legs[0].duration.text}
+              mapElement={
+                <div id="map-height-ele" style={{ height: `100%` }} />
+              }
             />
-            <li>{this.state.directions.routes[0].legs[0].distance.text}</li>
-            <li>{this.state.directions.routes[0].legs[0].duration.text}</li>
+            <li className="map-miles">
+              Distance: {this.state.directions.routes[0].legs[0].distance.text}
+            </li>
+            <li className="map-hours">
+              Duration: {this.state.directions.routes[0].legs[0].duration.text}
+            </li>
           </div>
         );
     }
