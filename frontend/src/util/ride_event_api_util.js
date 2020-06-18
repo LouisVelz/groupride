@@ -13,11 +13,7 @@ export const writeRide = (data) => {
 };
 
 export const patchRide = (data) => {
-<<<<<<< HEAD
-  debugger;
-=======
-  debugger
->>>>>>> f21deb3f8876a55c5064579fffb7c2396d2cb7ec
+
   return axios.patch(`/api/rideevent/${data.id}`, data);
 };
 
