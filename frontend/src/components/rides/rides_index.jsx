@@ -35,6 +35,7 @@ class RidesIndex extends React.Component {
     return (
       <div className="index-page-container">
         <section className="index-feed-container">
+          <h1 className="index-head"> Ride Event Feed</h1>
           {this.RenderRideItems()}
         </section>
       </div>

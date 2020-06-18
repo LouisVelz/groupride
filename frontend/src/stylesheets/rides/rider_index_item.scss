@@ -1,14 +1,17 @@
 .event-container {
   border: 1px solid black;
-  padding: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 10px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 75px;
   margin-left: 0px;
   margin-left: 0px;
-  background: rgba(207, 207, 207, 0.26);
+  background: rgb(236, 236, 236);
   display:flex;
   // width: fit-content;
+  justify-content:space-between;
 }
 
 .event-title {
@@ -38,12 +41,10 @@
   div {
     display: block;
     margin: 0px;
-    padding: 0px;
-    // padding: 10px;
-    // border: 1px solid green;
+    // border: 1px solid blue;
     text-align: left;
     font-weight: bold;
-    width: fit-content;
+    width: 70%;
     margin-bottom: 10px;
   }
   
@@ -80,6 +81,9 @@
 }
 
 .event-desc {
+  display: flex;
+  align-items: left;
+  justify-content: left;
   div {
     display: inline-block;
     padding: 15px;
@@ -130,6 +134,8 @@
   text-transform: uppercase;
   font-size: 20px;
   transition-duration: 0.2s;
+  display: flex;
+  align-items: left;
 }
 
 .event-join:hover {
@@ -155,12 +161,18 @@
   color:black;
 }
 
+.event-div-container {
+  float: left;
+}
+
 .event-map {
-  margin-left: 100px;
+  // margin-left: 100px;
+  float: right;
+  // margin-right: 0px;
 }
 
 #map-container {
-  margin-top: -10px;
+  margin-left: -10px;
 }
 
 #map-height-ele {

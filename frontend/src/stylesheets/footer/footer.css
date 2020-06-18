@@ -45,68 +45,8 @@
     margin-bottom: -2px;
 }
 
-.about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    overflow-y: scroll;
-    height: calc(67vh - 70px);
-    text-align: left;
-    width: 446px;
-    /* align-content: center; */
-    align-items: center;
-    margin: auto;
-    font-size: 18px;
-}
-
-.team {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    overflow-y: scroll;
-    height: calc(101vh - 70px);
-    text-align: left;
-    align-items: center;
-    margin: auto;
-}
-
-.team ul a {
-    margin-right: 10px;
-    font-weight: bold;
-    font-size: 18px;
-    text-decoration: none;
-}
-
-.team ul li {
-    font-size: 20px;
-    line-height: 1.3;
-    margin-bottom: 15px;
-}
-
-.tech {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    overflow-y: scroll;
-    height: calc(101vh - 70px);
-    text-align: left;
-    align-items: center;
-    margin: auto;
-}
-
-.tech ul {
-    font-size: 20px;
-    line-height: 1.5;
-}
-
-.tech p {
-    width: 446px;
-    font-size: 18px;
-}
-
-.tech h2 {
-    font-size: 32px;
+#footer-background {
+  background-image: url(../../components/images/rideBG.png);
+  /* background-size: contain; */
+  background-repeat: repeat;
 }

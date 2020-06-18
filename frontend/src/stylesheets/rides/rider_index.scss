@@ -1,5 +1,7 @@
 .index-page-container {
-
+  background-image: url(../../components/images/rideBG.png);
+  // background-size: cover;
+  background-repeat: repeat;
 }
 
 .index-feed-container {
@@ -8,4 +10,16 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+}
+
+.index-head {
+  font-size: 50px;
+  width: 100%;
+  margin-top: 0px;
+  // color: #007cc3;
+  // border-top: 2px solid black;
+  // border-left: 2px solid black;
+  // border-right: 2px solid black;
+  border-bottom: 3px solid black;
+  background: white;
 }
