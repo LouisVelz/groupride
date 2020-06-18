@@ -1,0 +1,135 @@
+.dropbtn {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: 1px solid #007cc3;
+    background-color: #007cc3;
+    margin-top: 13px;
+    color: white;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    outline: transparent;
+    
+}
+
+/* .dropdbtn:hover { transform: scale(2.1); } */
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 0px;
+  right: 6px;
+  margin-top: 16px;
+  /* width: 250px; */
+  /* size: 3px; */
+}
+
+.dropdown-content .link {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  size: 10px;
+  width: 200px;
+  font-size: 16px;
+}
+
+.dropdown-content .link:hover {background-color: #f1f1f1}
+.dropdown-content #nav-logout:hover {background-color: lightgrey}
+
+.dropdown {
+    height: 70px;
+    width: 50px;
+    padding-left: 18px;
+    padding-right: 11px;
+    outline: transparent;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.dropdown-content .nav-logout {
+    height: 23px;
+    padding: 5px;
+    /* justify-content: center; */
+    /* align-content: center; */
+    padding-top: 15px;
+    /* border-top: 1px solid lightgrey; */
+    padding-left: 15px;
+    padding-right: 18px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.dropdown-content .user-name {
+    color: black;
+    height: 30px;
+    padding-top: 20px;
+    text-align: left;
+    margin-left: 15px;
+    font-weight: bold;
+    margin-right: 15px;
+    font-size: 16px;
+    align-self: center;
+    cursor: auto;
+} 
+
+/* #user-profile-link {
+    color: #00adef;
+    font-size: 13px;
+    text-align: start;
+    cursor: pointer;
+    padding-top: 0;
+    background-color: transparent; 
+} */
+
+.dropdown-content .link-items {
+    border-top: 1px solid lightgray;
+    /* margin-top: 15px; */
+    padding-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid lightgray;
+}
+
+.nav-logo {
+    display: flex;
+    text-decoration: none;
+}
+
+#nav-logout {
+    display: flex;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    height: 23px;
+    padding: 5px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 18px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: black;
+} 
+
+.left-nav {
+    display: inline-flex;
+}
+
+.bike-logo {
+    margin: 5px;
+    background-color: white;
+    margin: 18px;
+    background-color: white;
+    padding: 1px;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../stylesheets/splash/splash-nav.css'
+import '../../stylesheets/greeting/greeting_nav.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBiking } from "@fortawesome/free-solid-svg-icons";
 
@@ -19,20 +20,40 @@ class Greeting extends React.Component {
   }
 
   render() {
-    let bike = <FontAwesomeIcon icon={faBiking} size="2x" />;
+    // let bike = <FontAwesomeIcon icon={faBiking} size="2x" />;
     const { props } = this;
+    console.log(this.props.currentUser)
 
     const welcomePage = props.loggedIn ? (
       <div className="nav-home-container">
-        <ul>
+        <div className="left-nav">
+          <a className="nav-logo" href="/index"><h1>GroupRide</h1></a>  
+          <a className="bike-logo" ><FontAwesomeIcon icon={faBiking} size="2x" /></a>
+        </div>
+        <div className="right-nav">
+          <div className="dropdown">
+            <button className="dropbtn"> D{this.props.currentUser._id} 
+              <ul className="dropdown-content">
+                <div className="user-name">Demo User{this.props.currentUser._id}</div>
+
+                <div className="link-items">
+                  <Link className="link" to={`/user/${this.props.currentUser._id}`}>Profile</Link>
+                  <Link className="link" to={`/ride/new`}>Create Ride</Link>
+                </div>
+                <Link to="" id="nav-logout" onClick={props.logout}>Log Out</Link>
+              </ul>
+            </button>
+          </div>
+        </div>
+        {/* <ul>
           <li>
             <h1 className="nav-logo">GroupRide</h1>
           </li>
           <li><button onClick={this.handleClick.bind(this)}>{bike}</button>
             {this.state.open && (<div className="dropdown">
-              <ul>
+              <ul> */}
                   {/* <li><Link to={`/users/${this.props.currentUser._id}`}>{this.props.currentUser.username}</Link></li> */}
-                  <li>Username</li>
+                  {/* <li>Username</li>
                   <li><Link to ={`/ride/new`}>Create Ride</Link></li>
                   <li><Link to ={`/user/${props.currentUser._id}`}>User Info</Link></li>
                   <li><button onClick={() => props.logout}>Log Out</button></li>
@@ -40,11 +61,11 @@ class Greeting extends React.Component {
               </div>
             )}
           </li>
-        </ul>
+        </ul> */}
        
-        <Link to="" className="loggedin-logout" onClick={props.logout}>
+        {/* <Link to="" className="loggedin-logout" onClick={props.logout}>
           Log Out
-        </Link>
+        </Link> */}
       </div>
     ) : (
       <div id="nav-splash-container">

@@ -26,7 +26,7 @@ body {
     height: 70px;
 }
 .nav-home-container ul{
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -83,7 +83,12 @@ ul{
     font-weight: bold;
 }
 
-.loggedin-logout {
+.index-page-container {
+    height: calc(101vh - 70px);
+    overflow-y: scroll;
+}
+
+/* .loggedin-logout {
     align-self: center;
     margin: 10px;
     border: 1px solid black;
@@ -95,4 +100,4 @@ ul{
     justify-content: center;
     display: inline-flex;
     margin-right: 25px;
-}
+} */
