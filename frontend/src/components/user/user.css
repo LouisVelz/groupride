@@ -1,0 +1,34 @@
+.user-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+.user-initial {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 1px solid #007cc3;
+    background-color: #007cc3;
+    margin-top: 45px;
+    color: white;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: transparent;
+}
+
+.user-full-name {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.user-email {
+    text-align: center;
+}

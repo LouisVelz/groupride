@@ -10,6 +10,7 @@
     height: auto;
 }
 
+
 .login-form h2 {
     margin-bottom: 5px;
 }
@@ -21,6 +22,36 @@
     font-size: 17px;
 }
 
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 425px;
+    height: 550px;
+    padding-bottom: 15px;
+}
+
+.signup-form h2 {
+    margin-bottom: 5px;
+}
+
+.signup-form input {
+    width: 300px;
+    height: 60px;
+    text-indent: 10px;
+    font-size: 17px;
+}
+
+.signup-form ul {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    color: red;
+}
 #submit-button {
     background-color: #007cc3;
     width: 310px;
