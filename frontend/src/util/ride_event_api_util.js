@@ -29,4 +29,9 @@ export const patchUser = (data) => {
   return axios.patch(`/api/users/${data.id}`, data);
 };
 
+export const deleteRide = (rideId) => {
+  debugger
+  return axios.delete(`/api/rideevent/${rideId}`);
+};
+
 

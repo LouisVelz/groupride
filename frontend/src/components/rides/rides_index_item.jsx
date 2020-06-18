@@ -13,14 +13,29 @@ class RideIndexItem extends React.Component {
       participants: this.props.currentUser,
       id: this.props.ride._id
         }
-    this.handleClick = this.handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this);
+    this.handleDelete = this.handleDelete.bind(this)
+    
   }
 
 handleClick(){
   this.props.updateRide(this.state)
     .then(() => window.location.reload())
 }
+handleDelete(){
+  this.props.trashRide(this.props.currentUser._id)
+    
+}
+  trashRide() {
+    if (!this.props.currentUser) return null;
 
+    if (this.props.currentUser._id === this.props.ride.creator) {
+      
+        return (
+          <button className="event-delete" onClick={this.handleDelete}>Delete Ride</button>
+        )
+    }
+  }
 joinRide(){
   if(!this.props.currentUser) return null;
   
@@ -72,6 +87,7 @@ joinRide(){
             </div>
           </div>
           {this.joinRide()}
+          {this.trashRide()}
         </div>
         <MapLoader
           ride={ride}

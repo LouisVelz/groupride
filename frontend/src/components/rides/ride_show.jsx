@@ -15,21 +15,23 @@ class RideShow extends React.Component {
   componentWillMount() {
     this.props.fetchRide(this.props.match.params.rideId);
     this.props.fetchParticipants(this.props.match.params.rideId)
+    
   }
 
   componentWillReceiveProps(newState) {
     this.setState({ ride: newState.ride });
   }
-
+  
   // componentDidMount() {
   //   this.props.fetchRide(this.props.match.params.rideId);
+    
   // }
 
   render() {
     const { ride } = this.props;
     let joinedMembers;
     
-    debugger;
+    ;
     if (!ride) {
       return <div>fetching data...</div>;
     } else {

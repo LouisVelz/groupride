@@ -3,7 +3,8 @@ import {
   RECEIVE_USER_RIDES,
   RECEIVE_NEW_RIDE,
   RECEIVE_RIDE,
-  RECEIVE_PARTICIPANTS
+  RECEIVE_PARTICIPANTS,
+  REMOVE_RIDE
 } from "../actions/ride_actions";
 
 
@@ -27,6 +28,9 @@ const ridesReducer = (
       return Object.assign({}, state, {[action.ride.data._id]: action.ride.data})
       // case RECEIVE_PARTICIPANTS:
       //   return Object.assign({}, state, action.participants)
+    case REMOVE_RIDE:
+      delete newState[action.rideId];
+      return newState;
     default:
       return state;
   }
