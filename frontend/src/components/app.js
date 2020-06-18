@@ -22,18 +22,20 @@ import ShowRide from './rides/ride_show_container'
 
 const App = () => (
   <div>
-
-    <Modal /> 
+    <Modal />
     <GreetingContainer />
     <Switch>
-      <AuthRoute exact path='/' component={SplashPage} />
-      <Route exact path="/index" component={RidesIndex} /> 
+      <AuthRoute exact path="/" component={SplashPage} />
+      <Route exact path="/index" component={RidesIndex} />
       <Route path="/ride/:rideId/edit" component={EditRideFormContainer} />
       <Route path="/ride/new" component={RideFormContainer} />
       <ProtectedRoute path="/user/:userId" component={UserPage} />
-      <ProtectedRoute path='/ride/:rideId' component={ShowRide} />
+      <ProtectedRoute path="/ride/:rideId" component={ShowRide} />
+      <Route path="/about" component={About} />
+      <Route path="/team" component={Team} />
+      <Route path="/technology" component={Technology} />
     </Switch>
-    <Footer /> 
+    <Footer />
   </div>
 );
 
