@@ -47,7 +47,7 @@ joinRide(){
     );
     return (
       <div className="event-container">
-        <div>
+        <div id="event-div-container">
           <div className="event-title">
             <h1>{ride.title}</h1>
             <h2>Event Posted: {ride.date.split("T")[0]}</h2>
@@ -73,16 +73,14 @@ joinRide(){
           </div>
           {this.joinRide()}
         </div>
-        <div className="event-map">
-          <MapLoader
-            ride={ride}
-            // API KEY  GOES IN THIS LINK without curly braces
-            googleMapURL={
-              "https://maps.googleapis.com/maps/api/js?key=AIzaSyAcQjrfAudzl6Ton7GA7D-gVqOINMFE7ns&v=3.exp&libraries=geometry,drawing,places"
-            }
-            loadingElement={<div style={{ height: `100%` }} />}
-          />
-        </div>
+        <MapLoader
+          ride={ride}
+          // API KEY  GOES IN THIS LINK without curly braces
+          googleMapURL={
+            "https://maps.googleapis.com/maps/api/js?key=AIzaSyAcQjrfAudzl6Ton7GA7D-gVqOINMFE7ns&v=3.exp&libraries=geometry,drawing,places"
+          }
+          loadingElement={<div style={{ height: `100%` }} />}
+        />
       </div>
     );
   }
