@@ -63,7 +63,7 @@ class RideForm extends React.Component {
         return (
           <div className="create-ride-form">
             <form className="c-ride-form" onSubmit={this.handleSumit}>
-              <h1>{this.props.formType}!!!</h1>
+              <h1>{this.props.formType}</h1>
               <label>
                 Title:
                 <input
@@ -75,7 +75,7 @@ class RideForm extends React.Component {
               </label>
               <br />
               <label>
-                Trip Description:
+                Ride Description:
                 <input
                   className="second-input"
                   type="text"
@@ -84,77 +84,115 @@ class RideForm extends React.Component {
                 />
               </label>
               <br />
-              <label>
-                Destination:
-                <PlacesAutocomplete value={this.state.destination} onChange={this.handleChangeDest} onSelect={this.handleSelectDest}>
-                  
-                  {({getInputProps, suggestions, getSuggestionItemProps, loading})=>(
+              <label className="third-input">
+                End Point:
+                <PlacesAutocomplete
+                  value={this.state.destination}
+                  onChange={this.handleChangeDest}
+                  onSelect={this.handleSelectDest}
+                >
+                  {({
+                    getInputProps,
+                    suggestions,
+                    getSuggestionItemProps,
+                    loading,
+                  }) => (
                     <div>
-                  <input {...getInputProps({placeholder:"enter your destination"})}
-                      // type="text"
-                      // className="third-input"
-                      // value={this.state.destination}
-                      // onChange={this.update("destination")}
-                    />
-                    <div>
-                      {loading ? <div>...loading</div> : null}
-                      {suggestions.map((suggestion)=>{
-                        const style = {
-                          backgroundColor: suggestion.active ? "#dadada" : "#fff"
-                        };
-                        return <div {...getSuggestionItemProps(suggestion, {style})}>{suggestion.description}</div>
-                      })}
-                    </div>
-                    </div>
-                    )}
-                    
-                </PlacesAutocomplete>
-              </label>
-              <br />
-              <label>
-                GroupRide location:
-                <PlacesAutocomplete value={this.state.meetup_location} onChange={this.handleChangeMeetupLoc} onSelect={this.handleSelectMeetupLoc}>
-
-                  {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-                    <div>
-                      <input {...getInputProps({ placeholder: "enter your destination" })}
-                      // type="text"
-                      // className="third-input"
-                      // value={this.state.destination}
-                      // onChange={this.update("destination")}
+                      <input
+                        {...getInputProps({
+                          placeholder: "enter your destination",
+                        })}
+                        // type="text"
+                        // className="third-input"
+                        // value={this.state.destination}
+                        // onChange={this.update("destination")}
                       />
-                      <div>
+                      <div className="form-suggestions">
                         {loading ? <div>...loading</div> : null}
                         {suggestions.map((suggestion) => {
                           const style = {
-                            backgroundColor: suggestion.active ? "#dadada" : "#fff"
+                            backgroundColor: suggestion.active
+                              ? "#f3f3f3"
+                              : "#fff",
+                              
                           };
-                          return <div {...getSuggestionItemProps(suggestion, { style })}>{suggestion.description}</div>
+                          return (
+                            <div
+                              {...getSuggestionItemProps(suggestion, { style })}
+                            >
+                              {suggestion.description}
+                            </div>
+                          );
                         })}
                       </div>
                     </div>
                   )}
-
                 </PlacesAutocomplete>
               </label>
               <br />
-              <label>
-                Groupride departure time:
+              <label className="fourth-input">
+                Start Point:
+                <PlacesAutocomplete
+                  value={this.state.meetup_location}
+                  onChange={this.handleChangeMeetupLoc}
+                  onSelect={this.handleSelectMeetupLoc}
+                >
+                  {({
+                    getInputProps,
+                    suggestions,
+                    getSuggestionItemProps,
+                    loading,
+                  }) => (
+                    <div>
+                      <input
+                        {...getInputProps({
+                          placeholder: "enter your destination",
+                        })}
+                        // type="text"
+                        // className="third-input"
+                        // value={this.state.destination}
+                        // onChange={this.update("destination")}
+                      />
+                      <div className="form-suggestions">
+                        {loading ? <div>...loading</div> : null}
+                        {suggestions.map((suggestion) => {
+                          const style = {
+                            backgroundColor: suggestion.active
+                              ? "#dadada"
+                              : "#fff",
+                          };
+                          return (
+                            <div
+                              {...getSuggestionItemProps(suggestion, { style })}
+                            >
+                              {suggestion.description}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </PlacesAutocomplete>
+              </label>
+              <br />
+              <label className="fifth-input">
+                Ride Date:
                 <input
                   type="datetime-local"
-                  className="fifth-input"
                   value={this.state.meetup_time}
                   onChange={this.update("meetup_time")}
                 />
               </label>
               <br />
-              <label>
+              <label className="sixth-input">
                 Purpose:
                 <select
                   value={this.state.purpose}
                   onChange={this.update("purpose")}
                 >
-                  <option value="Competitive Training">Competitive Training</option>
+                  <option value="Competitive Training">
+                    Competitive Training
+                  </option>
                   <option value="Light Training">Light Training</option>
                   <option value="Commute">Commute</option>
                   <option value="Joy Ride">Joy Ride</option>
@@ -163,7 +201,7 @@ class RideForm extends React.Component {
               <br />
               <button type="submit">{this.props.formType}</button>
               {/* <input type="submit" value={this.props.formType} /> */}
-              <div class="push"></div>
+              <div className="push"></div>
             </form>
           </div>
         );

@@ -7,8 +7,15 @@ import '../../stylesheets/rides/rider_index.scss'
 class RidesIndex extends React.Component {
   constructor(props) {
     super(props);
+    // this.state ={rides: []}
   }
 
+  // componentWillMount(){
+  //   this.props.fetchRides();
+  // }
+  // componentWillReceiveProps(newState){
+  //   this.setState({rides: newState.rides})
+  // }
   componentDidMount() {
     this.props.fetchRides();
   }
@@ -22,6 +29,7 @@ class RidesIndex extends React.Component {
               key={ride._id}
               currentUser={this.props.currentUser}
               updateRide={this.props.updateRide}
+              trashRide={this.props.trashRide}
               ride={ride}
             />
           ))}

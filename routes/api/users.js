@@ -91,4 +91,22 @@ router.post("/login", (req, res) => {
   });
 });
 
+router.patch('/:id',
+  (req, res) => {
+
+    User.findByIdAndUpdate(req.params.id, { bike_type: req.body.bike_type, skill_level: req.body.skill_level, social_media: req.body.social_media} , { new: true })
+      .then(user => res.json(user))
+      .catch(err =>
+        res.status(404).json({ noridefound: 'No ride found with that ID' })
+      );
+  });
+
+router.get('/:id', (req, res) => {
+  User.findById(req.params.id)
+    .then(user => res.json(user))
+    .catch(err =>
+      res.status(404).json({ nouserfound: 'No user found with that ID' })
+    );
+});
+
 module.exports = router;

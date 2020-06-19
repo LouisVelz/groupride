@@ -14,7 +14,6 @@ export const writeRide = (data) => {
 };
 
 export const patchRide = (data) => {
-  debugger
   return axios.patch(`/api/rideevent/${data.id}`, data);
 };
 
@@ -26,4 +25,13 @@ export const getRide = (rideId) => {
 export const getParticipants = (rideId) => {
   return axios.get(`/api/rideevent/${rideId}/participants`);
 };
+
+export const patchUser = (data) => {
+  return axios.patch(`/api/users/${data.id}`, data);
+};
+
+export const deleteRide = (rideId) => {
+  return axios.delete(`/api/rideevent/${rideId}`);
+};
+
 
