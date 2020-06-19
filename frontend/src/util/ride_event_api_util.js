@@ -9,7 +9,7 @@ export const getUserRides = (id) => {
 };
 
 export const writeRide = (data) => {
-  
+
   return axios.post("/api/rideevent/", data);
 };
 

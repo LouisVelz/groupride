@@ -7,11 +7,12 @@
     border: 1px solid gray;
     border-radius: 10px;
     width: 425px;
-    height: auto;
+    height: 380px;
 }
 
 
 .login-form h2 {
+    margin-top: 0;
     margin-bottom: 5px;
 }
 

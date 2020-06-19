@@ -5,6 +5,7 @@ import { createRide } from '../../actions/ride_actions';
 
 const mSTP = (state) => {
     return {
+        currentUser: state.session.user,
         ride: {
             title: "",
             description: "",
@@ -12,16 +13,17 @@ const mSTP = (state) => {
             meetup_location: "",
             meetup_time: "",
             purpose: "",
+            // participants: "",
         },
-        formType: 'Create GroupRide'
+        formType: 'Create Ride'
     }
 };
 
 const mDTP = dispatch => {
     return {
-
-        createRide: (ride) => dispatch(createRide(ride))
-    }
+      createRide: (ride) => dispatch(createRide(ride)),
+    //   updateRide: (ride) => dispatch(updateRide(ride)),
+    };
 };
 
 export default connect(mSTP, mDTP)(RideForm);

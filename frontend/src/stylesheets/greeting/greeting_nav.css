@@ -135,7 +135,6 @@
     margin-left: 20px;
     margin: 5px;
     background-color: white;
-    background-color: white;
     padding: 3px;
     color: black;
 }
@@ -148,13 +147,6 @@
     margin-top: 80px;
     margin-right: 40px;
 }
-
-/* .index-page-container h1 {
-    font-size: 50px;
-    margin-bottom: 0;
-    align-self: flex-start;
-    margin-left: 40px;
-} */
 
 .user-main {
     margin-top: 80px;

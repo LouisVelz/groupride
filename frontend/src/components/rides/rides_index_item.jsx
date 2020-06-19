@@ -42,7 +42,7 @@ handleDelete(){
   }
 joinRide(){
   if(!this.props.currentUser) return null;
-  
+
   if(this.props.currentUser._id!==this.props.ride.creator){
     if (!this.props.ride.participants.includes(this.props.currentUser._id)) {
       return(
@@ -51,11 +51,16 @@ joinRide(){
     } else {
       return (
         <button className="event-leave" onClick={this.handleUnjoin}>Leave Ride</button>
+
       )
-    }
+  } else {
+    return (
+    <button className="event-leave">Leave Ride</button>
+    )
   }
 }
   render() {
+
     const { ride } = this.props;
     var setMeetTime = ride.meetup_time;
     var meetDate = setMeetTime.split("T")[0];
@@ -89,8 +94,13 @@ joinRide(){
               RIDERS <p>{ride.participants.length}</p>
             </div>
           </div>
+          <button id="show-page-btn">
+            <Link to={`/ride/${ride._id}`}>Show Details</Link>
+          </button>
+          <div id="btn-for-ride">
           {this.joinRide()}
           {this.trashRide()}
+          </div>
         </div>
         <MapLoader
           ride={ride}

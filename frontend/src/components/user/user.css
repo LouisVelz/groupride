@@ -6,6 +6,17 @@
     font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-info ul {
+    padding-left: 0;
+}
+
 
 .user-initial {
     height: 150px;
@@ -32,3 +43,10 @@
 .user-email {
     text-align: center;
 }
+
+
+#user-bg {
+  background-image: url(../../components/images/rideBG.png);
+  background-repeat: repeat;
+}
+

@@ -42,7 +42,7 @@ class RidesIndex extends React.Component {
   render() {
     if (!this.props.rides[0]) return null;
     return (
-      <div className="index-page-container">
+      <div className="ride-index-container">
         <section className="index-feed-container">
           <h1 className="index-head"> Ride Event Feed</h1>
           {this.RenderRideItems()}
