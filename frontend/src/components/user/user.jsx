@@ -37,7 +37,7 @@ class UserPage extends React.Component {
     const titles = rides.map( ride => {
       return ride.title;
     }) 
-    // debugger
+
     console.log(currentUser)
     return(
       <div className= 'user-main'>
@@ -66,9 +66,10 @@ class UserPage extends React.Component {
           <ul>
             {userRides}
           </ul>
+
         </div>
       </div>
-    )
+    );
   }
 }
 

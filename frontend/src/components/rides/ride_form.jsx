@@ -29,7 +29,10 @@ class RideForm extends React.Component {
     }
 
     handleSumit() {
-        this.props.createRide(this.state);
+      // debugger;
+      //   this.setState({ participants: this.props.currentUser._id})
+        this.props.createRide(this.state)
+          // .then(() => this.props.history.push("/index"))
     }
 
   handleChangeDest = destination => {
@@ -61,148 +64,155 @@ class RideForm extends React.Component {
       // const handleSelect = async value => {};
       
         return (
-          <div className="create-ride-form">
-            <form className="c-ride-form" onSubmit={this.handleSumit}>
-              <h1>{this.props.formType}</h1>
-              <label>
-                Title:
-                <input
-                  className="first-input"
-                  type="text"
-                  value={this.state.title}
-                  onChange={this.update("title")}
-                />
-              </label>
-              <br />
-              <label>
-                Ride Description:
-                <input
-                  className="second-input"
-                  type="text"
-                  value={this.state.description}
-                  onChange={this.update("description")}
-                />
-              </label>
-              <br />
-              <label className="third-input">
-                End Point:
-                <PlacesAutocomplete
-                  value={this.state.destination}
-                  onChange={this.handleChangeDest}
-                  onSelect={this.handleSelectDest}
-                >
-                  {({
-                    getInputProps,
-                    suggestions,
-                    getSuggestionItemProps,
-                    loading,
-                  }) => (
-                    <div>
-                      <input
-                        {...getInputProps({
-                          placeholder: "enter your destination",
-                        })}
-                        // type="text"
-                        // className="third-input"
-                        // value={this.state.destination}
-                        // onChange={this.update("destination")}
-                      />
-                      <div className="form-suggestions">
-                        {loading ? <div>...loading</div> : null}
-                        {suggestions.map((suggestion) => {
-                          const style = {
-                            backgroundColor: suggestion.active
-                              ? "#f3f3f3"
-                              : "#fff",
-                              
-                          };
-                          return (
-                            <div
-                              {...getSuggestionItemProps(suggestion, { style })}
-                            >
-                              {suggestion.description}
-                            </div>
-                          );
-                        })}
+          <div id="form-bg">
+            <div className="create-ride-form">
+              <form className="c-ride-form" onSubmit={this.handleSumit}>
+                <h1>{this.props.formType}</h1>
+                <label>
+                  Title:
+                  <input
+                    className="first-input"
+                    type="text"
+                    value={this.state.title}
+                    placeholder="Enter More Than One Character"
+                    onChange={this.update("title")}
+                  />
+                </label>
+                <br />
+                <label>
+                  Ride Description:
+                  <input
+                    className="second-input"
+                    type="text"
+                    value={this.state.description}
+                    placeholder="Enter More Than One Character"
+                    onChange={this.update("description")}
+                  />
+                </label>
+                <br />
+                <label className="fourth-input">
+                  Start Point:
+                  <PlacesAutocomplete
+                    value={this.state.meetup_location}
+                    onChange={this.handleChangeMeetupLoc}
+                    onSelect={this.handleSelectMeetupLoc}
+                  >
+                    {({
+                      getInputProps,
+                      suggestions,
+                      getSuggestionItemProps,
+                      loading,
+                    }) => (
+                      <div>
+                        <input
+                          {...getInputProps({
+                            placeholder: "Enter Your Destination",
+                          })}
+                          // type="text"
+                          // className="third-input"
+                          // value={this.state.destination}
+                          // onChange={this.update("destination")}
+                        />
+                        <div className="form-suggestions">
+                          {loading ? <div>...loading</div> : null}
+                          {suggestions.map((suggestion) => {
+                            const style = {
+                              backgroundColor: suggestion.active
+                                ? "#dadada"
+                                : "#fff",
+                            };
+                            return (
+                              <div
+                                {...getSuggestionItemProps(suggestion, {
+                                  style,
+                                })}
+                              >
+                                {suggestion.description}
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </PlacesAutocomplete>
-              </label>
-              <br />
-              <label className="fourth-input">
-                Start Point:
-                <PlacesAutocomplete
-                  value={this.state.meetup_location}
-                  onChange={this.handleChangeMeetupLoc}
-                  onSelect={this.handleSelectMeetupLoc}
-                >
-                  {({
-                    getInputProps,
-                    suggestions,
-                    getSuggestionItemProps,
-                    loading,
-                  }) => (
-                    <div>
-                      <input
-                        {...getInputProps({
-                          placeholder: "enter your destination",
-                        })}
-                        // type="text"
-                        // className="third-input"
-                        // value={this.state.destination}
-                        // onChange={this.update("destination")}
-                      />
-                      <div className="form-suggestions">
-                        {loading ? <div>...loading</div> : null}
-                        {suggestions.map((suggestion) => {
-                          const style = {
-                            backgroundColor: suggestion.active
-                              ? "#dadada"
-                              : "#fff",
-                          };
-                          return (
-                            <div
-                              {...getSuggestionItemProps(suggestion, { style })}
-                            >
-                              {suggestion.description}
-                            </div>
-                          );
-                        })}
+                    )}
+                  </PlacesAutocomplete>
+                </label>
+                <br />
+                <label className="third-input">
+                  End Point:
+                  <PlacesAutocomplete
+                    value={this.state.destination}
+                    onChange={this.handleChangeDest}
+                    onSelect={this.handleSelectDest}
+                  >
+                    {({
+                      getInputProps,
+                      suggestions,
+                      getSuggestionItemProps,
+                      loading,
+                    }) => (
+                      <div>
+                        <input
+                          {...getInputProps({
+                            placeholder: "Enter Your Destination",
+                          })}
+                          // type="text"
+                          // className="third-input"
+                          // value={this.state.destination}
+                          // onChange={this.update("destination")}
+                        />
+                        <div className="form-suggestions">
+                          {loading ? <div>...loading</div> : null}
+                          {suggestions.map((suggestion) => {
+                            const style = {
+                              backgroundColor: suggestion.active
+                                ? "#f3f3f3"
+                                : "#fff",
+                            };
+                            return (
+                              <div
+                                {...getSuggestionItemProps(suggestion, {
+                                  style,
+                                })}
+                              >
+                                {suggestion.description}
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </PlacesAutocomplete>
-              </label>
-              <br />
-              <label className="fifth-input">
-                Ride Date:
-                <input
-                  type="datetime-local"
-                  value={this.state.meetup_time}
-                  onChange={this.update("meetup_time")}
-                />
-              </label>
-              <br />
-              <label className="sixth-input">
-                Purpose:
-                <select
-                  value={this.state.purpose}
-                  onChange={this.update("purpose")}
-                >
-                  <option value="Competitive Training">
-                    Competitive Training
-                  </option>
-                  <option value="Light Training">Light Training</option>
-                  <option value="Commute">Commute</option>
-                  <option value="Joy Ride">Joy Ride</option>
-                </select>
-              </label>
-              <br />
-              <button type="submit">{this.props.formType}</button>
-              {/* <input type="submit" value={this.props.formType} /> */}
-              <div className="push"></div>
-            </form>
+                    )}
+                  </PlacesAutocomplete>
+                </label>
+                <br />
+                <label className="fifth-input">
+                  Ride Date:
+                  <input
+                    type="datetime-local"
+                    value={this.state.meetup_time}
+                    onChange={this.update("meetup_time")}
+                  />
+                </label>
+                <br />
+                <label className="sixth-input">
+                  Purpose:
+                  <select
+                    value={this.state.purpose}
+                    onChange={this.update("purpose")}
+                  >
+                    <option value="Competitive Training">
+                      Competitive Training
+                    </option>
+                    <option value="Light Training">Light Training</option>
+                    <option value="Commute">Commute</option>
+                    <option value="Joy Ride">Joy Ride</option>
+                  </select>
+                </label>
+                <br />
+                <button type="submit">{this.props.formType}</button>
+                {/* <input type="submit" value={this.props.formType} /> */}
+                <div className="push"></div>
+              </form>
+            </div>
           </div>
         );
     }
