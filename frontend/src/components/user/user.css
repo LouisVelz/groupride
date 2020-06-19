@@ -6,6 +6,17 @@
     font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-info ul {
+    padding-left: 0;
+}
+
 
 .user-initial {
     height: 150px;
@@ -32,3 +43,16 @@
 .user-email {
     text-align: center;
 }
+
+.rides-header {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-size: 48px;
+}
+
+.user-link {
+    text-align: center;
+}
+
+
+

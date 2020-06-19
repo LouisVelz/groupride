@@ -16,7 +16,7 @@
 
 .event-title {
   padding-bottom: 20px;
-  text-align: left;
+  text-align: start;
   h1 {
     font-size: 40px;
     color:black;
@@ -24,6 +24,7 @@
     padding: 0px;
     margin: 0px;
     text-transform: capitalize;
+    text-align: start;
   }
 
   h2 {

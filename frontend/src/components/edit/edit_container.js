@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
-import { closeModal } from '../../actions/modal_actions';
-import { updateUser } from '../../actions/ride_actions'
-import EditForm from "./user";
+import { updateUser } from '../../actions/ride_actions';
+import EditForm from "../edit/edit_form";
 
 const mSTP = (state) => {
     const { session } = state;
@@ -13,7 +12,6 @@ const mSTP = (state) => {
 const mDTP = dispatch => {
     return {
         updateUser: (user) => dispatch(updateUser(user)),
-        closeModal: () => dispatch(closeModal()),
     }
 }
 
