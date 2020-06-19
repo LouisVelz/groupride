@@ -16,7 +16,7 @@
 
 .event-title {
   padding-bottom: 20px;
-  text-align: left;
+  text-align: start;
   h1 {
     font-size: 40px;
     color:black;
@@ -24,6 +24,7 @@
     padding: 0px;
     margin: 0px;
     text-transform: capitalize;
+    text-align: start;
   }
 
   h2 {
@@ -136,6 +137,7 @@
   transition-duration: 0.2s;
   display: flex;
   align-items: left;
+  font-weight: bold;
 }
 
 .event-join:hover {
@@ -156,11 +158,63 @@
   transition-duration: 0.2s;
   display: flex;
   align-items: left;
+  font-weight: bold;
+
 }
 
 .event-leave:hover {
   background: red;
   color:black;
+}
+
+
+.event-delete {
+  margin-top: 10px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+  background: red;
+  color: black;
+  text-transform: uppercase;
+  font-size: 20px;
+  transition-duration: 0.2s;
+  display: flex;
+  align-items: left;
+  font-weight: bold;
+
+}
+
+
+.event-delete:hover {
+  background: black;
+  color:white;
+}
+
+#show-page-btn{
+  margin-top: 10px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+  background: black;
+  text-transform: uppercase;
+  font-size: 20px;
+  transition-duration: 0.2s;
+  display: flex;
+  align-items: left;
+  font-weight: bold;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+#show-page-btn:hover {
+  background: rgb(32, 235, 235);
+  a {
+    color: black;
+  }
 }
 
 .event-div-container {
@@ -169,6 +223,7 @@
 
 .event-map {
   float: right;
+  margin-left: 20px;
 }
 
 #map-container {
@@ -195,4 +250,21 @@
   text-align: center;
   font-weight: bold;
   border: 2px solid black;
+}
+
+#btn-for-ride button {
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  margin-right: 30px;
+}
+
+#btn-for-ride button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+#btn-for-ride:after {
+  content: "";
+  clear: both;
+  display: table;
 }

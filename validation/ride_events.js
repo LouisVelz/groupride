@@ -9,7 +9,7 @@ module.exports = function validateRideEventInput(data) {
     data.meetup_location = validText(data.meetup_location) ? data.meetup_location : '';
     data.destination = validText(data.destination) ? data.destination : '';
 
-    if (!Validator.isLength(data.description, { min: 5, max: 140 })) {
+    if (!Validator.isLength(data.description, { min: 1, max: 140 })) {
         errors.description = 'Description must be between 5 and 140 characters';
     }
 

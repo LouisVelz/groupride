@@ -1,16 +1,17 @@
 import React from 'react'
 import './user.css'
 import RideIndexItem from './../rides/rides_index_item'
-import { use } from 'passport';
+import { Link } from 'react-router-dom';
 
 class UserPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { rides: [] };
+    // this.state = { rides: [] };
   }
 
   componentWillMount() {
+    // debugger
     this.props.fetchUserRides(this.props.currentUser._id);
   }
 
@@ -22,46 +23,54 @@ class UserPage extends React.Component {
   // }
 
   render(){
-    // debugger
-    const { rides, currentUser } = this.props
+
+    if (!this.props.rides) { return null }
+    const { rides, currentUser, openModal } = this.props
+
     let userRides
 
 
-      userRides = rides.map( (ride, index) =>{
-        // this.setState({ user_miles: user_miles + ride.total_miles})
-        return <RideIndexItem key={index} ride={ride}/>
-      })
+    userRides = rides.map( (ride, index) =>{
+      // this.setState({ user_miles: user_miles + ride.total_miles})
+      return <RideIndexItem key={index} ride={ride}/>
+    })
 
     const titles = rides.map( ride => {
       return ride.title;
     }) 
 
-    console.log(rides)
+    console.log(currentUser)
     return(
       <div className= 'user-main'>
         <div className='user-info'>
+            <div className="user-initial">{currentUser.username[0]}</div>
+            <div className="user-full-name">{currentUser.username}</div>
+              <div className="user-email">{currentUser.email}</div>
           <ul>
-            <li className="user-initial">{currentUser.username[0]}</li>
-            <li className="user-full-name">{currentUser.username}</li>
-            <div className="user-info">
-              <li className="user-email">{currentUser.email}</li>
-              <li className="user-rides">rides {titles.length}</li>
+            <div className="user-additional-info">
+              <li className="user-bike">Bicycle type: {currentUser.bike_type}</li>
+              <li className="user-rides-number">Rides: {titles.length}</li>
+              <li className="user-skill">Skill level: {currentUser.skill_level}</li>
             </div>
-            {/* <li>{this.state.user_miles}</li> */}
-            {/* <li>{currentUser.user_miles}</li>
-            <li>{currentUser.bicycle}</li>
-            <li>{currentUser.skill}</li>
-            <li>{currentUser.fb_link}</li>
-            <li>{currentUser.rides_completed}</li> */}
+            <li className="user-link">Social Media link: <a href={currentUser.social_media}>{currentUser.social_media}</a></li>
           </ul>
+          <Link
+              className="edit-button"
+              to={`/user/${currentUser._id}`}
+              onClick={() => openModal("edit")}
+            >
+              Edit Profile
+          </Link>
         </div>
         <div className="user-rides">
+          <h1 className="rides-header">Your Rides</h1>
           <ul>
             {userRides}
           </ul>
+
         </div>
       </div>
-    )
+    );
   }
 }
 
