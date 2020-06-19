@@ -49,18 +49,20 @@ class RideShow extends React.Component {
           <h1>{ride.title}</h1>
           <div className="show-ride-list">
             <div className="show-ride-list-ul">
-              <ul>
-                <li>Event Posted: {ride.date.split("T")[0]}</li>
-                <li>RIDE DESCRIPTION: {ride.description}</li>
-                <li>
-                  START: <span>{ride.meetup_location}</span>
-                </li>
-                <li>
-                  FINISH: <span>{ride.destination}</span>
-                </li>
-                <li>MEET DATE: {meetDate}</li>
-                <li>MEET TIME: {meetTime}</li>
-              </ul>
+              <div id="show-ride-list-top">
+                <ul>
+                  <li>Event Posted: {ride.date.split("T")[0]}</li>
+                  <li>RIDE DESCRIPTION: {ride.description}</li>
+                  <li>
+                    START: <span>{ride.meetup_location}</span>
+                  </li>
+                  <li>
+                    FINISH: <span>{ride.destination}</span>
+                  </li>
+                  <li>MEET DATE: {meetDate}</li>
+                  <li>MEET TIME: {meetTime}</li>
+                </ul>
+              </div>
               <ul>PARTICIPANTS: {joinedMembers}</ul>
             </div>
 

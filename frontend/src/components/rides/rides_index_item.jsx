@@ -52,7 +52,7 @@ joinRide(){
   }
 }
   render() {
-    console.log("api key", process.env.REACT_APP_DIRECTIONS_API);
+    // console.log("api key", process.env.REACT_APP_DIRECTIONS_API);
     const { ride } = this.props;
     var setMeetTime = ride.meetup_time;
     var meetDate = setMeetTime.split("T")[0];
@@ -86,6 +86,9 @@ joinRide(){
               RIDERS <p>{ride.participants.length}</p>
             </div>
           </div>
+          <button id="show-page-btn">
+            <Link to={`/ride/${ride._id}`}>Show Details</Link>
+          </button>
           {this.joinRide()}
           {this.trashRide()}
         </div>

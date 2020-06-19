@@ -72,6 +72,7 @@ class RideForm extends React.Component {
                     className="first-input"
                     type="text"
                     value={this.state.title}
+                    placeholder="Enter More Than One Character"
                     onChange={this.update("title")}
                   />
                 </label>
@@ -82,6 +83,7 @@ class RideForm extends React.Component {
                     className="second-input"
                     type="text"
                     value={this.state.description}
+                    placeholder="Enter More Than One Character"
                     onChange={this.update("description")}
                   />
                 </label>
@@ -102,7 +104,7 @@ class RideForm extends React.Component {
                       <div>
                         <input
                           {...getInputProps({
-                            placeholder: "enter your destination",
+                            placeholder: "Enter Your Destination",
                           })}
                           // type="text"
                           // className="third-input"
@@ -149,7 +151,7 @@ class RideForm extends React.Component {
                       <div>
                         <input
                           {...getInputProps({
-                            placeholder: "enter your destination",
+                            placeholder: "Enter Your Destination",
                           })}
                           // type="text"
                           // className="third-input"

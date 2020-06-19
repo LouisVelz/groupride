@@ -2,6 +2,26 @@
   margin-top: 80px;
   font-size: large;
   font-weight: 500;
+
+  h1{
+    text-align: center;
+    font-size: 40px; 
+  }
+
+  #show-ride-list-top > ul > li {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  p{
+  text-align: center;
+  margin-bottom: 40px;
+  }
+
+  span{
+    color: white;
+  }
+
 }
 .show-ride-map{
     justify-content: flex-end;
@@ -30,21 +50,14 @@
   background-color: red;
   width: fit-content;
 }
-span{
-  color: white;
-}
-p{
-  text-align: center;
-  margin-bottom: 40px;
-}
+
 .show-ride-map{
 z-index: 0;
 border-radius: 10px;
+}
 
-}
-h1{
-  text-align: center;
-}
+
+
 
 .show-ride-list-ul{
       border: 1px solid black;
