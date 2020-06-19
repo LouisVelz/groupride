@@ -23,7 +23,7 @@ handleClick(){
     .then(() => window.location.reload())
 }
 handleDelete(){
-  this.props.trashRide(this.props.currentUser._id)
+  this.props.trashRide(this.state.id)
     
 }
   trashRide() {

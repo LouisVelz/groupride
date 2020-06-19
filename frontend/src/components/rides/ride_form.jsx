@@ -29,6 +29,7 @@ class RideForm extends React.Component {
     }
 
     handleSumit() {
+      debugger
         this.props.createRide(this.state);
     }
 
@@ -163,7 +164,7 @@ class RideForm extends React.Component {
               <br />
               <button type="submit">{this.props.formType}</button>
               {/* <input type="submit" value={this.props.formType} /> */}
-              <div class="push"></div>
+              <div className="push"></div>
             </form>
           </div>
         );

@@ -86,7 +86,7 @@ export const updateUser = (data) => (dispatch) =>
 
 export const trashRide = (rideId) => (dispatch) =>
   deleteRide(rideId)
-    .then((ride) => dispatch(removeRide(ride)))
+    .then(() => dispatch(removeRide(rideId)))
 
 export const getUser = (userId) => (dispatch) =>
   fetchUser(userId)
