@@ -9,32 +9,32 @@ const MapLoader = withScriptjs(Map)
 class RideShow extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = { ride: null };
+    // this.state = { ride: null, creator: null };
   }
-
-  componentWillMount() {
-    this.props.fetchRide(this.props.match.params.rideId);
+  componentDidMount() {
+    this.props.fetchRide(this.props.match.params.rideId)
     this.props.fetchParticipants(this.props.match.params.rideId)
 
   }
+  
+
+  // componentDidUpdate(){
+  //   // this.props.getUser(this.props.ride._id);
+  // }
 
   componentWillReceiveProps(newState) {
-    this.setState({ ride: newState.ride });
+    this.setState({ ride: newState.ride});
   }
   
-  // componentDidMount() {
-  //   this.props.fetchRide(this.props.match.params.rideId);
-    
-  // }
 
   render() {
     const { ride, participants } = this.props;
     let joinedMembers;
-    
 
-    if (!ride || !participants) {
+    if (!ride || !participants ) {
       return <div>fetching data...</div>;
     } else {
+          // console.log(this.props.ride)
           var setMeetTime = ride.meetup_time;
           var meetDate = setMeetTime.split("T")[0];
           var meetTime = setMeetTime.substring(
