@@ -13,7 +13,6 @@ import {
 class MapWithADirectionsRenderer extends React.Component{
     constructor(props){
         super(props);
-        // API KEY  GOES IN THIS LINK without curly braces
         this.state = {
             directions: null,
 

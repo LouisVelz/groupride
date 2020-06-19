@@ -7,6 +7,8 @@ import {
   geocodeByPlaceId,
   getLatLng,
 } from 'react-places-autocomplete';
+import {Script} from 'react-load-script'
+const googleMap = require("../../config/keys").REACT_APP_GOOGLE_KEY;
 
 class RideForm extends React.Component {
     constructor(props) {
@@ -64,6 +66,8 @@ class RideForm extends React.Component {
       
         return (
           <div id="form-bg">
+            
+            
             <div className="create-ride-form">
               <form className="c-ride-form" onSubmit={this.handleSumit}>
                 <h1>{this.props.formType}</h1>
@@ -95,6 +99,7 @@ class RideForm extends React.Component {
                     value={this.state.meetup_location}
                     onChange={this.handleChangeMeetupLoc}
                     onSelect={this.handleSelectMeetupLoc}
+ 
                   >
                     {({
                       getInputProps,
@@ -142,6 +147,7 @@ class RideForm extends React.Component {
                     value={this.state.destination}
                     onChange={this.handleChangeDest}
                     onSelect={this.handleSelectDest}
+               
                   >
                     {({
                       getInputProps,
