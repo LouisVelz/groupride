@@ -11,16 +11,12 @@ class UserPage extends React.Component {
   }
 
   componentWillMount() {
-    // debugger
     this.props.fetchUserRides(this.props.currentUser._id);
   }
 
   componentWillReceiveProps(newState) {
     this.setState({ rides: newState.rides });
   }
-  // componentDidMount(){
-  //   this.props.fetchUserRides(this.props.currentUser._id)
-  // }
 
   render(){
 
