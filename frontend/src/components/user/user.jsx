@@ -23,9 +23,10 @@ class UserPage extends React.Component {
   // }
 
   render(){
-    // debugger
+
     if (!this.props.rides) { return null }
     const { rides, currentUser, openModal } = this.props
+
     let userRides
 
 

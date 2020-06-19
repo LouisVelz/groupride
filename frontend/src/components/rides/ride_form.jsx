@@ -29,10 +29,11 @@ class RideForm extends React.Component {
     }
 
     handleSumit() {
-      // debugger;
+
       //   this.setState({ participants: this.props.currentUser._id})
         this.props.createRide(this.state)
           // .then(() => this.props.history.push("/index"))
+
     }
 
   handleChangeDest = destination => {
