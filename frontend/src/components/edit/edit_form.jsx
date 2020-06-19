@@ -67,7 +67,7 @@ class EditForm extends React.Component {
                             placeholder="Social media link"
                         />
                         <br />
-                        <input id="edit-submit" type="submit" value="Edit" />
+                        <input id="edit-submit" type="submit" value="Update" />
                     </div>
                 </form>
             </div>
