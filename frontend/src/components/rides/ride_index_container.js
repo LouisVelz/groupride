@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import rideIndex from './rides_index';
-import { fetchRides, updateRide, trashRide } from "../../actions/ride_actions";
+import { fetchRides, updateRide, trashRide, leaveRide } from "../../actions/ride_actions";
 import { logout } from "../../actions/session_actions";
 
 const mSTP = (state) => {
@@ -16,8 +16,11 @@ const mDTP = dispatch => {
         fetchRides: () => dispatch(fetchRides()),
         updateRide: (ride) => dispatch(updateRide(ride)),
         logout: () => dispatch(logout()),
+
         updateRide: (ride) => dispatch(updateRide(ride)),
-        trashRide: (rideId) => dispatch(trashRide(rideId))
+        trashRide: (rideId) => dispatch(trashRide(rideId)),
+        leaveRide: (ride) => dispatch(leaveRide(ride))
+
     }
 };
 

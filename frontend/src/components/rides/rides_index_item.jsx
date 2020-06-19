@@ -15,7 +15,7 @@ class RideIndexItem extends React.Component {
         }
     this.handleClick = this.handleClick.bind(this);
     this.handleDelete = this.handleDelete.bind(this)
-    
+    this.handleUnjoin = this.handleUnjoin.bind(this)
   }
 
 handleClick(){
@@ -24,8 +24,12 @@ handleClick(){
 }
 handleDelete(){
   this.props.trashRide(this.state.id)
-    
+    .then(() => window.location.reload())
 }
+  handleUnjoin() {
+    this.props.leaveRide(this.state)
+      .then(() => window.location.reload())
+  }
   trashRide() {
     if (!this.props.currentUser) return null;
 
@@ -38,21 +42,21 @@ handleDelete(){
   }
 joinRide(){
   if(!this.props.currentUser) return null;
-  
-  if(this.props.currentUser._id!==this.props.ride.creator){
-    if (!this.props.ride.participants.includes(this.props.currentUser._id)) {
-      return(
-        <button className="event-join" onClick={this.handleClick}>Join Ride</button>
-        )
-    } else {
-      return (
-      <button className="event-leave">Leave Ride</button>
+
+  if (!this.props.ride.participants.includes(this.props.currentUser._id)) {
+    return(
+      <button className="event-join" onClick={this.handleClick}>Join Ride</button>
       )
-    }
+  } else {
+    return (
+      <button className="event-leave" onClick={this.handleUnjoin}>Leave Ride</button>
+
+    )
   }
 }
+
   render() {
-    console.log("api key", process.env.REACT_APP_DIRECTIONS_API);
+
     const { ride } = this.props;
     var setMeetTime = ride.meetup_time;
     var meetDate = setMeetTime.split("T")[0];
@@ -86,14 +90,19 @@ joinRide(){
               RIDERS <p>{ride.participants.length}</p>
             </div>
           </div>
+          <button id="show-page-btn">
+            <Link to={`/ride/${ride._id}`}>Show Details</Link>
+          </button>
+          <div id="btn-for-ride">
           {this.joinRide()}
           {this.trashRide()}
+          </div>
         </div>
         <MapLoader
           ride={ride}
           // API KEY  GOES IN THIS LINK without curly braces
           googleMapURL={
-            "https://maps.googleapis.com/maps/api/js?key=AIzaSyAcQjrfAudzl6Ton7GA7D-gVqOINMFE7ns&v=3.exp&libraries=geometry,drawing,places"
+            `https://maps.googleapis.com/maps/api/js?key=${process.env.MAPS_API}&v=3.exp&libraries=geometry,drawing,places`
           }
           loadingElement={<div style={{ height: `100%` }} />}
         />

@@ -11,21 +11,18 @@ class UserPage extends React.Component {
   }
 
   componentWillMount() {
-    // debugger
     this.props.fetchUserRides(this.props.currentUser._id);
   }
 
   componentWillReceiveProps(newState) {
     this.setState({ rides: newState.rides });
   }
-  // componentDidMount(){
-  //   this.props.fetchUserRides(this.props.currentUser._id)
-  // }
 
   render(){
-    // debugger
+
     if (!this.props.rides) { return null }
     const { rides, currentUser, openModal } = this.props
+
     let userRides
 
 
@@ -37,7 +34,7 @@ class UserPage extends React.Component {
     const titles = rides.map( ride => {
       return ride.title;
     }) 
-    // debugger
+
     console.log(currentUser)
     return(
       <div className= 'user-main'>
@@ -66,9 +63,10 @@ class UserPage extends React.Component {
           <ul>
             {userRides}
           </ul>
+
         </div>
       </div>
-    )
+    );
   }
 }
 

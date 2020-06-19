@@ -9,7 +9,6 @@ export const getUserRides = (id) => {
 };
 
 export const writeRide = (data) => {
-  // debugger
   return axios.post("/api/rideevent/", data);
 };
 
@@ -34,4 +33,7 @@ export const deleteRide = (rideId) => {
   return axios.delete(`/api/rideevent/${rideId}`);
 };
 
+export const unjoinRide = (data) => {
+  return axios.patch(`/api/rideevent/${data.id}/unjoin`, data);
+};
 

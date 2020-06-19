@@ -58,11 +58,21 @@ router.patch('/:id',
         );
 });
 
+router.patch('/:id/unjoin',
+    (req, res) => {
+
+        RideEvent.findByIdAndUpdate(req.params.id, { $pull: { participants: req.body.participants } }, { new: true })
+            .then(ride => res.json(ride))
+            .catch(err =>
+                res.status(404).json({ noridefound: 'No ride found with that ID' })
+            );
+    });
+
 router.post('/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
         const { errors, isValid } = validateRideEventInput(req.body);
-
+        
         if (!isValid) {
              return res.status(400).json(errors);
          }

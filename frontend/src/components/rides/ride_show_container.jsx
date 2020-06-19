@@ -5,7 +5,8 @@ import RideShow from "./ride_show";
 const mSTP = (state, ownProps) => {
   return {
     ride: state.entities.rides[ownProps.match.params.rideId],
-    participants: Object.values(state.entities.users)
+    participants: Object.values(state.entities.users),
+    // creator: state.entities.rides[ownProps.match.params.rideId]
   };
 };
 
