@@ -25,10 +25,14 @@
 .show-ride-list .show-ride-list-ul ul:first-child li:nth-child(3){
   background-color: green;
   width: fit-content;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .show-ride-list .show-ride-list-ul ul:first-child li:nth-child(4){
   background-color: red;
   width: fit-content;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
 }
 span{
   color: white;
