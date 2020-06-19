@@ -29,7 +29,6 @@ class RideForm extends React.Component {
     }
 
     handleSumit() {
-      debugger
         this.props.createRide(this.state);
     }
 

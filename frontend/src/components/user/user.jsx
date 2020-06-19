@@ -22,7 +22,6 @@ class UserPage extends React.Component {
   // }
 
   render(){
-    // debugger
     const { rides, currentUser } = this.props
     let userRides
 

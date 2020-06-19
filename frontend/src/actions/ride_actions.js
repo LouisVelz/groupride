@@ -1,5 +1,5 @@
 import { getRides, getUserRides, writeRide, 
-  patchRide, getRide, getParticipants, patchUser, deleteRide } from './../util/ride_event_api_util'
+  patchRide, getRide, getParticipants, patchUser, deleteRide, unjoinRide } from './../util/ride_event_api_util'
 import {fetchUser} from "./../util/session_api_util"
 
 export const RECEIVE_RIDES = "RECEIVE_RIDES";
@@ -91,4 +91,9 @@ export const trashRide = (rideId) => (dispatch) =>
 export const getUser = (userId) => (dispatch) =>
   fetchUser(userId)
     .then((user) =>dispatch(receiveUser(user)))
+
+export const leaveRide = (data) => (dispatch) =>
+  unjoinRide(data)
+    .then((ride) => dispatch(receiveNewRide(ride)))
+    .catch((err) => console.log(err));
 
