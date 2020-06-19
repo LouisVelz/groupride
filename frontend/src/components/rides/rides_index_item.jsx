@@ -43,22 +43,18 @@ handleDelete(){
 joinRide(){
   if(!this.props.currentUser) return null;
 
-  if(this.props.currentUser._id!==this.props.ride.creator){
-    if (!this.props.ride.participants.includes(this.props.currentUser._id)) {
-      return(
-        <button className="event-join" onClick={this.handleClick}>Join Ride</button>
-        )
-    } else {
-      return (
-        <button className="event-leave" onClick={this.handleUnjoin}>Leave Ride</button>
-
+  if (!this.props.ride.participants.includes(this.props.currentUser._id)) {
+    return(
+      <button className="event-join" onClick={this.handleClick}>Join Ride</button>
       )
   } else {
     return (
-    <button className="event-leave">Leave Ride</button>
+      <button className="event-leave" onClick={this.handleUnjoin}>Leave Ride</button>
+
     )
   }
 }
+
   render() {
 
     const { ride } = this.props;
