@@ -7,7 +7,7 @@
   border-radius: 10px;
   margin-bottom: 75px;
   margin-left: 0px;
-  margin-left: 0px;
+  margin-right: 0px;
   background: rgb(236, 236, 236);
   display:flex;
   // width: fit-content;
@@ -16,7 +16,7 @@
 
 .event-title {
   padding-bottom: 20px;
-  text-align: left;
+  text-align: start;
   h1 {
     font-size: 40px;
     color:black;
@@ -24,6 +24,7 @@
     padding: 0px;
     margin: 0px;
     text-transform: capitalize;
+    text-align: start;
   }
 
   h2 {
@@ -154,6 +155,8 @@
   text-transform: uppercase;
   font-size: 20px;
   transition-duration: 0.2s;
+  display: flex;
+  align-items: left;
 }
 
 .event-leave:hover {
@@ -166,9 +169,7 @@
 }
 
 .event-map {
-  // margin-left: 100px;
   float: right;
-  // margin-right: 0px;
 }
 
 #map-container {

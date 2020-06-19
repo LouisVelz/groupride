@@ -32,8 +32,12 @@ router.get('/:id/participants', (req, res) => {
         );
 });
 
-router.delete('/:id', (req, res) => {
-    RideEvent.deleteOne({ "_id": req.params.id })
+router.delete('/:id', (req, res) => { 
+    RideEvent.findByIdAndDelete(req.params.id)
+    .then(ride=> res.json(ride))
+        .catch(err =>
+            res.status(404).json({ noridefound: 'No ride found' })
+        );
 });
 
 router.get('/:id', (req, res) => {

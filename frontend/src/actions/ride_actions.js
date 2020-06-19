@@ -1,12 +1,14 @@
 import { getRides, getUserRides, writeRide, 
-  patchRide, getRide, getParticipants, patchUser } from './../util/ride_event_api_util'
+  patchRide, getRide, getParticipants, patchUser, deleteRide } from './../util/ride_event_api_util'
+import {fetchUser} from "./../util/session_api_util"
 
 export const RECEIVE_RIDES = "RECEIVE_RIDES";
 export const RECEIVE_USER_RIDES = "RECEIVE_USER_RIDES";
 export const RECEIVE_NEW_RIDE = "RECEIVE_NEW_RIDE";
 export const RECEIVE_RIDE = "RECEIVE_RIDE";
 export const RECEIVE_USERS = "RECEIVE_USERS";
-export const RECEIVE_USER = "RECEIVE_USER"
+export const RECEIVE_USER = "RECEIVE_USER";
+export const REMOVE_RIDE = "REMOVE_RIDE"
 
 
 
@@ -39,6 +41,11 @@ const receiveParticipants = (users) => ({
 const receiveUser = (user) => ({
   type: RECEIVE_USER,
   user
+});
+
+const removeRide = (rideId) => ({
+  type: REMOVE_RIDE,
+  rideId
 });
 
 export const fetchRides = () => (dispatch) =>
@@ -77,5 +84,11 @@ export const updateUser = (data) => (dispatch) =>
     .then((user) => dispatch(receiveUser(user)))
     .catch((err) => console.log(err));
 
+export const trashRide = (rideId) => (dispatch) =>
+  deleteRide(rideId)
+    .then(() => dispatch(removeRide(rideId)))
 
+export const getUser = (userId) => (dispatch) =>
+  fetchUser(userId)
+    .then((user) =>dispatch(receiveUser(user)))
 

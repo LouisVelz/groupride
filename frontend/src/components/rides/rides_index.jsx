@@ -7,8 +7,15 @@ import '../../stylesheets/rides/rider_index.scss'
 class RidesIndex extends React.Component {
   constructor(props) {
     super(props);
+    // this.state ={rides: []}
   }
 
+  // componentWillMount(){
+  //   this.props.fetchRides();
+  // }
+  // componentWillReceiveProps(newState){
+  //   this.setState({rides: newState.rides})
+  // }
   componentDidMount() {
     this.props.fetchRides();
   }
@@ -22,6 +29,7 @@ class RidesIndex extends React.Component {
               key={ride._id}
               currentUser={this.props.currentUser}
               updateRide={this.props.updateRide}
+              trashRide={this.props.trashRide}
               ride={ride}
             />
           ))}
@@ -33,7 +41,7 @@ class RidesIndex extends React.Component {
   render() {
     if (!this.props.rides[0]) return null;
     return (
-      <div className="index-page-container">
+      <div className="ride-index-container">
         <section className="index-feed-container">
           <h1 className="index-head"> Ride Event Feed</h1>
           {this.RenderRideItems()}

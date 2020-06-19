@@ -1,13 +1,8 @@
 .create-ride-form{
-  // display: flex;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
   font-size: large;
-  justify-content: center;
-  // flex-flow: column wrap;
-  // justify-content: flex-end;
-  // align-items: flex-start;
   margin: 40px auto;
 }
 .create-ride-form form{
@@ -17,25 +12,14 @@
 }
 
 .create-ride-form input{
-  width: 300px;
-  height: 45px;
+  width: 299px;
+  height: 44px;
   margin-left: 20px;
   margin-top: 20px;
-  // text-align: end;
 }
-// .create-ride-form textarea{
-//   width: 300px;
-//   height: 45px;
-//   margin-left: 20px;
-//   margin-top: 20px;
-//   text-align: end;
-//   margin-right: 80px;
-
-// }
-
 .create-ride-form select {
-  width: 300px;
-  height: 45px;
+  width: 304px;
+  height: 50px;
   margin-left: 20px;
   margin-top: 20px;
   text-align: center;
@@ -44,8 +28,8 @@
 }
 
 .create-ride-form form button{
-  width: 300px;
-  height: 45px;
+  width: 305px;
+  height: 50px;
   margin-top: 20px;
   background-color: #027cc2;
   color: white;
@@ -56,23 +40,38 @@
 
 }
 
+.create-ride-form .sixth-input{
+  margin-right: 9px;
+
+}
 .create-ride-form .fifth-input{
-  margin-right: 210px;
+  margin-right: 103px;
 
 }
 .create-ride-form .fourth-input{
-  margin-right: 175px;
+  margin-right: 112px;
+  display: flex;
+  align-items: baseline;
 
 }
 .create-ride-form .third-input{
-  margin-right: 115px;
+  margin-right: 106px;
+  display: flex;
+  align-items: baseline;
 
 }
 .create-ride-form .second-input{
-  margin-right: 150px;
+  margin-right: 160px;
+
 
 }
 .create-ride-form .first-input{
-  margin-right: 65px;
+  margin-right: 61px;
 
+}
+.form-suggestions{
+  font-size: small;
+  width: 300px;
+  overflow: hidden;
+  margin-left: 30px;
 }

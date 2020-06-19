@@ -100,4 +100,13 @@ router.patch('/:id',
         res.status(404).json({ noridefound: 'No ride found with that ID' })
       );
   });
+
+router.get('/:id', (req, res) => {
+  User.findById(req.params.id)
+    .then(user => res.json(user))
+    .catch(err =>
+      res.status(404).json({ nouserfound: 'No user found with that ID' })
+    );
+});
+
 module.exports = router;
