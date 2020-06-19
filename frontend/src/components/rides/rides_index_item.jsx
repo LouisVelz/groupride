@@ -4,6 +4,8 @@ import Map from "../map/map"
 import { withScriptjs } from "react-google-maps";
 import "../../stylesheets/rides/rider_index_item.scss"
 
+const googleMap = require("../../config/keys").REACT_APP_GOOGLE_KEY;
+
 const MapLoader = withScriptjs(Map);
 
 class RideIndexItem extends React.Component {
@@ -42,21 +44,20 @@ handleDelete(){
   }
 joinRide(){
   if(!this.props.currentUser) return null;
-
-  if (!this.props.ride.participants.includes(this.props.currentUser._id)) {
-    return(
-      <button className="event-join" onClick={this.handleClick}>Join Ride</button>
+  
+  if(this.props.currentUser._id!==this.props.ride.creator){
+    if (!this.props.ride.participants.includes(this.props.currentUser._id)) {
+      return(
+        <button className="event-join" onClick={this.handleClick}>Join Ride</button>
+        )
+    } else {
+      return (
+        <button className="event-leave" onClick={this.handleUnjoin}>Leave Ride</button>
       )
-  } else {
-    return (
-      <button className="event-leave" onClick={this.handleUnjoin}>Leave Ride</button>
-
-    )
+    }
   }
 }
-
   render() {
-
     const { ride } = this.props;
     var setMeetTime = ride.meetup_time;
     var meetDate = setMeetTime.split("T")[0];
@@ -90,19 +91,23 @@ joinRide(){
               RIDERS <p>{ride.participants.length}</p>
             </div>
           </div>
+
+          
           <button id="show-page-btn">
             <Link to={`/ride/${ride._id}`}>Show Details</Link>
           </button>
           <div id="btn-for-ride">
+
           {this.joinRide()}
           {this.trashRide()}
-          </div>
+        </div>
         </div>
         <MapLoader
           ride={ride}
           // API KEY  GOES IN THIS LINK without curly braces
           googleMapURL={
-            `https://maps.googleapis.com/maps/api/js?key=${process.env.MAPS_API}&v=3.exp&libraries=geometry,drawing,places`
+            "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=" +
+            googleMap
           }
           loadingElement={<div style={{ height: `100%` }} />}
         />
