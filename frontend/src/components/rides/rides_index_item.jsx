@@ -90,6 +90,7 @@ joinRide(){
               RIDERS <p>{ride.participants.length}</p>
             </div>
           </div>
+          
           <button id="show-page-btn">
             <Link to={`/ride/${ride._id}`}>Show Details</Link>
           </button>
