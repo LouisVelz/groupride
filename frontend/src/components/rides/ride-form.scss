@@ -2,12 +2,8 @@
 
   display: flex;
   flex-direction: column;
-  // align-items: center;
   font-size: large;
-  // justify-content: center;
-  // flex-flow: column wrap;
-  // justify-content: flex-end;
-  // align-items: flex-start;
+
   margin: 40px auto;
 }
 .create-ride-form form{
@@ -21,17 +17,8 @@
   height: 44px;
   margin-left: 20px;
   margin-top: 20px;
-  // text-align: end;
-}
-// .create-ride-form textarea{
-//   width: 300px;
-//   height: 45px;
-//   margin-left: 20px;
-//   margin-top: 20px;
-//   text-align: end;
-//   margin-right: 80px;
 
-// }
+}
 
 .create-ride-form select {
   width: 304px;
