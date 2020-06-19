@@ -2,6 +2,7 @@ import React from 'react'
 import Map from "../map/map_show_page"
 import { withScriptjs } from "react-google-maps";
 import './ride_show.scss'
+const googleMap = require("../../config/keys").REACT_APP_GOOGLE_KEY;
 
 
 const MapLoader = withScriptjs(Map)
@@ -70,7 +71,10 @@ class RideShow extends React.Component {
               <MapLoader
                 ride={ride}
                 // API KEY  GOES IN THIS LINK without curly braces
-                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyAcQjrfAudzl6Ton7GA7D-gVqOINMFE7ns&v=3.exp&libraries=geometry,drawing,places`}
+                googleMapURL={
+                  "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=" +
+                  googleMap
+                }
                 loadingElement={<div style={{ height: `100%` }} />}
               />
             </div>
