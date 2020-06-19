@@ -7,7 +7,7 @@ import {
   geocodeByPlaceId,
   getLatLng,
 } from 'react-places-autocomplete';
-import {Script} from 'react-load-script'
+
 const googleMap = require("../../config/keys").REACT_APP_GOOGLE_KEY;
 
 class RideForm extends React.Component {
