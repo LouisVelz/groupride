@@ -9,13 +9,14 @@ import {
     DirectionsRenderer,
 
 } from "react-google-maps";
+const googleMap = require("../../config/keys").REACT_APP_GOOGLE_KEY;
 
 class MapWithADirectionsRenderer extends React.Component{
     constructor(props){
         super(props);
         // API KEY  GOES IN THIS LINK without curly braces
         this.googleMapURL =
-          "https://maps.googleapis.com/maps/api/js?key=AIzaSyAcQjrfAudzl6Ton7GA7D-gVqOINMFE7ns&v=3.exp&libraries=geometry,drawing,places";
+          "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=" + googleMap;
         this.state = {
             directions: null,
 
