@@ -136,6 +136,7 @@
   transition-duration: 0.2s;
   display: flex;
   align-items: left;
+  font-weight: bold;
 }
 
 .event-join:hover {
@@ -156,11 +157,36 @@
   transition-duration: 0.2s;
   display: flex;
   align-items: left;
+  font-weight: bold;
+
 }
 
 .event-leave:hover {
   background: red;
   color:black;
+}
+
+
+.event-delete {
+  margin-top: 10px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+  background: red;
+  color: black;
+  text-transform: uppercase;
+  font-size: 20px;
+  transition-duration: 0.2s;
+  display: flex;
+  align-items: left;
+  font-weight: bold;
+
+}
+
+.event-delete:hover {
+  background: black;
+  color:white;
 }
 
 .event-div-container {

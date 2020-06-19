@@ -1,9 +1,17 @@
-.create-ride-form{
+#form-bg {
+  background-image: url(../../components/images/rideBG.png);
+  background-repeat: repeat;
+}
 
+.create-ride-form{
   display: flex;
   flex-direction: column;
   font-size: large;
   margin: 40px auto;
+  width: 800px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: rgba(255, 255, 255, 0.938);
 }
 .create-ride-form form{
   display: flex;
@@ -44,27 +52,31 @@
   margin-right: 9px;
 
 }
+
 .create-ride-form .fifth-input{
   margin-right: 103px;
 
 }
+
 .create-ride-form .fourth-input{
   margin-right: 112px;
   display: flex;
   align-items: baseline;
 
 }
+
 .create-ride-form .third-input{
   margin-right: 106px;
   display: flex;
   align-items: baseline;
 
 }
+
 .create-ride-form .second-input{
   margin-right: 160px;
 
-
 }
+
 .create-ride-form .first-input{
   margin-right: 61px;
 

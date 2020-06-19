@@ -32,3 +32,9 @@
 .user-email {
     text-align: center;
 }
+
+#user-bg {
+  background-image: url(../../components/images/rideBG.png);
+  background-repeat: repeat;
+}
+
