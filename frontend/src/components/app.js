@@ -11,7 +11,6 @@ import Technology from "./footer/technology";
 // import EditRideFormContainer from './rides/edit_ride_form_container'
 import RideFormContainer from './rides/ride_form_container'
 import RidesIndex from './rides/ride_index_container'
-import EditUser from './edit/edit_container'
 import UserPage from './user/user_container'
 import './../stylesheets/app.css'
 import ShowRide from './rides/ride_show_container'
@@ -26,18 +25,14 @@ const App = () => (
     <GreetingContainer />
     <Switch>
       <AuthRoute exact path="/" component={SplashPage} />
-      <Route exact path="/index" component={RidesIndex} />
-      {/* <Route path="/ride/:rideId/edit" component={EditRideFormContainer} /> */}
-      <Route path="/ride/new" component={RideFormContainer} />
-      <Route path="/about" component={About} />
-      <Route path="/team" component={Team} />
-      <Route path="/technology" component={Technology} />
+      <ProtectedRoute exact path="/index" component={RidesIndex} />
+      <ProtectedRoute path="/ride/new" component={RideFormContainer} />
+      <ProtectedRoute path="/technology" component={Technology} />
       <ProtectedRoute path="/user/:userId" component={UserPage} />
       <ProtectedRoute path="/ride/:rideId" component={ShowRide} />
       <Route path="/about" component={About} />
       <Route path="/team" component={Team} />
       <Route path="/technology" component={Technology} />
-      <Route path="/edit/:userId" component={EditUser} />
     </Switch>
     <Footer />
   </div>

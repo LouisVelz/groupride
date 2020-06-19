@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-// import './user.css'
+import '../../stylesheets/edit/edit.css'
 
 class EditForm extends React.Component {
     constructor(props) {
@@ -12,7 +12,6 @@ class EditForm extends React.Component {
             bike_type: '',
             skill_level: '',
             social_media: '',
-            // open: false
         };
         // this.handleClick = this.handleClick.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,7 +38,7 @@ class EditForm extends React.Component {
         };
         this.props.updateUser(user)
             .then(() => this.props.history.push(`/user/${this.props.currentUser._id}`))
-                .then(() => window.location.reload());
+                .then(() => window.location.reload(true));
     }
 
     render() {
@@ -61,13 +60,14 @@ class EditForm extends React.Component {
                             placeholder="Your skill level"
                         />
                         <br />
-                        <input type="text"
+                        <input type="url"
+                            className="social-media-link"
                             value={this.state.social_media}
                             onChange={this.update('social_media')}
                             placeholder="Social media link"
                         />
                         <br />
-                        <input id="submit-button" type="submit" value="Edit" />
+                        <input id="edit-submit" type="submit" value="Edit" />
                     </div>
                 </form>
             </div>

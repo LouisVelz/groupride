@@ -42,23 +42,27 @@ class UserPage extends React.Component {
     return(
       <div className= 'user-main'>
         <div className='user-info'>
+            <div className="user-initial">{currentUser.username[0]}</div>
+            <div className="user-full-name">{currentUser.username}</div>
+              <div className="user-email">{currentUser.email}</div>
           <ul>
-            <li className="user-initial">{currentUser.username[0]}</li>
-            <li className="user-full-name">{currentUser.username}</li>
-            <div className="user-info">
-              <li className="user-email">{currentUser.email}</li>
-              <li className="user-rides">rides {titles.length}</li>
+            <div className="user-additional-info">
+              <li className="user-bike">Bicycle type: {currentUser.bike_type}</li>
+              <li className="user-rides-number">Rides: {titles.length}</li>
+              <li className="user-skill">Skill level: {currentUser.skill_level}</li>
             </div>
-            <li><Link to={`/edit/${currentUser._id}`}>Edit Profile</Link></li>
-            {/* <li>{this.state.user_miles}</li> */}
-            {/* <li>{currentUser.user_miles}</li>
-            <li>{currentUser.bicycle}</li>
-            <li>{currentUser.skill}</li>
-            <li>{currentUser.fb_link}</li>
-            <li>{currentUser.rides_completed}</li> */}
+            <li className="user-link">Social Media link: <a href={currentUser.social_media}>{currentUser.social_media}</a></li>
           </ul>
+          <Link
+              className="edit-button"
+              to={`/user/${currentUser._id}`}
+              onClick={() => openModal("edit")}
+            >
+              Edit Profile
+          </Link>
         </div>
         <div className="user-rides">
+          <h1 className="rides-header">Your Rides</h1>
           <ul>
             {userRides}
           </ul>

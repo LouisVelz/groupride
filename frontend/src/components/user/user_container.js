@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { fetchUserRides } from './../../actions/ride_actions'
 import UserPage from "./user";
+import { openModal } from '../../actions/modal_actions';
 
 const mSTP = (state) => {
   const { entities, session } = state;
@@ -14,7 +15,8 @@ const mSTP = (state) => {
 const mDTP = dispatch => {
   return {
     fetchUserRides: (id) => dispatch(fetchUserRides(id)),
-    
+    openModal: (str) => dispatch(openModal(str)),
+
   }
 }
 
