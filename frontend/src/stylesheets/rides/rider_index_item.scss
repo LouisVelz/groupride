@@ -222,6 +222,7 @@
 
 .event-map {
   float: right;
+  margin-left: 20px;
 }
 
 #map-container {
@@ -248,4 +249,21 @@
   text-align: center;
   font-weight: bold;
   border: 2px solid black;
+}
+
+#btn-for-ride button {
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  margin-right: 30px;
+}
+
+#btn-for-ride button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+#btn-for-ride:after {
+  content: "";
+  clear: both;
+  display: table;
 }

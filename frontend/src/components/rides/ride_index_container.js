@@ -16,7 +16,6 @@ const mDTP = dispatch => {
         fetchRides: () => dispatch(fetchRides()),
         updateRide: (ride) => dispatch(updateRide(ride)),
         logout: () => dispatch(logout()),
-        updateRide: (ride) => dispatch(updateRide(ride)),
         trashRide: (rideId) => dispatch(trashRide(rideId))
     }
 };
