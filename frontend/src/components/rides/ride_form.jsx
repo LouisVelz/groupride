@@ -29,6 +29,7 @@ class RideForm extends React.Component {
     }
 
     handleSumit() {
+        debugger
         this.props.createRide(this.state);
     }
 
@@ -107,13 +108,14 @@ class RideForm extends React.Component {
                         // value={this.state.destination}
                         // onChange={this.update("destination")}
                       />
-                      <div>
+                      <div className="form-suggestions">
                         {loading ? <div>...loading</div> : null}
                         {suggestions.map((suggestion) => {
                           const style = {
                             backgroundColor: suggestion.active
-                              ? "#dadada"
+                              ? "#f3f3f3"
                               : "#fff",
+                              
                           };
                           return (
                             <div
@@ -152,7 +154,7 @@ class RideForm extends React.Component {
                         // value={this.state.destination}
                         // onChange={this.update("destination")}
                       />
-                      <div>
+                      <div className="form-suggestions">
                         {loading ? <div>...loading</div> : null}
                         {suggestions.map((suggestion) => {
                           const style = {
