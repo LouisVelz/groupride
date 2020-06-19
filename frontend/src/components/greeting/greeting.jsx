@@ -24,20 +24,39 @@ class Greeting extends React.Component {
     const welcomePage = props.loggedIn ? (
       <div className="nav-home-container">
         <div className="left-nav">
-          <a className="nav-logo" href="/index"><h1>GroupRide</h1></a>  
-          <a className="bike-logo" href="/index"><FontAwesomeIcon icon={faBiking} size="2x" /></a>
+          <Link to="/index" className="nav-logo">
+            <h1>GroupRide</h1>
+          </Link>
+
+            <Link to="/index" className="bike-logo">
+              <FontAwesomeIcon icon={faBiking} size="2x" />
+            </Link>
+
         </div>
         <div className="right-nav">
           <div className="dropdown">
-            <button className="dropbtn"> {this.props.currentUser.username[0]} 
+            <button className="dropbtn">
+              {" "}
+              {this.props.currentUser.username[0]}
               <ul className="dropdown-content">
-                <div className="user-name">{this.props.currentUser.username}</div>
+                <div className="user-name">
+                  {this.props.currentUser.username}
+                </div>
 
                 <div className="link-items">
-                  <Link className="link" to={`/user/${this.props.currentUser._id}`}>Profile</Link>
-                  <Link className="link" to={`/ride/new`}>Create Ride</Link>
+                  <Link
+                    className="link"
+                    to={`/user/${this.props.currentUser._id}`}
+                  >
+                    Profile
+                  </Link>
+                  <Link className="link" to={`/ride/new`}>
+                    Create Ride
+                  </Link>
                 </div>
-                <Link to="" id="nav-logout" onClick={props.logout}>Log Out</Link>
+                <Link to="" id="nav-logout" onClick={props.logout}>
+                  Log Out
+                </Link>
               </ul>
             </button>
           </div>
@@ -46,8 +65,12 @@ class Greeting extends React.Component {
     ) : (
       <div id="nav-splash-container">
         <div className="left-nav">
-          <a className="nav-logo" href="/index"><h1>GroupRide</h1></a>
-          <a className="bike-logo" href="/index"><FontAwesomeIcon icon={faBiking} size="2x" /></a>
+          <a className="nav-logo" href="/index">
+            <h1>GroupRide</h1>
+          </a>
+          <a className="bike-logo" href="/index">
+            <FontAwesomeIcon icon={faBiking} size="2x" />
+          </a>
         </div>
         <div className="singup-login">
           <Link
