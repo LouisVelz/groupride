@@ -28,10 +28,9 @@ class Greeting extends React.Component {
             <h1>GroupRide</h1>
           </Link>
 
-            <Link to="/index" className="bike-logo">
-              <FontAwesomeIcon icon={faBiking} size="2x" />
-            </Link>
-
+          <Link to="/index" className="bike-logo">
+            <FontAwesomeIcon icon={faBiking} size="2x" />
+          </Link>
         </div>
         <div className="right-nav">
           <div className="dropdown">
@@ -65,12 +64,13 @@ class Greeting extends React.Component {
     ) : (
       <div id="nav-splash-container">
         <div className="left-nav">
-          <a className="nav-logo" href="/index">
+          <Link to="/index" className="nav-logo">
             <h1>GroupRide</h1>
-          </a>
-          <a className="bike-logo" href="/index">
+          </Link>
+
+          <Link to="/index" className="bike-logo">
             <FontAwesomeIcon icon={faBiking} size="2x" />
-          </a>
+          </Link>
         </div>
         <div className="singup-login">
           <Link

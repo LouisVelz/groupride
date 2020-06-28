@@ -88,7 +88,7 @@ joinRide(){
               MEET TIME <p>{meetTime}</p>
             </div>
             <div id="event-desc-div3">
-              RIDERS <p>{ride.participants.length}</p>
+              RIDERS JOINED <p>{ride.participants.length}</p>
             </div>
           </div>
 
