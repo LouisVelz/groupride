@@ -100,7 +100,6 @@ joinRide(){
             {this.trashRide()}
           </div>
         </div>
-        </div>
         <MapLoader
           ride={ride}
           // API KEY  GOES IN THIS LINK without curly braces
