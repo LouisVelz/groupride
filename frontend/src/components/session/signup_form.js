@@ -44,12 +44,12 @@ class SignupForm extends React.Component {
 
         this.props.signup(user)
             .then(() => {
-            // if (Object.keys(this.state.errors).length === 0) {
+              if (Object.keys(this.state.errors).length === 0) {
                 this.props.login(user)
-            // } else {
+                  // } else {
 
-            // }
-        });
+            }
+        } );
     }
 
     renderErrors() {
