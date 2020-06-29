@@ -92,14 +92,13 @@ joinRide(){
             </div>
           </div>
 
-          
           <button id="show-page-btn">
             <Link to={`/ride/${ride._id}`}>Show Details</Link>
           </button>
           <div id="btn-for-ride">
-
-          {this.joinRide()}
-          {this.trashRide()}
+            {this.joinRide()}
+            {this.trashRide()}
+          </div>
         </div>
         <MapLoader
           ride={ride}
