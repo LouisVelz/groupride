@@ -32,7 +32,7 @@ class Team extends React.Component {
                   <h3>-Backend Lead-</h3>
                   <h4>Elvin Valette</h4>
                   <div id="team-links">
-                    <a href="www.linkedin.com/in/elvin-valette-5b2945a5">
+                    <a href="https://www.linkedin.com/in/elvin-valette-5b2945a5/">
                       <FontAwesomeIcon icon={faLinkedin} />
                       LinkedIn
                     </a>
