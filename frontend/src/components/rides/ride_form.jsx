@@ -4,11 +4,8 @@ import './ride-form.scss'
 import PlacesAutocomplete from 'react-places-autocomplete';
 import {
   geocodeByAddress,
-  geocodeByPlaceId,
   getLatLng,
 } from 'react-places-autocomplete';
-
-const googleMap = require("../../config/keys").REACT_APP_GOOGLE_KEY;
 
 class RideForm extends React.Component {
     constructor(props) {
@@ -19,8 +16,6 @@ class RideForm extends React.Component {
         // this.setAddress = setAddress;
         this.handleSumit = this.handleSumit.bind(this);
     }
-
-    
 
     update(field) {
         return (e) => {

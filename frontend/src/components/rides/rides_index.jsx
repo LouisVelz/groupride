@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom"
 import RidesIndexItem from './rides_index_item';
-import { updateRide } from '../../actions/ride_actions';
 import '../../stylesheets/rides/rider_index.scss'
 
 class RidesIndex extends React.Component {
@@ -19,7 +17,7 @@ class RidesIndex extends React.Component {
   componentDidMount() {
     this.props.fetchRides();
   }
-
+  
   RenderRideItems() {
     if (Array.isArray(this.props.rides[0])) {
       return (
