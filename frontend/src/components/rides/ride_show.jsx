@@ -26,7 +26,6 @@ class RideShow extends React.Component {
   componentWillReceiveProps(newState) {
     this.setState({ ride: newState.ride});
   }
-  
 
   render() {
     const { ride, participants } = this.props;
