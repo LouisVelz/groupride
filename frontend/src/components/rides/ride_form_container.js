@@ -5,6 +5,7 @@ import { createRide } from '../../actions/ride_actions';
 
 const mSTP = (state) => {
     return {
+        errors: state.errors.ride,
         currentUser: state.session.user,
         ride: {
             title: "",
