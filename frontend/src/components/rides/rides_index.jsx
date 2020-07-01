@@ -3,10 +3,10 @@ import RidesIndexItem from './rides_index_item';
 import '../../stylesheets/rides/rider_index.scss'
 
 class RidesIndex extends React.Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
     // this.state ={rides: []}
-  }
+  // }
 
   // componentWillMount(){
   //   this.props.fetchRides();

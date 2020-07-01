@@ -9,12 +9,14 @@ class EditForm extends React.Component {
 
         this.state = {
             id: this.props.currentUser._id,
-            bike_type: '',
-            skill_level: '',
-            social_media: '',
+            bike_type: "",
+            skill_level: "",
+            social_media: "",
         };
+        // debugger
         // this.handleClick = this.handleClick.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this)
     }
 
     // handleClick() {
@@ -22,9 +24,13 @@ class EditForm extends React.Component {
     // }
 
     update(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
+        return (e) => {
+            this.setState({[field]: e.currentTarget.value});
+        }
+    }
+    componentDidUpdate() {
+        this.props.getUser(this.props.currentUser._id);
+
     }
 
     handleSubmit(e) {
@@ -34,11 +40,12 @@ class EditForm extends React.Component {
             id: this.state.id,
             bike_type: this.state.bike_type,
             skill_level: this.state.skill_level,
-            social_media: this.state.social_media
+            social_media: this.state.social_media,
         };
+
         this.props.updateUser(user)
             .then(() => this.props.history.push(`/user/${this.props.currentUser._id}`))
-                .then(() => window.location.reload(true));
+            .then(() => this.props.closeModal())
     }
 
     render() {

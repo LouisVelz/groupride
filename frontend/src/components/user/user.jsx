@@ -4,11 +4,11 @@ import RideIndexItem from './../rides/rides_index_item'
 import { Link } from 'react-router-dom';
 
 class UserPage extends React.Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
     // this.state = { rides: [] };
-  }
+  // }
 
   componentWillMount() {
     this.props.fetchUserRides(this.props.currentUser._id);

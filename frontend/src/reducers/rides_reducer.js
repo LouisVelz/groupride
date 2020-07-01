@@ -3,7 +3,7 @@ import {
   RECEIVE_USER_RIDES,
   RECEIVE_NEW_RIDE,
   RECEIVE_RIDE,
-  RECEIVE_PARTICIPANTS,
+  // RECEIVE_PARTICIPANTS,
   REMOVE_RIDE
 } from "../actions/ride_actions";
 

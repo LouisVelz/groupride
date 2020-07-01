@@ -8,14 +8,13 @@ const googleMap = require("../../config/keys").REACT_APP_GOOGLE_KEY;
 const MapLoader = withScriptjs(Map)
 
 class RideShow extends React.Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
     // this.state = { ride: null, creator: null };
-  }
+  // }
   componentDidMount() {
     this.props.fetchRide(this.props.match.params.rideId)
     this.props.fetchParticipants(this.props.match.params.rideId)
-
   }
   
 
@@ -78,7 +77,7 @@ class RideShow extends React.Component {
               />
             </div>
           </div>
-          <p>-Green lines on map show bicycle roads 🚴🏿‍♀️-</p>
+          <p>-Green lines on map show bicycle roads <span role="img" aria-label="bike"> 🚴🏿‍♀️</span>-</p>
         </div>
       );
     }
