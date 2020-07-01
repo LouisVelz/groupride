@@ -14,6 +14,12 @@ class RidesIndex extends React.Component {
   // componentWillReceiveProps(newState){
   //   this.setState({rides: newState.rides})
   // }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if(!prevProps) return null;
+  //   if (prevProps.rides.length !== this.props.rides.length) {
+  //     this.props.fetchRides();
+  //   }
+  // }
   componentDidMount() {
     this.props.fetchRides();
   }
