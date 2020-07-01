@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { browserHistory } from 'react-router';
 import './ride-form.scss'
 import PlacesAutocomplete from 'react-places-autocomplete';
 import {
@@ -29,9 +30,14 @@ class RideForm extends React.Component {
     }
 
     handleSumit() {
-      //   this.setState({ participants: this.props.currentUser._id})
         this.props.createRide(this.state)
-          // .then(() => this.props.history.push("/index"))
+          .then((response) => {
+            if(!response.errors) this.props.history.push("/index")
+          })
+   
+   
+     
+
     }
 
     handleChangeDest = destination => {
@@ -63,7 +69,7 @@ class RideForm extends React.Component {
     renderErrors() {
       // if (!this.errors) return null;
       console.log(this.props.errors)
-
+      debugger
       return (
         <ul>
           {/* {Object.keys(this.props.errors).filter(key => key === 'title')
