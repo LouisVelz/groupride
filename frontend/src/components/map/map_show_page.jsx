@@ -1,9 +1,9 @@
 /*global google*/
 import React from "react";
-import ReactDOM from "react-dom";
-import { compose, withProps, lifecycle } from "recompose";
+// import ReactDOM from "react-dom";
+// import { compose, withProps, lifecycle } from "recompose";
 import {
-    withScriptjs,
+    // withScriptjs,
     withGoogleMap,
     GoogleMap,
     DirectionsRenderer,
@@ -11,7 +11,7 @@ import {
 } from "react-google-maps";
 const googleMap = require("../../config/keys").REACT_APP_GOOGLE_KEY;
 
-class MapWithADirectionsRenderer extends React.Component{
+class MapShowWithADirectionsRenderer extends React.Component{
     constructor(props){
         super(props);
         // API KEY  GOES IN THIS LINK without curly braces
@@ -49,7 +49,7 @@ class MapWithADirectionsRenderer extends React.Component{
         if(!this.state.directions){
             return null;
         }
-        const GoogleMapExample = withGoogleMap(props => (
+        const GoogleMapExample = withGoogleMap((props) => (
             <GoogleMap
                 defaultCenter={{ lat: 6.5244, lng: 3.3792 }}
                 defaultZoom={13}
@@ -85,4 +85,4 @@ class MapWithADirectionsRenderer extends React.Component{
 
 }
 
-export default MapWithADirectionsRenderer;
+export default MapShowWithADirectionsRenderer;

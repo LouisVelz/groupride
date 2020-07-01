@@ -4,10 +4,10 @@ import '../../stylesheets/rides/rider_index.scss'
 import ThreeDots from '../content-loader/contend-loader';
 
 class RidesIndex extends React.Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
     // this.state ={rides: []}
-  }
+  // }
 
   // componentWillMount(){
   //   this.props.fetchRides();
