@@ -2,7 +2,12 @@ import React from 'react'
 import Map from "../map/map_show_page"
 import { withScriptjs } from "react-google-maps";
 import './ride_show.scss'
+import ThreeDots from '../content-loader/contend-loader';
 const googleMap = require("../../config/keys").REACT_APP_GOOGLE_KEY;
+
+
+
+
 
 
 const MapLoader = withScriptjs(Map)
@@ -15,7 +20,6 @@ class RideShow extends React.Component {
   componentDidMount() {
     this.props.fetchRide(this.props.match.params.rideId)
     this.props.fetchParticipants(this.props.match.params.rideId)
-
   }
   
 
@@ -32,7 +36,13 @@ class RideShow extends React.Component {
     let joinedMembers;
 
     if (!ride || !participants ) {
-      return <div>fetching data...</div>;
+
+      return (
+        <div className="show-ride-main">
+          <div className="show-ride-map"><ThreeDots /></div>
+        </div>
+      );
+      
     } else {
           // console.log(this.props.ride)
           var setMeetTime = ride.meetup_time;
@@ -44,6 +54,7 @@ class RideShow extends React.Component {
           joinedMembers = participants.map((participant, index) => {
               return <li key={index}>{participant.username}</li>
             })
+
       return (
         <div className="show-ride-main">
           <h1>{ride.title}</h1>
@@ -67,15 +78,16 @@ class RideShow extends React.Component {
             </div>
 
             <div className="show-ride-map">
-              <MapLoader
-                ride={ride}
-                // API KEY  GOES IN THIS LINK without curly braces
-                googleMapURL={
-                  "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=" +
-                  googleMap
-                }
-                loadingElement={<div style={{ height: `100%` }} />}
-              />
+                <MapLoader
+                  ride={ride}
+                  // API KEY  GOES IN THIS LINK without curly braces
+                  googleMapURL={
+                    "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=" +
+                    googleMap
+                  }
+                  loadingElement={<div style={{ height: `100%` }} />}
+                />
+              
             </div>
           </div>
           <p>-Green lines on map show bicycle roads 🚴🏿‍♀️-</p>
