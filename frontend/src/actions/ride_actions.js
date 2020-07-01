@@ -8,7 +8,8 @@ export const RECEIVE_NEW_RIDE = "RECEIVE_NEW_RIDE";
 export const RECEIVE_RIDE = "RECEIVE_RIDE";
 export const RECEIVE_USERS = "RECEIVE_USERS";
 export const RECEIVE_USER = "RECEIVE_USER";
-export const REMOVE_RIDE = "REMOVE_RIDE"
+export const REMOVE_RIDE = "REMOVE_RIDE";
+export const RECEIVE_RIDE_ERRORS = "RECEIVE_RIDE_ERRORS";
 
 
 
@@ -48,41 +49,46 @@ const removeRide = (rideId) => ({
   rideId
 });
 
+const receiveErrors = errors => ({
+  type: RECEIVE_RIDE_ERRORS,
+  errors
+});
+
 export const fetchRides = () => (dispatch) =>
   getRides()
     .then((rides) => dispatch(receiveRides(rides)))
-    .catch((err) => console.log(err));
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
 
 export const fetchUserRides = (id) => (dispatch) =>
   getUserRides(id)
     .then((rides) => dispatch(receiveUserRides(rides)))
-    .catch((err) => console.log(err));
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
 
 export const createRide = (data) => (dispatch) =>
   writeRide(data)
     .then((ride) => dispatch(receiveNewRide(ride)))
-    .catch((err) => console.log(err));
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
 
 
 export const updateRide = (data) => (dispatch) =>
   patchRide(data)
     .then((ride) => dispatch(receiveNewRide(ride)))
-    .catch((err) => console.log(err));
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
 
 export const fetchRide = (rideId) => (dispatch) =>
   getRide(rideId)
     .then((ride) => dispatch(receiveRide(ride)))
-    .catch((err) => console.log(err));
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
 
 export const fetchParticipants = (rideId) => (dispatch) =>
   getParticipants(rideId)
     .then((users) => dispatch(receiveParticipants(users)))
-    .catch((err) => console.log(err));
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
 
 export const updateUser = (data) => (dispatch) =>
   patchUser(data)
     .then((user) => dispatch(receiveUser(user)))
-    .catch((err) => console.log(err));
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
 
 export const trashRide = (rideId) => (dispatch) =>
   deleteRide(rideId)
@@ -95,5 +101,5 @@ export const getUser = (userId) => (dispatch) =>
 export const leaveRide = (data) => (dispatch) =>
   unjoinRide(data)
     .then((ride) => dispatch(receiveNewRide(ride)))
-    .catch((err) => console.log(err));
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
 

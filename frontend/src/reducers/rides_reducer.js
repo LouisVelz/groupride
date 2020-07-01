@@ -4,7 +4,8 @@ import {
   RECEIVE_NEW_RIDE,
   RECEIVE_RIDE,
   RECEIVE_PARTICIPANTS,
-  REMOVE_RIDE
+  REMOVE_RIDE,
+  RECEIVE_RIDE_ERRORS,
 } from "../actions/ride_actions";
 
 
