@@ -11,6 +11,7 @@ export const RECEIVE_USER = "RECEIVE_USER";
 export const REMOVE_RIDE = "REMOVE_RIDE";
 export const EXIT_RIDE = "EXIT_RIDE";
 export const JOIN_RIDE = "JOIN_RIDE";
+export const RECEIVE_RIDE_ERRORS = "RECEIVE_RIDE_ERRORS";
 
 
 
@@ -59,41 +60,46 @@ const joinRide = (ride) =>({
   type: JOIN_RIDE,
   ride
 })
+const receiveErrors = errors => ({
+  type: RECEIVE_RIDE_ERRORS,
+  errors
+});
+
 export const fetchRides = () => (dispatch) =>
   getRides()
     .then((rides) => dispatch(receiveRides(rides)))
-    .catch((err) => console.log(err));
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
 
 export const fetchUserRides = (id) => (dispatch) =>
   getUserRides(id)
     .then((rides) => dispatch(receiveUserRides(rides)))
-    .catch((err) => console.log(err));
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
 
 export const createRide = (data) => (dispatch) =>
   writeRide(data)
     .then((ride) => dispatch(receiveNewRide(ride)))
-    .catch((err) => console.log(err));
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
 
 
 export const updateRide = (data) => (dispatch) =>
   patchRide(data)
     .then((data) => dispatch(joinRide(data)))
-    .catch((err) => console.log(err));
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
 
 export const fetchRide = (rideId) => (dispatch) =>
   getRide(rideId)
     .then((ride) => dispatch(receiveRide(ride)))
-    .catch((err) => console.log(err));
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
 
 export const fetchParticipants = (rideId) => (dispatch) =>
   getParticipants(rideId)
     .then((users) => dispatch(receiveParticipants(users)))
-    .catch((err) => console.log(err));
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
 
 export const updateUser = (data) => (dispatch) =>
   patchUser(data)
     .then((user) => dispatch(receiveUser(user)))
-    .catch((err) => console.log(err));
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
 
 export const trashRide = (rideId) => (dispatch) =>
   deleteRide(rideId)
@@ -107,6 +113,6 @@ export const leaveRide = (data) => (dispatch) =>{
   
   return unjoinRide(data)
     .then((data) => dispatch(exitRide(data)))
-    .catch((err) => console.log(err));
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
 }
 

@@ -4,7 +4,7 @@ import UserPage from "./user";
 import { openModal } from '../../actions/modal_actions';
 
 const mSTP = (state) => {
-  const { entities, session } = state;
+  const { entities } = state;
   return {
     errors: state.errors.session,
     currentUser: state.session.user,
@@ -16,7 +16,6 @@ const mDTP = dispatch => {
   return {
     fetchUserRides: (id) => dispatch(fetchUserRides(id)),
     openModal: (str) => dispatch(openModal(str)),
-
   }
 }
 

@@ -55,7 +55,7 @@ class SignupForm extends React.Component {
     renderErrors() {
     let errorList;
     let errorsClass;
-    if (this.props.errors === undefined || this.props.errors.length == 0) {
+    if (this.props.errors === undefined || this.props.errors.length === 0) {
       errorList = null;
       errorsClass = "no-errors"
     } else {
