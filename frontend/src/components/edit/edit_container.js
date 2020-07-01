@@ -4,8 +4,7 @@ import { closeModal } from '../../actions/modal_actions';
 import EditForm from "../edit/edit_form";
 
 const mSTP = (state) => {
-    // const { session } = state;
-    // debugger;
+
     return {
         currentUser: state.session.user,
         description: { 

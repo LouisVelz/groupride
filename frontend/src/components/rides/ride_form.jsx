@@ -27,7 +27,11 @@ class RideForm extends React.Component {
 
     handleSumit() {
         this.props.createRide(this.state)
-          .then(() => this.props.history.push("/index"))
+
+          .then((response) => {
+            if(!response.errors) this.props.history.push("/index")
+          })
+   
     }
 
     handleChangeDest = destination => {
@@ -57,13 +61,11 @@ class RideForm extends React.Component {
     
     
     renderErrors() {
-      // if (!this.errors) return null;
-      console.log(this.props.errors)
+
 
       return (
         <ul>
-          {/* {Object.keys(this.props.errors).filter(key => key === 'title')
-          } */}
+
           {Object.values(this.props.errors).map((error, i) => (
             <li key={`error-${i}`}>
               {error}
@@ -74,6 +76,7 @@ class RideForm extends React.Component {
     }
 
     render() { 
+
       
         return (
           <div id="form-bg">
@@ -127,6 +130,7 @@ class RideForm extends React.Component {
                           {...getInputProps({
                             placeholder: "Enter Your Destination",
                           })}
+
                         />
                         <div className="form-suggestions">
                           {loading ? <div>...loading</div> : null}
@@ -232,5 +236,6 @@ class RideForm extends React.Component {
 }
 
 export default withRouter(RideForm);
+
 
         
