@@ -28,6 +28,7 @@ class EditForm extends React.Component {
             this.setState({[field]: e.currentTarget.value});
         }
     }
+    
     componentDidUpdate() {
         this.props.getUser(this.props.currentUser._id);
 

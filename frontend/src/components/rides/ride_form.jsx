@@ -8,13 +8,16 @@ import {
 } from 'react-places-autocomplete';
 
 class RideForm extends React.Component {
+
     constructor(props) {
-        super(props);
+      super(props);
         this.state = this.props.ride;
+        // this.errors = this.props.errors;
         // const [address, setAddress] = React.useState("");
         // this.address = address;
         // this.setAddress = setAddress;
         this.handleSumit = this.handleSumit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     }
 
     update(field) {
@@ -31,30 +34,48 @@ class RideForm extends React.Component {
           // .then(() => this.props.history.push("/index"))
     }
 
-  handleChangeDest = destination => {
-    this.setState({ destination });
-  };
+    handleChangeDest = destination => {
+      this.setState({ destination });
+    };
 
-  handleChangeMeetupLoc = meetup_location => {
-    this.setState({ meetup_location });
-  };
-  
-  handleSelectDest = destination => {
+    handleChangeMeetupLoc = meetup_location => {
+      this.setState({ meetup_location });
+    };
     
-    this.setState({ destination });
-    geocodeByAddress(destination)
-      .then(results => getLatLng(results[0]))
-      .then(latLng => console.log('Success', latLng))
-      .catch(error => console.error('Error', error));
-  };
+    handleSelectDest = destination => {
+      
+      this.setState({ destination });
+      geocodeByAddress(destination)
+        .then(results => getLatLng(results[0]))
+        .then(latLng => console.log('Success', latLng))
+        .catch(error => console.error('Error', error));
+    };
 
-  handleSelectMeetupLoc = meetup_location => {
-    this.setState({ meetup_location });
-    geocodeByAddress(meetup_location)
-      .then(results => getLatLng(results[0]))
-      .then(latLng => console.log('Success', latLng))
-      .catch(error => console.error('Error', error));
-  };
+    handleSelectMeetupLoc = meetup_location => {
+      this.setState({ meetup_location });
+      geocodeByAddress(meetup_location)
+        .then(results => getLatLng(results[0]))
+        .then(latLng => console.log('Success', latLng))
+        .catch(error => console.error('Error', error));
+    };
+    
+    
+    renderErrors() {
+      // if (!this.errors) return null;
+      console.log(this.props.errors)
+
+      return (
+        <ul>
+          {/* {Object.keys(this.props.errors).filter(key => key === 'title')
+          } */}
+          {Object.values(this.props.errors).map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
 
     render() { 
       // const handleSelect = async value => {};
@@ -75,6 +96,7 @@ class RideForm extends React.Component {
                     placeholder="Enter More Than One Character"
                     onChange={this.update("title")}
                   />
+                  <div id="ride-form-error">{this.props.errors["title"]}</div>
                 </label>
                 <br />
                 <label>
@@ -87,6 +109,7 @@ class RideForm extends React.Component {
                     onChange={this.update("description")}
                   />
                 </label>
+                <div id="ride-form-error">{this.props.errors["description"]}</div>
                 <br />
                 <label className="fourth-input">
                   Start Point:
@@ -135,6 +158,7 @@ class RideForm extends React.Component {
                     )}
                   </PlacesAutocomplete>
                 </label>
+                <div id="ride-form-error">{this.props.errors["meetup_location"]}</div> 
                 <br />
                 <label className="third-input">
                   End Point:
@@ -183,6 +207,7 @@ class RideForm extends React.Component {
                     )}
                   </PlacesAutocomplete>
                 </label>
+                <div id="ride-form-error">{this.props.errors["destination"]}</div>
                 <br />
                 <label className="fifth-input">
                   Ride Date:
