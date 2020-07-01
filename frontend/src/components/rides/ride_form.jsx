@@ -6,6 +6,7 @@ import {
   geocodeByAddress,
   getLatLng,
 } from 'react-places-autocomplete';
+import ReactDependentScript from 'react-dependent-script';
 
 class RideForm extends React.Component {
 
@@ -26,13 +27,11 @@ class RideForm extends React.Component {
 
     handleSumit() {
         this.props.createRide(this.state)
+
           .then((response) => {
             if(!response.errors) this.props.history.push("/index")
           })
    
-   
-     
-
     }
 
     handleChangeDest = destination => {
@@ -81,7 +80,9 @@ class RideForm extends React.Component {
       
         return (
           <div id="form-bg">
-            
+            <ReactDependentScript>
+              scripts={["https://maps.googleapis.com/maps/api/js?key=AIzaSyCsS0j6913rWPp3A7tZFPwtsAP3Fz7H3sk&libraries=places"]}
+            </ReactDependentScript>
             
             <div className="create-ride-form">
               <form className="c-ride-form" onSubmit={this.handleSumit}>
@@ -226,7 +227,6 @@ class RideForm extends React.Component {
                 </label>
                 <br />
                 <button type="submit">{this.props.formType}</button>
-                {/* <input type="submit" value={this.props.formType} /> */}
                 <div className="push"></div>
               </form>
             </div>
