@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { browserHistory } from 'react-router';
 import './ride-form.scss'
 import PlacesAutocomplete from 'react-places-autocomplete';
 import {
@@ -13,10 +12,6 @@ class RideForm extends React.Component {
     constructor(props) {
       super(props);
         this.state = this.props.ride;
-        // this.errors = this.props.errors;
-        // const [address, setAddress] = React.useState("");
-        // this.address = address;
-        // this.setAddress = setAddress;
         this.handleSumit = this.handleSumit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     }
@@ -67,13 +62,11 @@ class RideForm extends React.Component {
     
     
     renderErrors() {
-      // if (!this.errors) return null;
-      console.log(this.props.errors)
-      debugger
+
+
       return (
         <ul>
-          {/* {Object.keys(this.props.errors).filter(key => key === 'title')
-          } */}
+
           {Object.values(this.props.errors).map((error, i) => (
             <li key={`error-${i}`}>
               {error}
@@ -84,7 +77,7 @@ class RideForm extends React.Component {
     }
 
     render() { 
-      // const handleSelect = async value => {};
+
       
         return (
           <div id="form-bg">
@@ -136,10 +129,7 @@ class RideForm extends React.Component {
                           {...getInputProps({
                             placeholder: "Enter Your Destination",
                           })}
-                          // type="text"
-                          // className="third-input"
-                          // value={this.state.destination}
-                          // onChange={this.update("destination")}
+
                         />
                         <div className="form-suggestions">
                           {loading ? <div>...loading</div> : null}
@@ -185,10 +175,6 @@ class RideForm extends React.Component {
                           {...getInputProps({
                             placeholder: "Enter Your Destination",
                           })}
-                          // type="text"
-                          // className="third-input"
-                          // value={this.state.destination}
-                          // onChange={this.update("destination")}
                         />
                         <div className="form-suggestions">
                           {loading ? <div>...loading</div> : null}
@@ -251,11 +237,5 @@ class RideForm extends React.Component {
 
 export default withRouter(RideForm);
 
-          // <select value={this.state.value} onChange={this.handleChange}>
-          //   <option value="grapefruit">Grapefruit</option>
-          //   <option value="lime">Lime</option>
-          //   <option value="coconut">Coconut</option>
-          //   <option value="mango">Mango</option>
-          // </select>;
 
         

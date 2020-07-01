@@ -13,15 +13,11 @@ class EditForm extends React.Component {
             skill_level: "",
             social_media: "",
         };
-        // debugger
-        // this.handleClick = this.handleClick.bind(this);
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this)
     }
 
-    // handleClick() {
-    //     this.setState({ open: !this.state.open });
-    // }
 
     update(field) {
         return (e) => {
