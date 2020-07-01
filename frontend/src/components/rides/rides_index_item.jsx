@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Map from "../map/map"
 import { withScriptjs } from "react-google-maps";
 import "../../stylesheets/rides/rider_index_item.scss"
+import ThreeDots from '../content-loader/contend-loader';
 
 const googleMap = require("../../config/keys").REACT_APP_GOOGLE_KEY;
 
@@ -59,12 +60,22 @@ joinRide(){
 }
   render() {
     const { ride } = this.props;
+
+    if(!ride){
+      return (
+        <div className="event-container">
+          <ThreeDots/>
+        </div>
+      )
+    } else {
+
     var setMeetTime = ride.meetup_time;
     var meetDate = setMeetTime.split("T")[0];
     var meetTime = setMeetTime.substring(
       setMeetTime.lastIndexOf("T") + 1,
       setMeetTime.lastIndexOf(".")
     );
+    
     return (
       <div className="event-container">
         <div id="event-div-container">
@@ -111,6 +122,7 @@ joinRide(){
         />
       </div>
     );
+        }
   }
 }
 

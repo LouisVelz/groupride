@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import RidesIndexItem from './rides_index_item';
 import { updateRide } from '../../actions/ride_actions';
 import '../../stylesheets/rides/rider_index.scss'
+import ThreeDots from '../content-loader/contend-loader';
 
 class RidesIndex extends React.Component {
   constructor(props) {
@@ -40,15 +41,27 @@ class RidesIndex extends React.Component {
   }
 
   render() {
-    if (!this.props.rides[0]) return null;
-    return (
-      <div className="ride-index-container">
-        <section className="index-feed-container">
-          <h1 className="index-head"> Ride Event Feed</h1>
-          {this.RenderRideItems()}
-        </section>
-      </div>
-    );
+
+    if (!this.props.rides[0].length){
+       return (
+         <div className="ride-index-container">
+           <section className="index-feed-container">
+             <h1 className="index-head"> Ride Event Feed</h1>
+             <div style={{marginTop: "250px"}}></div>
+             <ThreeDots />
+           </section>
+         </div>
+       );
+    }else {
+      return (
+        <div className="ride-index-container">
+          <section className="index-feed-container">
+            <h1 className="index-head"> Ride Event Feed</h1>
+            {this.RenderRideItems()}
+          </section>
+        </div>
+      );
+    }
   }
 }
 
