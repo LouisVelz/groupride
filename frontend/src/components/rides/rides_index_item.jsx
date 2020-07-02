@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Map from "../map/map"
-import { withScriptjs } from "react-google-maps";
+import { withScriptjs, withGoogleMap } from "react-google-maps";
 import "../../stylesheets/rides/rider_index_item.scss"
 import ThreeDots from '../content-loader/contend-loader';
 
@@ -14,7 +14,7 @@ class RideIndexItem extends React.Component {
     super(props)
     // debugger;
     this.state = {
-      participants: this.props.ride.participants,
+      participants: this.props.ride.participants.concat(this.props.ride.creator),
       id: this.props.ride._id
       }
     this.handleClick = this.handleClick.bind(this);
@@ -111,7 +111,6 @@ joinRide(){
           </div>
           <MapLoader
             ride={ride}
-            // API KEY  GOES IN THIS LINK without curly braces
             googleMapURL={
               "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=" +
               googleMap
