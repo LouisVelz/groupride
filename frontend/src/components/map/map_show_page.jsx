@@ -14,13 +14,12 @@ const googleMap = require("../../config/keys").REACT_APP_GOOGLE_KEY;
 class MapShowWithADirectionsRenderer extends React.Component{
     constructor(props){
         super(props);
-        // API KEY  GOES IN THIS LINK without curly braces
-        this.googleMapURL =
-          "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=" + googleMap;
+
+        // this.googleMapURL =
+        //   "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=" + googleMap;
+
         this.state = {
             directions: null,
-
-
         };
     }
 

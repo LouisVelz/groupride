@@ -1,3 +1,4 @@
+/* global google */
 import React from 'react';
 import { withRouter } from 'react-router';
 import './ride-form.scss'
@@ -6,7 +7,7 @@ import {
   geocodeByAddress,
   getLatLng,
 } from 'react-places-autocomplete';
-import ReactDependentScript from 'react-dependent-script';
+
 
 class RideForm extends React.Component {
 
@@ -17,6 +18,7 @@ class RideForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this);
     }
 
+  
     update(field) {
         return (e) => {
             this.setState({
@@ -80,10 +82,13 @@ class RideForm extends React.Component {
       
         return (
           <div id="form-bg">
-            <ReactDependentScript>
-              scripts={["https://maps.googleapis.com/maps/api/js?key=AIzaSyCsS0j6913rWPp3A7tZFPwtsAP3Fz7H3sk&libraries=places"]}
-            </ReactDependentScript>
-            
+            {/* <LoadScript
+              id="script-loader"
+              googleMapsApiKey={"AIzaSyCsS0j6913rWPp3A7tZFPwtsAP3Fz7H3sk"}
+              language="en"
+              region="EN"
+              version="weekly"
+            ></LoadScript> */}
             <div className="create-ride-form">
               <form className="c-ride-form" onSubmit={this.handleSumit}>
                 <h1>{this.props.formType}</h1>
@@ -117,6 +122,7 @@ class RideForm extends React.Component {
                     value={this.state.meetup_location}
                     onChange={this.handleChangeMeetupLoc}
                     onSelect={this.handleSelectMeetupLoc}
+                  
  
                   >
                     {({
