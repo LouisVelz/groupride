@@ -7,9 +7,7 @@ import {
   geocodeByAddress,
   getLatLng,
 } from 'react-places-autocomplete';
-import ReactDependentScript from 'react-dependent-script';
-import Script from 'react-load-script';
-import { LoadScript } from "@react-google-maps/api";
+
 
 class RideForm extends React.Component {
 
