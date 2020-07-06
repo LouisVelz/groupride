@@ -6,12 +6,12 @@ import '../../stylesheets/edit/edit.css'
 class EditForm extends React.Component {
     constructor(props) {
         super(props);
-        
+        debugger;
         this.state = {
             id: props.currentUser._id,
-            bike_type: JSON.parse(localStorage.getItem("newState")).bike_type,
-            skill_level: JSON.parse(localStorage.getItem("newState")).skill_level,
-            social_media: JSON.parse(localStorage.getItem("newState")).social_media,
+            bike_type: props.bike_type,
+            skill_level: props.skill_level,
+            social_media: props.social_media,
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,7 +37,8 @@ class EditForm extends React.Component {
             skill_level: this.state.skill_level,
             social_media: this.state.social_media,
         };
-        this.setState({currentUser: user})
+        this.setState({id: user})
+        // localStorage.setItem("newState", JSON.stringify());
         this.props.updateUser(user)
             .then(() => this.setState({currentUser: user}))
             .then(() => this.props.history.push(`/user/${this.props.currentUser._id}`))

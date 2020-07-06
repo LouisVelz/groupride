@@ -4,7 +4,6 @@ import { fetchRides, updateRide, trashRide, leaveRide } from "../../actions/ride
 import { logout } from "../../actions/session_actions";
 
 const mSTP = (state) => {
-    // debugger;
     return {
         rides: Object.values(state.entities.rides),
         currentUser: state.session.user,

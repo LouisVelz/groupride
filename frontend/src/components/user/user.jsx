@@ -7,10 +7,11 @@ import { Link } from 'react-router-dom';
 class UserPage extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      bike_type: JSON.parse(localStorage.getItem("newState")).bike_type,
-      skill_level: JSON.parse(localStorage.getItem("newState")).skill_level,
-      social_media: JSON.parse(localStorage.getItem("newState")).social_media,
+      bike_type: this.props.changedUser.bike_type,
+      skill_level: this.props.changedUser.skill_level,
+      social_media: this.props.changedUser.social_media,
     };
   }
 
