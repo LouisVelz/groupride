@@ -9,7 +9,11 @@ const mSTP = (state, ownProps) => {
   const userId = ownProps.match.params.userId;
   let changedState;
   if (state.entities.users[userId] === undefined) {
-    changedState = state.session.user;
+    if (localStorage.getItem("newState") === null) {
+      changedState = state.session.user;
+    } else {
+      changedState = JSON.parse(localStorage.getItem("newState"));
+    }
   } else {
     localStorage.setItem("newState", JSON.stringify(state.entities.users[userId]));
     changedState = state.entities.users[userId];

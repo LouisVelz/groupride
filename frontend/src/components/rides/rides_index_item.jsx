@@ -12,9 +12,8 @@ const MapLoader = withScriptjs(Map);
 class RideIndexItem extends React.Component {
   constructor(props){
     super(props)
-    // debugger;
     this.state = {
-      participants: this.props.ride.participants.concat(this.props.ride.creator),
+      participants: this.props.ride.participants,
       id: this.props.ride._id
       }
     this.handleClick = this.handleClick.bind(this);
