@@ -6,7 +6,7 @@ import '../../stylesheets/edit/edit.css'
 class EditForm extends React.Component {
     constructor(props) {
         super(props);
-        debugger;
+
         this.state = {
             id: props.currentUser._id,
             bike_type: props.bike_type,
