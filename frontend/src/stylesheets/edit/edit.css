@@ -69,5 +69,9 @@
     width: 130px;
     text-decoration: none;
     font-size: 18px;
+}
 
+.edit-button:hover {
+    background-color: rgb(184, 8, 8);
+      border: solid 1px rgb(184, 8, 8);
 }

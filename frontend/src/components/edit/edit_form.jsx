@@ -43,6 +43,7 @@ class EditForm extends React.Component {
             .then(() => this.setState({currentUser: user}))
             .then(() => this.props.history.push(`/user/${this.props.currentUser._id}`))
             .then(() => window.location.reload())
+
     }
 
     render() {
