@@ -8,23 +8,24 @@ class EditForm extends React.Component {
         super(props);
 
         this.state = {
-            id: this.props.currentUser._id,
-            bike_type: '',
-            skill_level: '',
-            social_media: '',
+            id: props.currentUser._id,
+            bike_type: props.bike_type,
+            skill_level: props.skill_level,
+            social_media: props.social_media,
         };
-        // this.handleClick = this.handleClick.bind(this);
+
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this)
     }
 
-    // handleClick() {
-    //     this.setState({ open: !this.state.open });
-    // }
-
     update(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
+        return (e) => {
+            this.setState({[field]: e.target.value});
+        }
+    }
+    
+    componentDidUpdate() {
+        this.props.getUser(this.props.currentUser._id);
     }
 
     handleSubmit(e) {
@@ -34,20 +35,15 @@ class EditForm extends React.Component {
             id: this.state.id,
             bike_type: this.state.bike_type,
             skill_level: this.state.skill_level,
-            social_media: this.state.social_media
+            social_media: this.state.social_media,
         };
+        this.setState({id: user})
+        // localStorage.setItem("newState", JSON.stringify());
         this.props.updateUser(user)
+            .then(() => this.setState({currentUser: user}))
             .then(() => this.props.history.push(`/user/${this.props.currentUser._id}`))
-                .then(() => {
-                    if (!window.location.hash) {
-                        window.location.href = window.location.href;
-                    } else {
-                        window.location.reload();
-                    }
-                }
+            .then(() => window.location.reload())
 
-                // window.location.reload(true)
-        );
     }
 
     render() {

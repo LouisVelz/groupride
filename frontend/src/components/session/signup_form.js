@@ -44,18 +44,18 @@ class SignupForm extends React.Component {
 
         this.props.signup(user)
             .then(() => {
-            // if (Object.keys(this.state.errors).length === 0) {
+              if (Object.keys(this.state.errors).length === 0) {
                 this.props.login(user)
-            // } else {
+                  // } else {
 
-            // }
-        });
+            }
+        } );
     }
 
     renderErrors() {
     let errorList;
     let errorsClass;
-    if (this.props.errors === undefined || this.props.errors.length == 0) {
+    if (this.props.errors === undefined || this.props.errors.length === 0) {
       errorList = null;
       errorsClass = "no-errors"
     } else {

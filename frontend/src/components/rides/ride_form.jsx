@@ -1,27 +1,24 @@
+/* global google */
 import React from 'react';
 import { withRouter } from 'react-router';
 import './ride-form.scss'
 import PlacesAutocomplete from 'react-places-autocomplete';
 import {
   geocodeByAddress,
-  geocodeByPlaceId,
   getLatLng,
 } from 'react-places-autocomplete';
 
-const googleMap = require("../../config/keys").REACT_APP_GOOGLE_KEY;
 
 class RideForm extends React.Component {
+
     constructor(props) {
-        super(props);
+      super(props);
         this.state = this.props.ride;
-        // const [address, setAddress] = React.useState("");
-        // this.address = address;
-        // this.setAddress = setAddress;
         this.handleSumit = this.handleSumit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     }
 
-    
-
+  
     update(field) {
         return (e) => {
             this.setState({
@@ -31,43 +28,67 @@ class RideForm extends React.Component {
     }
 
     handleSumit() {
-      //   this.setState({ participants: this.props.currentUser._id})
         this.props.createRide(this.state)
-          // .then(() => this.props.history.push("/index"))
+
+          .then((response) => {
+            if(!response.errors) this.props.history.push("/index")
+          })
+   
     }
 
-  handleChangeDest = destination => {
-    this.setState({ destination });
-  };
+    handleChangeDest = destination => {
+      this.setState({ destination });
+    };
 
-  handleChangeMeetupLoc = meetup_location => {
-    this.setState({ meetup_location });
-  };
-  
-  handleSelectDest = destination => {
+    handleChangeMeetupLoc = meetup_location => {
+      this.setState({ meetup_location });
+    };
     
-    this.setState({ destination });
-    geocodeByAddress(destination)
-      .then(results => getLatLng(results[0]))
-      .then(latLng => console.log('Success', latLng))
-      .catch(error => console.error('Error', error));
-  };
+    handleSelectDest = destination => {
+      
+      this.setState({ destination });
+      geocodeByAddress(destination)
+        .then(results => getLatLng(results[0]))
+        .then(latLng => console.log('Success', latLng))
+        .catch(error => console.error('Error', error));
+    };
 
-  handleSelectMeetupLoc = meetup_location => {
-    this.setState({ meetup_location });
-    geocodeByAddress(meetup_location)
-      .then(results => getLatLng(results[0]))
-      .then(latLng => console.log('Success', latLng))
-      .catch(error => console.error('Error', error));
-  };
+    handleSelectMeetupLoc = meetup_location => {
+      this.setState({ meetup_location });
+      geocodeByAddress(meetup_location)
+        .then(results => getLatLng(results[0]))
+        .then(latLng => console.log('Success', latLng))
+        .catch(error => console.error('Error', error));
+    };
+    
+    
+    renderErrors() {
+
+
+      return (
+        <ul>
+
+          {Object.values(this.props.errors).map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
 
     render() { 
-      // const handleSelect = async value => {};
+
       
         return (
           <div id="form-bg">
-            
-            
+            {/* <LoadScript
+              id="script-loader"
+              googleMapsApiKey={"AIzaSyCsS0j6913rWPp3A7tZFPwtsAP3Fz7H3sk"}
+              language="en"
+              region="EN"
+              version="weekly"
+            ></LoadScript> */}
             <div className="create-ride-form">
               <form className="c-ride-form" onSubmit={this.handleSumit}>
                 <h1>{this.props.formType}</h1>
@@ -80,6 +101,7 @@ class RideForm extends React.Component {
                     placeholder="Enter More Than One Character"
                     onChange={this.update("title")}
                   />
+                  <div id="ride-form-error">{this.props.errors["title"]}</div>
                 </label>
                 <br />
                 <label>
@@ -92,6 +114,7 @@ class RideForm extends React.Component {
                     onChange={this.update("description")}
                   />
                 </label>
+                <div id="ride-form-error">{this.props.errors["description"]}</div>
                 <br />
                 <label className="fourth-input">
                   Start Point:
@@ -99,6 +122,7 @@ class RideForm extends React.Component {
                     value={this.state.meetup_location}
                     onChange={this.handleChangeMeetupLoc}
                     onSelect={this.handleSelectMeetupLoc}
+                  
  
                   >
                     {({
@@ -112,10 +136,7 @@ class RideForm extends React.Component {
                           {...getInputProps({
                             placeholder: "Enter Your Destination",
                           })}
-                          // type="text"
-                          // className="third-input"
-                          // value={this.state.destination}
-                          // onChange={this.update("destination")}
+
                         />
                         <div className="form-suggestions">
                           {loading ? <div>...loading</div> : null}
@@ -140,6 +161,7 @@ class RideForm extends React.Component {
                     )}
                   </PlacesAutocomplete>
                 </label>
+                <div id="ride-form-error">{this.props.errors["meetup_location"]}</div> 
                 <br />
                 <label className="third-input">
                   End Point:
@@ -160,10 +182,6 @@ class RideForm extends React.Component {
                           {...getInputProps({
                             placeholder: "Enter Your Destination",
                           })}
-                          // type="text"
-                          // className="third-input"
-                          // value={this.state.destination}
-                          // onChange={this.update("destination")}
                         />
                         <div className="form-suggestions">
                           {loading ? <div>...loading</div> : null}
@@ -188,6 +206,7 @@ class RideForm extends React.Component {
                     )}
                   </PlacesAutocomplete>
                 </label>
+                <div id="ride-form-error">{this.props.errors["destination"]}</div>
                 <br />
                 <label className="fifth-input">
                   Ride Date:
@@ -214,7 +233,6 @@ class RideForm extends React.Component {
                 </label>
                 <br />
                 <button type="submit">{this.props.formType}</button>
-                {/* <input type="submit" value={this.props.formType} /> */}
                 <div className="push"></div>
               </form>
             </div>
@@ -225,11 +243,5 @@ class RideForm extends React.Component {
 
 export default withRouter(RideForm);
 
-          // <select value={this.state.value} onChange={this.handleChange}>
-          //   <option value="grapefruit">Grapefruit</option>
-          //   <option value="lime">Lime</option>
-          //   <option value="coconut">Coconut</option>
-          //   <option value="mango">Mango</option>
-          // </select>;
 
         

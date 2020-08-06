@@ -99,6 +99,7 @@ router.patch('/:id',
       .catch(err =>
         res.status(404).json({ noridefound: 'No ride found with that ID' })
       );
+      
   });
 
 router.get('/:id', (req, res) => {
