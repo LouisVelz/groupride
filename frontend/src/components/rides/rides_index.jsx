@@ -1,18 +1,30 @@
 import React from 'react';
-import { Link } from "react-router-dom"
 import RidesIndexItem from './rides_index_item';
-import { updateRide } from '../../actions/ride_actions';
 import '../../stylesheets/rides/rider_index.scss'
+import ThreeDots from '../content-loader/contend-loader';
 
 class RidesIndex extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+    // this.state ={rides: []}
+  // }
 
+  // componentWillMount(){
+  //   this.props.fetchRides();
+  // }
+  // componentWillReceiveProps(newState){
+  //   this.setState({rides: newState.rides})
+  // }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if(!prevProps) return null;
+  //   if (prevProps.rides.length !== this.props.rides.length) {
+  //     this.props.fetchRides();
+  //   }
+  // }
   componentDidMount() {
     this.props.fetchRides();
   }
-
+  
   RenderRideItems() {
     if (Array.isArray(this.props.rides[0])) {
       return (
@@ -22,6 +34,8 @@ class RidesIndex extends React.Component {
               key={ride._id}
               currentUser={this.props.currentUser}
               updateRide={this.props.updateRide}
+              trashRide={this.props.trashRide}
+              leaveRide={this.props.leaveRide}
               ride={ride}
             />
           ))}
@@ -31,15 +45,27 @@ class RidesIndex extends React.Component {
   }
 
   render() {
-    if (!this.props.rides[0]) return null;
-    return (
-      <div className="index-page-container">
-        <section className="index-feed-container">
-          <h1 className="index-head"> Ride Event Feed</h1>
-          {this.RenderRideItems()}
-        </section>
-      </div>
-    );
+
+    if (!this.props.rides[0].length){
+       return (
+         <div className="ride-index-container">
+           <section className="index-feed-container">
+             <h1 className="index-head"> Ride Event Feed</h1>
+             <div style={{marginTop: "250px"}}></div>
+             <ThreeDots />
+           </section>
+         </div>
+       );
+    }else {
+      return (
+        <div className="ride-index-container">
+          <section className="index-feed-container">
+            <h1 className="index-head"> Ride Event Feed</h1>
+            {this.RenderRideItems()}
+          </section>
+        </div>
+      );
+    }
   }
 }
 

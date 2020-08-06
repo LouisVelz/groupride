@@ -3,9 +3,9 @@
   flex-direction: column;
   justify-content: center;
   align-self: center;
-  height: calc(78vh - 70px);
-  width: 800px;
+  height: auto;
   margin: auto;
+  width: 800px;
   padding-top: 100px;
   padding-bottom: 100px;
   background: rgba(255, 255, 255, 0.904);
@@ -27,6 +27,8 @@
 #about-div2 {
   text-align: left;
   line-height: 0px;
+  margin-bottom: 100px;
+
   p {
     font-size: 20px;
     margin: 5px;

@@ -3,7 +3,9 @@ import {
   RECEIVE_USER_RIDES,
   RECEIVE_NEW_RIDE,
   RECEIVE_RIDE,
-  RECEIVE_PARTICIPANTS
+  REMOVE_RIDE,
+  EXIT_RIDE,
+  JOIN_RIDE
 } from "../actions/ride_actions";
 
 
@@ -17,16 +19,42 @@ const ridesReducer = (
     case RECEIVE_RIDES:
       newState.all = action.rides.data;
       return newState;
+
     case RECEIVE_USER_RIDES:
       newState.user = action.rides.data;
       return newState;
+
     case RECEIVE_NEW_RIDE:
       newState.new = action.ride.data;
       return newState;
+
     case RECEIVE_RIDE:
       return Object.assign({}, state, {[action.ride.data._id]: action.ride.data})
-      // case RECEIVE_PARTICIPANTS:
-      //   return Object.assign({}, state, action.participants)
+
+    case REMOVE_RIDE:
+      const filtered = newState.all.filter(ride => ride._id !== action.rideId);
+      newState.all = filtered;
+      return newState;
+
+    case EXIT_RIDE:
+      let data = JSON.parse(action.data.config.data)
+      newState.all.forEach(ride => {
+        if (ride._id === data.id) {
+          const removed = ride.participants.filter(participant => participant !== data.participants)
+          ride.participants = removed;
+        }
+      });
+      return newState;
+
+    case JOIN_RIDE:
+      const data1 = JSON.parse(action.ride.config.data)
+      newState.all.forEach(ride => {
+        if(ride._id === data1.id){
+          ride.participants.push(data1.participants);
+        } 
+      });
+      return newState;
+
     default:
       return state;
   }

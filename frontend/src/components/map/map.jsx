@@ -1,9 +1,9 @@
 /*global google*/
 import React from "react";
-import ReactDOM from "react-dom";
-import { compose, withProps, lifecycle } from "recompose";
+// import ReactDOM from "react-dom";
+// import { compose, withProps, lifecycle } from "recompose";
 import {
-    withScriptjs,
+    // withScriptjs,
     withGoogleMap,
     GoogleMap,
     DirectionsRenderer,
@@ -13,9 +13,6 @@ import {
 class MapWithADirectionsRenderer extends React.Component{
     constructor(props){
         super(props);
-        // API KEY  GOES IN THIS LINK without curly braces
-        this.googleMapURL =
-          "https://maps.googleapis.com/maps/api/js?key=AIzaSyAcQjrfAudzl6Ton7GA7D-gVqOINMFE7ns&v=3.exp&libraries=geometry,drawing,places";
         this.state = {
             directions: null,
 

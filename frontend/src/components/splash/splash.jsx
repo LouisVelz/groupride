@@ -13,7 +13,6 @@ import splashTop3 from "../images/friendsRide.png";
 import splashTop4 from "../images/fingerAir.png";
 import splashMid1 from "../images/highfive.png";
 import splashMid2 from "../images/splashphone.png";
-import Footer from '../footer/footer'
 
 
 const mSTP = state => {

@@ -16,7 +16,7 @@
     height: 45px;
     width: 45px;
     border-radius: 50%;
-    border: 1px solid #007cc3;
+    border: 1px solid #b3def7;
     background-color: #007cc3;
     margin-top: 13px;
     color: white;
@@ -135,7 +135,6 @@
     margin-left: 20px;
     margin: 5px;
     background-color: white;
-    background-color: white;
     padding: 3px;
     color: black;
 }
@@ -148,13 +147,6 @@
     margin-top: 80px;
     margin-right: 40px;
 }
-
-/* .index-page-container h1 {
-    font-size: 50px;
-    margin-bottom: 0;
-    align-self: flex-start;
-    margin-left: 40px;
-} */
 
 .user-main {
     margin-top: 80px;

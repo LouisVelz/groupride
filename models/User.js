@@ -14,6 +14,15 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+  bike_type: {
+    type: String
+  },
+  skill_level: {
+    type: String
+  },
+  social_media: {
+    type: String
+  },
   date: {
     type: Date,
     default: Date.now
