@@ -34,9 +34,9 @@ Users will be able to create Rides / Events so that they can be posted to the ma
 
 ![](gifs/create-form.gif)
 
-### Goggle Maps 
+### Google Maps 
 
-On creation of the route, a map showing the Event's route will display next to the event's details allowing users to see an actual map of the route along with the specific details (Time and Distance) of the ride obtained from the Google Maps API. The Google Maps API was also use in the Create Ride form to display autocomplete on the location inputs. These inputs will show locations that match the user's input on Google Maps.
+On creation of the route, a map showing the event's route will display next to the event's details allowing users to see an actual map of the route along with the specific details (Time and Distance) of the ride obtained from the Google Maps API. The Google Maps API was also used in the Create Ride form to display autocomplete on the location inputs. These inputs will show locations that match the user's input on Google Maps.
 
 ![](gifs/index-page.gif)
 
