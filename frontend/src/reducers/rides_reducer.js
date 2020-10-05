@@ -37,20 +37,22 @@ const ridesReducer = (
       return newState;
 
     case EXIT_RIDE:
+      debugger
       let data = JSON.parse(action.data.config.data)
       newState.all.forEach(ride => {
         if (ride._id === data.id) {
-          const removed = ride.participants.filter(participant => participant !== data.participants)
+          const removed = ride.participants.filter(participant => participant !== data.currentUser)
           ride.participants = removed;
         }
       });
       return newState;
 
     case JOIN_RIDE:
+      debugger
       const data1 = JSON.parse(action.ride.config.data)
       newState.all.forEach(ride => {
         if(ride._id === data1.id){
-          ride.participants.push(data1.participants);
+          ride.participants.push(data1.currentUser);
         } 
       });
       return newState;

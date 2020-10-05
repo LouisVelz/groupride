@@ -14,7 +14,8 @@ class RideIndexItem extends React.Component {
     super(props)
     this.state = {
       participants: this.props.ride.participants,
-      id: this.props.ride._id
+      id: this.props.ride._id,
+      currentUser: this.props.currentUser._id
       }
     this.handleClick = this.handleClick.bind(this);
     this.handleDelete = this.handleDelete.bind(this)
@@ -22,10 +23,12 @@ class RideIndexItem extends React.Component {
   }
 
 handleClick(){
+  debugger
   this.props.updateRide(this.state)
 }
 
 handleDelete(){
+  debugger
   this.props.trashRide(this.state.id)
 }
 
