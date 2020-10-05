@@ -37,7 +37,6 @@ const ridesReducer = (
       return newState;
 
     case EXIT_RIDE:
-      debugger
       let data = JSON.parse(action.data.config.data)
       newState.all.forEach(ride => {
         if (ride._id === data.id) {
@@ -48,7 +47,6 @@ const ridesReducer = (
       return newState;
 
     case JOIN_RIDE:
-      debugger
       const data1 = JSON.parse(action.ride.config.data)
       newState.all.forEach(ride => {
         if(ride._id === data1.id){

@@ -13,7 +13,6 @@ export const writeRide = (data) => {
 };
 
 export const patchRide = (data) => {
-  debugger
   return axios.patch(`/api/rideevent/${data.id}`, data);
 };
 
@@ -31,12 +30,10 @@ export const patchUser = (data) => {
 };
 
 export const deleteRide = (rideId) => {
-  debugger
   return axios.delete(`/api/rideevent/${rideId}`);
 };
 
 export const unjoinRide = (data) => {
-  debugger
   return axios.patch(`/api/rideevent/${data.id}/unjoin`, data);
 };
 

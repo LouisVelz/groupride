@@ -23,12 +23,10 @@ class RideIndexItem extends React.Component {
   }
 
 handleClick(){
-  debugger
   this.props.updateRide(this.state)
 }
 
 handleDelete(){
-  debugger
   this.props.trashRide(this.state.id)
 }
 
