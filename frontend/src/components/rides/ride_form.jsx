@@ -7,6 +7,9 @@ import {
   geocodeByAddress,
   getLatLng,
 } from 'react-places-autocomplete';
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 
 class RideForm extends React.Component {
