@@ -14,6 +14,7 @@ class RideForm extends React.Component {
     constructor(props) {
       super(props);
         this.state = this.props.ride;
+        this.state.purpose = "Joy Ride"
         this.handleSumit = this.handleSumit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     }
@@ -82,13 +83,6 @@ class RideForm extends React.Component {
       
         return (
           <div id="form-bg">
-            {/* <LoadScript
-              id="script-loader"
-              googleMapsApiKey={"AIzaSyCsS0j6913rWPp3A7tZFPwtsAP3Fz7H3sk"}
-              language="en"
-              region="EN"
-              version="weekly"
-            ></LoadScript> */}
             <div className="create-ride-form">
               <form className="c-ride-form" onSubmit={this.handleSumit}>
                 <h1>{this.props.formType}</h1>

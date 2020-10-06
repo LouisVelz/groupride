@@ -50,8 +50,7 @@ router.get('/:id', (req, res) => {
 
 router.patch('/:id', 
     (req, res) => {
-
-        RideEvent.findByIdAndUpdate(req.params.id, { $push: { participants: req.body.participants } }, { new: true })
+        RideEvent.findByIdAndUpdate(req.params.id, { $push: { participants: req.body.currentUser } }, { new: true })
         .then(ride => res.json(ride))
         .catch(err =>
             res.status(404).json({ noridefound: 'No ride found with that ID' })
@@ -61,7 +60,7 @@ router.patch('/:id',
 router.patch('/:id/unjoin',
     (req, res) => {
 
-        RideEvent.findByIdAndUpdate(req.params.id, { $pull: { participants: req.body.participants } }, { new: true })
+        RideEvent.findByIdAndUpdate(req.params.id, { $pull: { participants: req.body.currentUser } }, { new: true })
             .then(ride => res.json(ride))
             .catch(err =>
                 res.status(404).json({ noridefound: 'No ride found with that ID' })
